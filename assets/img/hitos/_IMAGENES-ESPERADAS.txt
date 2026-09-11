@@ -1,0 +1,33 @@
+Imágenes esperadas para cada hito (carpeta: assets/img/hitos/)
+Formato recomendado: .webp  (alternativas: .jpg / .png)
+
+h01-turing.webp
+h02-z3.webp
+h03-colossus.webp
+h04-eniac.webp
+h05-lenguaje-maquina.webp
+h06-transistor.webp
+h07-manchester-baby.webp
+h08-univac.webp
+h09-ensamblador.webp
+h10-tx0.webp
+h11-fortran.webp
+h12-circuito-integrado.webp
+h13-cobol.webp
+h14-algol.webp
+h15-pdp1.webp
+h16-system360.webp
+h17-basic.webp
+h18-ley-moore.webp
+h19-unix.webp
+h20-pdp11.webp
+h21-intel4004.webp
+h22-lenguaje-c.webp
+h23-intel8080.webp
+h24-altair.webp
+h25-apple2.webp
+h26-ibm-pc.webp
+h27-python.webp
+h28-32-64-bits.webp
+h29-almacenamiento.webp
+h30-internet-web.webp

@@ -1,0 +1,15 @@
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+
+# Node (por si más adelante agregas herramientas)
+node_modules/
+npm-debug.log*
+
+# Vercel
+.vercel
