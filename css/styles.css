@@ -98,8 +98,11 @@ input{font:inherit}
   border-bottom:1px solid var(--line);
 }
 .hero__inner{max-width:1320px; margin:0 auto; padding:30px 20px 26px}
-.hero__kicker{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted)}
-.hero__title{font-size:clamp(1.7rem,4.4vw,2.9rem); font-weight:700; margin:6px 0 0}
+.hero__title{font-size:clamp(1.7rem,4.4vw,2.9rem); font-weight:700; margin:0}
+.hero__credito{
+  margin-top:8px; display:flex; flex-direction:column; gap:2px;
+  font-size:.72rem; line-height:1.5; color:var(--muted);
+}
 .hero__subtitle{margin-top:8px; max-width:70ch; font-size:clamp(.94rem,1.3vw,1.06rem); color:var(--muted)}
 .hero__pregunta{
   margin-top:16px; max-width:92ch;

@@ -123,9 +123,6 @@ function renderMeta(){
   $('#hero-subtitulo').textContent = m.subtitulo;
   $('#hero-pregunta').textContent = m.preguntaGuia;
   $('#cierre-pregunta').textContent = m.preguntaGuia;
-  $('#pie-autor').textContent = m.autor;
-  $('#pie-regla').textContent = m.reglaColor;
-  $('#hero-kicker').textContent = `${S.data.hitos[0].anio} — presente · ${S.data.hitos.length} hitos · ${S.data.generaciones.length} generaciones`;
   document.title = `${m.titulo} — Línea de tiempo interactiva`;
 }
 
