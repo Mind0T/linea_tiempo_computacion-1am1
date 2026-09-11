@@ -30,11 +30,7 @@
 <header class="hero">
   <div class="hero__inner">
     <h1 class="hero__title" id="hero-titulo">Evolución de la Computación</h1>
-    <p class="hero__credito">
-      <span>Escuela Superior de Cómputo - IPN</span>
-      <span>Prof. Macario Hernández Cruz</span>
-      <span>Daniela Elina García Medina e Irvin Jair Soriano Rosales</span>
-    </p>
+    <p class="hero__credito" id="hero-credito"></p>
     <p class="hero__subtitle" id="hero-subtitulo"></p>
     <p class="hero__pregunta">
       <span class="hero__pregunta-label mono">Pregunta guía</span>
@@ -124,61 +120,15 @@
 
   <!-- ============================ CIERRE ========================== -->
   <section id="cierre" class="seccion seccion--cierre" aria-labelledby="cierre-titulo">
-    <p class="cierre__label mono">Final del camino · respuesta a la pregunta guía</p>
+    <p class="cierre__label mono" id="cierre-label"></p>
     <p class="cierre__pregunta" id="cierre-pregunta"></p>
-    <h2 class="seccion__titulo" id="cierre-titulo">Evolución progresiva con traslapes, no rupturas limpias</h2>
+    <h2 class="seccion__titulo" id="cierre-titulo"></h2>
 
-    <p class="cierre__tesis">
-      Las «generaciones» son una <em>etiqueta didáctica posterior</em>, no un calendario de cortes.
-      El camino muestra tecnologías que nacen antes de su generación, máquinas que se siguen
-      construyendo después de quedar «superadas» y capas de software que atraviesan décadas enteras.
-      El cambio fue acumulativo: cada etapa heredó ideas de la anterior y convivió con ella durante años.
-    </p>
+    <p class="cierre__tesis" id="cierre-tesis"></p>
 
-    <ol class="evidencias">
-      <li class="evidencia">
-        <p class="evidencia__num mono">01</p>
-        <h3 class="evidencia__titulo">El transistor llega antes que su generación</h3>
-        <p>Se inventa en <span class="mono">1947</span>, pero la UNIVAC I de tubos se entrega en <span class="mono">1951</span>
-        y la segunda generación arranca hacia <span class="mono">1956</span>. Nueve años de traslape entre el invento y su adopción.</p>
-        <p class="evidencia__link"><a href="#" data-open-hito="H06">Ver el hito de transición →</a></p>
-      </li>
-      <li class="evidencia">
-        <p class="evidencia__num mono">02</p>
-        <h3 class="evidencia__titulo">Los orígenes fueron simultáneos, no lineales</h3>
-        <p>Z3 en Alemania (<span class="mono">1941</span>), Colossus en el Reino Unido (<span class="mono">1943</span>) y ENIAC
-        en EE.&nbsp;UU. (<span class="mono">1945</span>) surgen en paralelo y con enfoques distintos.</p>
-        <p class="evidencia__link"><a href="#" data-open-hito="H02">Ver la Z3 →</a></p>
-      </li>
-      <li class="evidencia">
-        <p class="evidencia__num mono">03</p>
-        <h3 class="evidencia__titulo">El software avanza en capas que cruzan generaciones</h3>
-        <p>Lenguaje máquina, ensamblador, almacenamiento, bits e Internet no caben en una sola generación:
-        son <strong>bandas</strong> que se superponen durante décadas.</p>
-        <p class="evidencia__link"><a href="#" data-open-hito="H09">Ver el ensamblador →</a></p>
-      </li>
-      <li class="evidencia">
-        <p class="evidencia__num mono">04</p>
-        <h3 class="evidencia__titulo">La compatibilidad se volvió la regla</h3>
-        <p>Con el System/360 (<span class="mono">1964</span>) la arquitectura se separó de la implementación:
-        el hardware podía cambiar sin romper el software. La continuidad se diseñó a propósito.</p>
-        <p class="evidencia__link"><a href="#" data-open-hito="H16">Ver el System/360 →</a></p>
-      </li>
-      <li class="evidencia">
-        <p class="evidencia__num mono">05</p>
-        <h3 class="evidencia__titulo">El progreso tuvo un ritmo, no saltos</h3>
-        <p>La Ley de Moore (<span class="mono">1965</span>) describe una mejora sostenida y predecible.
-        Si hubiera habido rupturas, no existiría una tendencia tan estable durante cincuenta años.</p>
-        <p class="evidencia__link"><a href="#" data-open-hito="H18">Ver la Ley de Moore →</a></p>
-      </li>
-    </ol>
+    <ol class="evidencias" id="cierre-evidencias"></ol>
 
-    <p class="cierre__cierre">
-      Conclusión: hubo <strong>umbrales tecnológicos</strong> claros —el tubo, el transistor, el circuito integrado,
-      el microprocesador— pero sus efectos se difundieron de forma gradual y traslapada.
-      La historia de la computación se lee mejor como una <strong>co-evolución continua</strong> entre hardware,
-      arquitectura y programación que como una sucesión de rupturas.
-    </p>
+    <p class="cierre__cierre" id="cierre-conclusion"></p>
   </section>
 </main>
 

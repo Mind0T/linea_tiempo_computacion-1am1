@@ -15,7 +15,7 @@ let RMAX = YMAX;                   // tope del CAMINO: último hito puntual + ma
 // Desktop: el camino avanza por filas (izq→der, baja, der→izq…)
 const D = { PX_YEAR:104, ROW_GAP:316, TOP:150, MARGIN:104, BULGE:74, WAVE:19, STEP:9, BOTTOM:190 };
 // Móvil: "S" vertical suave con las tarjetas a la derecha
-const M = { X:44, AMP:18, WAVE_L:300, TOP:54, GAP_MIN:112, GAP_MAX:196, PX_YEAR:13, STEP:7, BOTTOM:140, CARD_X:104 };
+const M = { X:44, AMP:18, WAVE_L:300, TOP:158, GAP_MIN:112, GAP_MAX:196, PX_YEAR:13, STEP:7, BOTTOM:140, CARD_X:104 };
 
 const CARD_W    = 186;  // ancho de tarjeta (coincide con .pin del CSS)
 const PIN_LEN   = 22;   // del camino al centro de la cabeza del pin
@@ -92,6 +92,7 @@ async function init(){
   ZONAS = ord.map((g, i) => ({ ...g, desde:g.ini, hasta: i < ord.length - 1 ? ord[i + 1].ini : RMAX }));
 
   renderMeta();
+  renderCierre();
   renderLeyenda();
   renderFiltros();
   setupTema();
@@ -120,10 +121,39 @@ function dibujar(){
 function renderMeta(){
   const m = S.data.meta;
   $('#hero-titulo').textContent = m.titulo;
+  $('#hero-credito').innerHTML = (m.creditos || []).map(t => `<span>${esc(t)}</span>`).join('');
   $('#hero-subtitulo').textContent = m.subtitulo;
   $('#hero-pregunta').textContent = m.preguntaGuia;
   $('#cierre-pregunta').textContent = m.preguntaGuia;
   document.title = `${m.titulo} — Línea de tiempo interactiva`;
+}
+
+/** Texto "enriquecido" seguro para bloques largos del cierre:
+ *  escapa el texto y luego resalta años (mono) y **negrita** / _cursiva_ .
+ *  El texto viene de nuestro propio hitos.json (no de un usuario), así
+ *  que aplicar este pequeño formateo sobre la cadena ya escapada es seguro. */
+function richText(raw){
+  let s = esc(raw || '');
+  s = s.replace(/\b(1[6-9]\d{2}|20\d{2})\b/g, y => `<span class="mono">${y}</span>`);
+  s = s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  s = s.replace(/_(.+?)_/g, '<em>$1</em>');
+  return s;
+}
+
+function renderCierre(){
+  const c = S.data.meta.cierre;
+  if(!c) return;
+  $('#cierre-label').textContent = c.label || '';
+  $('#cierre-titulo').textContent = c.titulo || '';
+  $('#cierre-tesis').innerHTML = richText(c.tesis);
+  $('#cierre-evidencias').innerHTML = (c.evidencias || []).map(ev => `
+    <li class="evidencia">
+      <p class="evidencia__num mono">${esc(ev.num)}</p>
+      <h3 class="evidencia__titulo">${esc(ev.titulo)}</h3>
+      <p>${richText(ev.texto)}</p>
+      ${ev.hitoId ? `<p class="evidencia__link"><a href="#" data-open-hito="${esc(ev.hitoId)}">${esc(ev.linkTexto || 'Ver el hito')} →</a></p>` : ''}
+    </li>`).join('');
+  $('#cierre-conclusion').innerHTML = richText(c.conclusion);
 }
 
 function renderLeyenda(){

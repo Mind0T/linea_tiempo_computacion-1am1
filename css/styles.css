@@ -97,20 +97,20 @@ input{font:inherit}
     var(--surface);
   border-bottom:1px solid var(--line);
 }
-.hero__inner{max-width:1320px; margin:0 auto; padding:30px 20px 26px}
+.hero__inner{max-width:1320px; margin:0 auto; padding:30px 20px 26px; text-align:center}
 .hero__title{font-size:clamp(1.7rem,4.4vw,2.9rem); font-weight:700; margin:0}
 .hero__credito{
-  margin-top:8px; display:flex; flex-direction:column; gap:2px;
+  margin:8px auto 0; display:flex; flex-direction:column; align-items:center; gap:2px;
   font-size:.72rem; line-height:1.5; color:var(--muted);
 }
-.hero__subtitle{margin-top:8px; max-width:70ch; font-size:clamp(.94rem,1.3vw,1.06rem); color:var(--muted)}
+.hero__subtitle{margin:8px auto 0; max-width:70ch; font-size:clamp(.94rem,1.3vw,1.06rem); color:var(--muted)}
 .hero__pregunta{
-  margin-top:16px; max-width:92ch;
-  display:flex; flex-wrap:wrap; gap:6px 12px; align-items:baseline;
+  margin:16px auto 0; max-width:92ch;
+  display:flex; flex-wrap:wrap; justify-content:center; gap:6px 12px; align-items:baseline;
   padding:12px 16px; border-radius:var(--r-md);
   background:var(--surface-2); border:1px solid var(--line);
   border-left:3px solid var(--g-g3);
-  font-size:.96rem; font-weight:500;
+  font-size:.96rem; font-weight:500; text-align:left;
 }
 .hero__pregunta-label{
   font-size:.66rem; letter-spacing:.14em; text-transform:uppercase;
@@ -339,6 +339,9 @@ input{font:inherit}
   backdrop-filter:blur(10px);
   border:1px solid var(--line); box-shadow:var(--shadow-sm);
 }
+@media (max-width:720px){
+  .hud{ margin-bottom:-6px }
+}
 .hud__row{display:flex; align-items:baseline; gap:10px}
 .hud__anio{font-size:1.14rem; font-weight:600; letter-spacing:-.02em}
 .hud__gen{font-size:.74rem; color:var(--muted); letter-spacing:.02em}
@@ -527,15 +530,15 @@ input{font:inherit}
 .tooltip span{display:block; opacity:.7; font-size:.72rem}
 
 /* ---------- 9. Cierre, leyenda y pie ---------- */
-.seccion--cierre{border-top:1px solid var(--line)}
+.seccion--cierre{border-top:1px solid var(--line); text-align:center}
 .cierre__label{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--g-g4); font-weight:600}
 [data-theme="dark"] .cierre__label{color:#c4a6ff}
 .cierre__pregunta{
-  margin-top:12px; max-width:78ch; font-size:clamp(1rem,1.8vw,1.2rem); font-weight:500;
-  padding-left:14px; border-left:3px solid var(--g-g3);
+  margin:12px auto 0; max-width:78ch; font-size:clamp(1rem,1.8vw,1.2rem); font-weight:500;
+  padding-left:14px; border-left:3px solid var(--g-g3); text-align:left;
 }
-.seccion--cierre .seccion__titulo{margin-top:18px; max-width:34ch}
-.cierre__tesis{margin-top:18px; max-width:74ch; font-size:clamp(1rem,1.5vw,1.12rem); color:var(--muted)}
+.seccion--cierre .seccion__titulo{margin:18px auto 0; max-width:34ch}
+.cierre__tesis{margin:18px auto 0; max-width:74ch; font-size:clamp(1rem,1.5vw,1.12rem); color:var(--muted)}
 .cierre__tesis em{color:var(--text); font-style:italic}
 
 .evidencias{
@@ -545,7 +548,7 @@ input{font:inherit}
 }
 .evidencia{
   padding:20px; border:1px solid var(--line); border-radius:var(--r-md);
-  background:var(--surface); display:grid; gap:8px; align-content:start;
+  background:var(--surface); display:grid; gap:8px; align-content:start; justify-items:center;
 }
 .evidencia__num{font-size:.74rem; color:var(--muted); letter-spacing:.1em}
 .evidencia__titulo{font-size:1rem; font-weight:600}
@@ -553,7 +556,7 @@ input{font:inherit}
 .evidencia__link a{font-size:.84rem; font-weight:600; color:var(--g-g3); text-decoration:none}
 [data-theme="dark"] .evidencia__link a{color:#93b4fd}
 .evidencia__link a:hover{text-decoration:underline}
-.cierre__cierre{margin-top:32px; max-width:80ch; font-size:1rem; padding-top:24px; border-top:1px solid var(--line)}
+.cierre__cierre{margin:32px auto 0; max-width:80ch; font-size:1rem; padding-top:24px; border-top:1px solid var(--line)}
 
 .leyenda{display:grid; gap:24px; grid-template-columns:1fr; margin-bottom:26px}
 @media (min-width:800px){ .leyenda{grid-template-columns:1.3fr 1fr; gap:36px} }

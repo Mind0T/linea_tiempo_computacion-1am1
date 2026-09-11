@@ -4,7 +4,55 @@
     "subtitulo": "Del concepto de \"computar\" a la era de los datos: hardware, arquitectura y programación",
     "preguntaGuia": "¿Los cambios entre generaciones de computadoras ocurrieron como rupturas claramente delimitadas o fueron una evolución progresiva en la que coexistieron diferentes tecnologías?",
     "autor": "Irvin",
-    "reglaColor": "Los eventos puntuales toman el color de su GENERACIÓN; las bandas/periodos toman el color de su CATEGORÍA (porque cruzan varias generaciones)."
+    "creditos": [
+      "Escuela Superior de Cómputo - IPN",
+      "Prof. Macario Hernández Cruz",
+      "Daniela Elina García Medina e Irvin Jair Soriano Rosales"
+    ],
+    "reglaColor": "Los eventos puntuales toman el color de su GENERACIÓN; las bandas/periodos toman el color de su CATEGORÍA (porque cruzan varias generaciones).",
+    "cierre": {
+      "label": "Final del camino · respuesta a la pregunta guía",
+      "titulo": "Evolución progresiva con traslapes, no rupturas limpias",
+      "tesis": "Las «generaciones» son una _etiqueta didáctica posterior_, no un calendario de cortes. El camino muestra tecnologías que nacen antes de su generación, máquinas que se siguen construyendo después de quedar «superadas» y capas de software que atraviesan décadas enteras. El cambio fue acumulativo: cada etapa heredó ideas de la anterior y convivió con ella durante años.",
+      "evidencias": [
+        {
+          "num": "01",
+          "titulo": "El transistor llega antes que su generación",
+          "texto": "Se inventa en 1947, pero la UNIVAC I de tubos se entrega en 1951 y la segunda generación arranca hacia 1956. Nueve años de traslape entre el invento y su adopción.",
+          "hitoId": "H06",
+          "linkTexto": "Ver el hito de transición"
+        },
+        {
+          "num": "02",
+          "titulo": "Los orígenes fueron simultáneos, no lineales",
+          "texto": "Z3 en Alemania (1941), Colossus en el Reino Unido (1943) y ENIAC en EE. UU. (1945) surgen en paralelo y con enfoques distintos.",
+          "hitoId": "H02",
+          "linkTexto": "Ver la Z3"
+        },
+        {
+          "num": "03",
+          "titulo": "El software avanza en capas que cruzan generaciones",
+          "texto": "Lenguaje máquina, ensamblador, almacenamiento, bits e Internet no caben en una sola generación: son **bandas** que se superponen durante décadas.",
+          "hitoId": "H09",
+          "linkTexto": "Ver el ensamblador"
+        },
+        {
+          "num": "04",
+          "titulo": "La compatibilidad se volvió la regla",
+          "texto": "Con el System/360 (1964) la arquitectura se separó de la implementación: el hardware podía cambiar sin romper el software. La continuidad se diseñó a propósito.",
+          "hitoId": "H16",
+          "linkTexto": "Ver el System/360"
+        },
+        {
+          "num": "05",
+          "titulo": "El progreso tuvo un ritmo, no saltos",
+          "texto": "La Ley de Moore (1965) describe una mejora sostenida y predecible. Si hubiera habido rupturas, no existiría una tendencia tan estable durante cincuenta años.",
+          "hitoId": "H18",
+          "linkTexto": "Ver la Ley de Moore"
+        }
+      ],
+      "conclusion": "Conclusión: hubo **umbrales tecnológicos** claros —el tubo, el transistor, el circuito integrado, el microprocesador— pero sus efectos se difundieron de forma gradual y traslapada. La historia de la computación se lee mejor como una **co-evolución continua** entre hardware, arquitectura y programación que como una sucesión de rupturas."
+    }
   },
 
   "generaciones": [
