@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Evolución de la Computación — Línea de tiempo interactiva</title>
+<meta name="description" content="Línea de tiempo interactiva de la evolución de la computación: un camino que viaja de la máquina de Turing a la era de los datos, con 30 hitos, fuentes y bandas transversales.">
+<meta name="author" content="Irvin">
+
+<!-- Open Graph / compartir -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Evolución de la Computación">
+<meta property="og:description" content="Del concepto de «computar» a la era de los datos: recorre el camino de la computación hito por hito.">
+<meta property="og:image" content="assets/img/og/og-image.png">
+<meta property="og:locale" content="es_MX">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Tipografía: IBM Plex Sans (UI) + IBM Plex Mono (años y etiquetas técnicas) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#camino">Saltar al camino de hitos</a>
+
+<!-- ===================== PORTADA COMPACTA ====================== -->
+<header class="hero">
+  <div class="hero__inner">
+    <p class="hero__kicker mono" id="hero-kicker">1936 — presente</p>
+    <h1 class="hero__title" id="hero-titulo">Evolución de la Computación</h1>
+    <p class="hero__subtitle" id="hero-subtitulo"></p>
+    <p class="hero__pregunta">
+      <span class="hero__pregunta-label mono">Pregunta guía</span>
+      <span id="hero-pregunta"></span>
+    </p>
+  </div>
+</header>
+
+<!-- ============ BARRA DE CONTROL FLOTANTE (compacta) ============= -->
+<div class="bar" id="controls">
+  <div class="bar__inner">
+    <div class="bar__menu">
+      <button type="button" class="bar__btn" id="btn-gen" aria-expanded="false" aria-controls="pop-gen">
+        Generación <span class="bar__badge mono" id="cnt-gen" hidden>0</span>
+        <svg class="bar__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="pop" id="pop-gen" hidden>
+        <p class="pop__label mono">Filtrar por generación</p>
+        <div class="chips" id="filtro-generaciones"></div>
+      </div>
+    </div>
+
+    <div class="bar__menu">
+      <button type="button" class="bar__btn" id="btn-cat" aria-expanded="false" aria-controls="pop-cat">
+        Categoría <span class="bar__badge mono" id="cnt-cat" hidden>0</span>
+        <svg class="bar__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="pop" id="pop-cat" hidden>
+        <p class="pop__label mono">Filtrar por categoría</p>
+        <div class="chips" id="filtro-categorias"></div>
+      </div>
+    </div>
+
+    <button type="button" class="bar__btn bar__btn--star" id="toggle-propias" aria-pressed="false">
+      <span aria-hidden="true">⭐</span> Propias
+    </button>
+
+    <div class="search">
+      <svg class="search__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input type="search" id="buscador" placeholder="Buscar hito o año…" aria-label="Buscar por título, año o tecnología" autocomplete="off">
+    </div>
+
+    <p class="conteo mono" id="conteo" aria-live="polite" hidden></p>
+    <button type="button" class="bar__btn bar__btn--mini" id="limpiar" hidden>Limpiar</button>
+
+    <button type="button" class="bar__btn bar__btn--icon" id="tema" aria-pressed="false" title="Cambiar a tema oscuro">
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 13.5A9 9 0 1 1 10.5 3a7 7 0 0 0 10.5 10.5Z"/></svg>
+      <span class="sr-only">Cambiar tema</span>
+    </button>
+  </div>
+</div>
+
+<main>
+  <!-- ================== EL CAMINO (héroe de la página) ============== -->
+  <section id="camino" class="road" aria-labelledby="road-titulo">
+    <h2 class="sr-only" id="road-titulo">El camino de la computación: 30 hitos en orden cronológico</h2>
+
+    <p class="road__nota">
+      <span><b>Pines</b> = momentos puntuales, con el color de su generación</span>
+      <span><b>Cintas paralelas</b> = procesos continuos, con el color de su categoría</span>
+      <span><b>⭐</b> = aportaciones propias</span>
+    </p>
+
+    <!-- HUD + mini-mapa: la "cámara" que viaja por la ruta -->
+    <div class="hud" id="hud">
+      <div class="hud__row">
+        <span class="hud__anio mono" id="hud-anio">1936</span>
+        <span class="hud__gen" id="hud-gen">Antecedentes</span>
+      </div>
+      <div class="mapa">
+        <div class="mapa__pista" id="mapa-pista" aria-hidden="true"></div>
+        <div class="mapa__hitos" id="mapa-hitos" aria-hidden="true"></div>
+        <input type="range" class="mapa__input" id="mapa" min="0" max="1000" step="1" value="0"
+          aria-label="Avanzar por el camino">
+      </div>
+    </div>
+
+    <div class="road__stage" id="road-stage">
+      <div class="road__zonas" id="road-zonas" aria-hidden="true"></div>
+      <svg class="road__svg" id="road-svg" aria-hidden="true" focusable="false"></svg>
+      <div class="road__pines" id="road-pines"></div>
+    </div>
+
+    <p class="estado" id="estado" role="status"></p>
+  </section>
+
+  <!-- ============================ CIERRE ========================== -->
+  <section id="cierre" class="seccion seccion--cierre" aria-labelledby="cierre-titulo">
+    <p class="cierre__label mono">Final del camino · respuesta a la pregunta guía</p>
+    <p class="cierre__pregunta" id="cierre-pregunta"></p>
+    <h2 class="seccion__titulo" id="cierre-titulo">Evolución progresiva con traslapes, no rupturas limpias</h2>
+
+    <p class="cierre__tesis">
+      Las «generaciones» son una <em>etiqueta didáctica posterior</em>, no un calendario de cortes.
+      El camino muestra tecnologías que nacen antes de su generación, máquinas que se siguen
+      construyendo después de quedar «superadas» y capas de software que atraviesan décadas enteras.
+      El cambio fue acumulativo: cada etapa heredó ideas de la anterior y convivió con ella durante años.
+    </p>
+
+    <ol class="evidencias">
+      <li class="evidencia">
+        <p class="evidencia__num mono">01</p>
+        <h3 class="evidencia__titulo">El transistor llega antes que su generación</h3>
+        <p>Se inventa en <span class="mono">1947</span>, pero la UNIVAC I de tubos se entrega en <span class="mono">1951</span>
+        y la segunda generación arranca hacia <span class="mono">1956</span>. Nueve años de traslape entre el invento y su adopción.</p>
+        <p class="evidencia__link"><a href="#" data-open-hito="H06">Ver el hito de transición →</a></p>
+      </li>
+      <li class="evidencia">
+        <p class="evidencia__num mono">02</p>
+        <h3 class="evidencia__titulo">Los orígenes fueron simultáneos, no lineales</h3>
+        <p>Z3 en Alemania (<span class="mono">1941</span>), Colossus en el Reino Unido (<span class="mono">1943</span>) y ENIAC
+        en EE.&nbsp;UU. (<span class="mono">1945</span>) surgen en paralelo y con enfoques distintos.</p>
+        <p class="evidencia__link"><a href="#" data-open-hito="H02">Ver la Z3 →</a></p>
+      </li>
+      <li class="evidencia">
+        <p class="evidencia__num mono">03</p>
+        <h3 class="evidencia__titulo">El software avanza en capas que cruzan generaciones</h3>
+        <p>Lenguaje máquina, ensamblador, almacenamiento, bits e Internet no caben en una sola generación:
+        son <strong>bandas</strong> que se superponen durante décadas.</p>
+        <p class="evidencia__link"><a href="#" data-open-hito="H09">Ver el ensamblador →</a></p>
+      </li>
+      <li class="evidencia">
+        <p class="evidencia__num mono">04</p>
+        <h3 class="evidencia__titulo">La compatibilidad se volvió la regla</h3>
+        <p>Con el System/360 (<span class="mono">1964</span>) la arquitectura se separó de la implementación:
+        el hardware podía cambiar sin romper el software. La continuidad se diseñó a propósito.</p>
+        <p class="evidencia__link"><a href="#" data-open-hito="H16">Ver el System/360 →</a></p>
+      </li>
+      <li class="evidencia">
+        <p class="evidencia__num mono">05</p>
+        <h3 class="evidencia__titulo">El progreso tuvo un ritmo, no saltos</h3>
+        <p>La Ley de Moore (<span class="mono">1965</span>) describe una mejora sostenida y predecible.
+        Si hubiera habido rupturas, no existiría una tendencia tan estable durante cincuenta años.</p>
+        <p class="evidencia__link"><a href="#" data-open-hito="H18">Ver la Ley de Moore →</a></p>
+      </li>
+    </ol>
+
+    <p class="cierre__cierre">
+      Conclusión: hubo <strong>umbrales tecnológicos</strong> claros —el tubo, el transistor, el circuito integrado,
+      el microprocesador— pero sus efectos se difundieron de forma gradual y traslapada.
+      La historia de la computación se lee mejor como una <strong>co-evolución continua</strong> entre hardware,
+      arquitectura y programación que como una sucesión de rupturas.
+    </p>
+  </section>
+</main>
+
+<!-- =========================== CRÉDITOS ========================== -->
+<footer class="pie">
+  <div class="pie__inner">
+    <div class="leyenda">
+      <div class="leyenda__grupo">
+        <h2 class="leyenda__titulo mono">Generaciones <span class="leyenda__nota">· color del camino y de los pines</span></h2>
+        <ul class="leyenda__lista" id="leyenda-generaciones"></ul>
+      </div>
+      <div class="leyenda__grupo">
+        <h2 class="leyenda__titulo mono">Categorías <span class="leyenda__nota">· color de las bandas</span></h2>
+        <ul class="leyenda__lista" id="leyenda-categorias"></ul>
+      </div>
+    </div>
+    <p class="pie__autor">Investigación, curaduría y diseño: <strong id="pie-autor">—</strong></p>
+    <p class="pie__nota">
+      Cada hito incluye sus fuentes verificables dentro del panel de detalle; los enlaces abren en una pestaña nueva.
+      Contenido renderizado dinámicamente desde <code class="mono">data/hitos.json</code>.
+    </p>
+    <p class="pie__nota pie__nota--regla mono" id="pie-regla"></p>
+  </div>
+</footer>
+
+<!-- ==================== PANEL DE DETALLE (dialog) ================= -->
+<div class="overlay" id="overlay" hidden></div>
+<aside class="panel" id="panel" role="dialog" aria-modal="true" aria-labelledby="panel-titulo" hidden>
+  <div class="panel__grip" aria-hidden="true"></div>
+  <header class="panel__head">
+    <div class="panel__meta" id="panel-meta"></div>
+    <button type="button" class="btn btn--icon panel__close" id="panel-close" aria-label="Cerrar detalle (Esc)">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </header>
+  <div class="panel__body" id="panel-body" tabindex="-1"></div>
+  <footer class="panel__foot">
+    <button type="button" class="btn btn--mini" id="panel-prev">← Anterior</button>
+    <p class="panel__pos mono" id="panel-pos"></p>
+    <button type="button" class="btn btn--mini" id="panel-next">Siguiente →</button>
+  </footer>
+</aside>
+
+<div class="tooltip" id="tooltip" role="tooltip" aria-hidden="true"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

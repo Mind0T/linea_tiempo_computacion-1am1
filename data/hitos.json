@@ -1,0 +1,466 @@
+{
+  "meta": {
+    "titulo": "Evolución de la Computación",
+    "subtitulo": "Del concepto de \"computar\" a la era de los datos: hardware, arquitectura y programación",
+    "preguntaGuia": "¿Los cambios entre generaciones de computadoras ocurrieron como rupturas claramente delimitadas o fueron una evolución progresiva en la que coexistieron diferentes tecnologías?",
+    "autor": "Irvin",
+    "reglaColor": "Los eventos puntuales toman el color de su GENERACIÓN; las bandas/periodos toman el color de su CATEGORÍA (porque cruzan varias generaciones)."
+  },
+
+  "generaciones": [
+    { "id": "antecedente", "nombre": "Antecedentes", "tecnologia": "Bases teóricas y primeras máquinas", "rango": "1936–1943", "color": "#64748b" },
+    { "id": "g1", "nombre": "Primera generación", "tecnologia": "Tubos de vacío", "rango": "1943–1956", "color": "#ea580c" },
+    { "id": "transicion", "nombre": "Hito de transición", "tecnologia": "Del tubo al transistor", "rango": "1947", "color": "#f59e0b" },
+    { "id": "g2", "nombre": "Segunda generación", "tecnologia": "Transistores", "rango": "1956–1964", "color": "#0d9488" },
+    { "id": "g3", "nombre": "Tercera generación", "tecnologia": "Circuitos integrados", "rango": "1964–1971", "color": "#2563eb" },
+    { "id": "g4", "nombre": "Cuarta generación", "tecnologia": "Microprocesadores", "rango": "1971–", "color": "#7c3aed" },
+    { "id": "posterior", "nombre": "Evolución posterior", "tecnologia": "Post-generacional", "rango": "1985–presente", "color": "#db2777" }
+  ],
+
+  "categorias": [
+    { "id": "hardware", "nombre": "Hardware", "emoji": "🖥️", "icono": "cpu", "color": "#7c3aed" },
+    { "id": "programacion", "nombre": "Programación", "emoji": "⌨️", "icono": "code", "color": "#0d9488" },
+    { "id": "concepto", "nombre": "Concepto / Arquitectura", "emoji": "🧠", "icono": "brain", "color": "#64748b" },
+    { "id": "almacenamiento", "nombre": "Almacenamiento", "emoji": "💾", "icono": "hard-drive", "color": "#ca8a04" },
+    { "id": "redes", "nombre": "Redes / Web", "emoji": "🌐", "icono": "globe", "color": "#0284c7" }
+  ],
+
+  "hitos": [
+    {
+      "id": "H01", "slug": "turing", "titulo": "Máquina de Turing", "anio": 1936, "anioFin": null, "periodo": "1936",
+      "tipo": "puntual", "categoria": "concepto", "generacion": "antecedente", "aportacionPropia": true,
+      "queOcurrio": "Alan Turing publica \"On Computable Numbers\", un modelo matemático abstracto que define formalmente qué significa computar y qué problemas son computables.",
+      "innovacion": "La fundación teórica de la computación: la idea de una máquina universal capaz de ejecutar cualquier algoritmo.",
+      "importancia": "Toda computadora moderna es, conceptualmente, una aproximación física a la máquina universal de Turing. Separó el 'qué se computa' del 'cómo se construye la máquina'.",
+      "queCambio": "Por primera vez existió una definición rigurosa de 'cálculo mecánico' y la noción de programa como secuencia de instrucciones.",
+      "relacionHwSw": "Es el puente conceptual: justifica que una misma máquina resuelva problemas distintos según su programa.",
+      "justificacionAportacion": "Conecta la teoría con toda la línea de tiempo: explica por qué el hardware pudo evolucionar sin reinventar la idea de computar.",
+      "imagen": "assets/img/hitos/h01-turing.webp",
+      "imagenAlt": "Alan Turing y el esquema de la máquina de Turing",
+      "fuentes": [
+        { "nombre": "History of Information", "url": "https://www.historyofinformation.com/detail.php?id=619" },
+        { "nombre": "Texto original (LMS, PDF)", "url": "https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf" }
+      ]
+    },
+    {
+      "id": "H02", "slug": "z3", "titulo": "Z3 de Konrad Zuse", "anio": 1941, "anioFin": null, "periodo": "1941",
+      "tipo": "puntual", "categoria": "hardware", "generacion": "antecedente", "aportacionPropia": true,
+      "queOcurrio": "El ingeniero alemán Konrad Zuse termina la Z3, considerada la primera computadora digital programable y totalmente automática (relés electromecánicos, binario de punto flotante).",
+      "innovacion": "Programabilidad automática mediante cinta perforada, antes que Colossus y ENIAC.",
+      "importancia": "Demuestra que la computación no nació de una sola línea: hubo esfuerzos paralelos (Alemania, Reino Unido, EE.UU.) que coexistieron.",
+      "queCambio": "Frente a calculadoras mecánicas fijas, la Z3 ejecutaba secuencias de instrucciones distintas sin rediseñar la máquina.",
+      "relacionHwSw": "Primeros pasos de la programación como algo separable del cableado físico.",
+      "justificacionAportacion": "Refuerza la pregunta guía: las generaciones no fueron rupturas limpias, sino desarrollos simultáneos y traslapados.",
+      "imagen": "assets/img/hitos/h02-z3.webp",
+      "imagenAlt": "Réplica de la computadora Z3 de Konrad Zuse",
+      "fuentes": [
+        { "nombre": "Britannica – Zuse computer", "url": "https://www.britannica.com/technology/Zuse-computer" },
+        { "nombre": "Britannica – Z3", "url": "https://www.britannica.com/technology/Z3" }
+      ]
+    },
+    {
+      "id": "H03", "slug": "colossus", "titulo": "Colossus", "anio": 1943, "anioFin": null, "periodo": "1943",
+      "tipo": "puntual", "categoria": "hardware", "generacion": "g1", "aportacionPropia": false,
+      "queOcurrio": "En Bletchley Park, Tommy Flowers y su equipo construyen Colossus para descifrar el cifrado alemán Lorenz durante la Segunda Guerra Mundial.",
+      "innovacion": "Primera computadora electrónica digital programable (por conmutadores y clavijas), con ~1,600–2,400 tubos de vacío.",
+      "importancia": "Probó que la electrónica de tubos procesaba información mucho más rápido que lo electromecánico. Su existencia fue secreta por décadas.",
+      "queCambio": "Aceleró el cómputo frente a las máquinas de relés; el salto de lo mecánico a lo puramente electrónico.",
+      "relacionHwSw": "Aún sin programa almacenado: se reconfiguraba físicamente para cada tarea.",
+      "imagen": "assets/img/hitos/h03-colossus.webp",
+      "imagenAlt": "Computadora Colossus con tubos de vacío en Bletchley Park",
+      "fuentes": [
+        { "nombre": "The National Museum of Computing", "url": "https://www.tnmoc.org/colossus" }
+      ]
+    },
+    {
+      "id": "H04", "slug": "eniac", "titulo": "ENIAC", "anio": 1945, "anioFin": null, "periodo": "1945",
+      "tipo": "puntual", "categoria": "hardware", "generacion": "g1", "aportacionPropia": false,
+      "queOcurrio": "Eckert y Mauchly terminan ENIAC en la Universidad de Pensilvania: la primera computadora electrónica de propósito general a gran escala en EE.UU., con ~17,468 tubos de vacío.",
+      "innovacion": "Cómputo electrónico de propósito general (no dedicado a una sola tarea), aritmética decimal.",
+      "importancia": "Marcó el inicio de la computación electrónica moderna a gran escala; miles de veces más rápida que las calculadoras electromecánicas.",
+      "queCambio": "Reprogramable para múltiples problemas, aunque reconfigurando cables y switches (días de trabajo).",
+      "relacionHwSw": "Su equipo de programadoras mostró la programación como disciplina emergente antes de que existieran los lenguajes.",
+      "imagen": "assets/img/hitos/h04-eniac.webp",
+      "imagenAlt": "La computadora ENIAC y sus operadoras",
+      "fuentes": [
+        { "nombre": "Britannica – ENIAC", "url": "https://www.britannica.com/technology/computer/ENIAC" },
+        { "nombre": "Computer History Museum", "url": "https://www.computerhistory.org/revolution/birth-of-the-computer/4/78" }
+      ]
+    },
+    {
+      "id": "H05", "slug": "lenguaje-maquina", "titulo": "Programación en lenguaje máquina", "anio": 1940, "anioFin": 1955, "periodo": "Década de 1940",
+      "tipo": "banda", "categoria": "programacion", "generacion": "g1", "aportacionPropia": false,
+      "queOcurrio": "Las primeras máquinas se programaban directamente en código binario o reconfigurando hardware; cada instrucción correspondía a operaciones específicas de esa máquina.",
+      "innovacion": "El software en su forma más primitiva: instrucciones legibles solo por la máquina.",
+      "importancia": "Estableció la idea de 'instrucción' como unidad de cómputo, base de todo lo que vendría.",
+      "queCambio": "Nada abstracto aún: lento, propenso a errores y no portable entre máquinas distintas.",
+      "relacionHwSw": "Máxima dependencia: el programa estaba pegado al hardware concreto.",
+      "imagen": "assets/img/hitos/h05-lenguaje-maquina.webp",
+      "imagenAlt": "Programación en lenguaje máquina: código binario y tarjeta perforada",
+      "fuentes": [
+        { "nombre": "CHM Timeline", "url": "https://www.computerhistory.org/timeline/1948/" }
+      ]
+    },
+    {
+      "id": "H06", "slug": "transistor", "titulo": "Invención del transistor", "anio": 1947, "anioFin": null, "periodo": "1947",
+      "tipo": "puntual", "categoria": "hardware", "generacion": "transicion", "aportacionPropia": false,
+      "queOcurrio": "En los Laboratorios Bell, Bardeen, Brattain y Shockley inventan el transistor (de contacto de punto), premiado con el Nobel en 1956.",
+      "innovacion": "Un componente de estado sólido que amplifica y conmuta señales: el sustituto del tubo de vacío.",
+      "importancia": "Habilitador físico de la segunda generación: más pequeño, frío, confiable y barato que el tubo.",
+      "queCambio": "Eliminó el calor, el tamaño y la fragilidad de los tubos, abriendo la puerta a la miniaturización.",
+      "relacionHwSw": "Al hacer el hardware más denso y confiable, hizo viables programas y sistemas más complejos.",
+      "notaTransicion": "El transistor se inventa en 1947, antes que máquinas de 1ª generación como UNIVAC I (1951), pero define a la 2ª: un invento de laboratorio tarda años en volverse fabricable y económico. Por eso las máquinas de tubos siguieron construyéndose en paralelo. Es el mejor ejemplo de que las generaciones se traslapan.",
+      "imagen": "assets/img/hitos/h06-transistor.webp",
+      "imagenAlt": "El primer transistor de contacto de punto, Bell Labs 1947",
+      "fuentes": [
+        { "nombre": "CHM – Silicon Engine", "url": "https://www.computerhistory.org/siliconengine/invention-of-the-point-contact-transistor/" },
+        { "nombre": "Nokia Bell Labs", "url": "https://www.nokia.com/blog/the-transistor-75-years-since-the-famed-nokia-bell-labs-invention-changed-the-world/" }
+      ]
+    },
+    {
+      "id": "H07", "slug": "manchester-baby", "titulo": "Manchester Baby y el programa almacenado", "anio": 1948, "anioFin": null, "periodo": "1948",
+      "tipo": "puntual", "categoria": "concepto", "generacion": "g1", "aportacionPropia": false,
+      "queOcurrio": "La Small-Scale Experimental Machine ('Baby') de la Universidad de Mánchester ejecuta, el 21 de junio de 1948, el primer programa almacenado en memoria electrónica.",
+      "innovacion": "La arquitectura de programa almacenado (línea de von Neumann / informe EDVAC): programa y datos conviven en la misma memoria.",
+      "importancia": "Es el modelo conceptual de toda computadora actual: cambiar de tarea = cargar otro programa, no recablear.",
+      "queCambio": "Frente a ENIAC/Colossus (recableado físico), el cambio de tarea pasó a ser cuestión de software.",
+      "relacionHwSw": "Aquí nace la relación moderna: el software es el elemento flexible sobre un hardware fijo.",
+      "imagen": "assets/img/hitos/h07-manchester-baby.webp",
+      "imagenAlt": "Réplica del Manchester Baby, primera máquina de programa almacenado",
+      "fuentes": [
+        { "nombre": "CHM Timeline", "url": "https://www.computerhistory.org/timeline/1948/" },
+        { "nombre": "Science and Industry Museum", "url": "https://www.scienceandindustrymuseum.org.uk/objects-and-stories/baby-and-modern-computing" }
+      ]
+    },
+    {
+      "id": "H08", "slug": "univac", "titulo": "UNIVAC I", "anio": 1951, "anioFin": null, "periodo": "1951",
+      "tipo": "puntual", "categoria": "hardware", "generacion": "g1", "aportacionPropia": false,
+      "queOcurrio": "Eckert y Mauchly (Remington Rand) entregan UNIVAC I, la primera computadora comercial de EE.UU.; célebre por predecir la elección presidencial de 1952 en TV.",
+      "innovacion": "El paso de la computadora de laboratorio a producto comercial; usaba cinta magnética en lugar de tarjetas.",
+      "importancia": "Inauguró la computación como negocio y herramienta administrativa/estadística, no solo científica o militar.",
+      "queCambio": "Introdujo el almacenamiento en cinta magnética, más rápido y denso que las tarjetas perforadas.",
+      "relacionHwSw": "Al venderse a empresas, empujó la necesidad de software más accesible (semilla de COBOL).",
+      "imagen": "assets/img/hitos/h08-univac.webp",
+      "imagenAlt": "La computadora comercial UNIVAC I, 1951",
+      "fuentes": [
+        { "nombre": "CHM Timeline", "url": "https://www.computerhistory.org/timeline/1951/" }
+      ]
+    },
+    {
+      "id": "H09", "slug": "ensamblador", "titulo": "Lenguaje ensamblador", "anio": 1949, "anioFin": 1965, "periodo": "Década de 1950",
+      "tipo": "banda", "categoria": "programacion", "generacion": "g2", "aportacionPropia": false,
+      "queOcurrio": "Aparecen los lenguajes ensambladores: mnemónicos (ADD, MOV) que un 'ensamblador' traduce a lenguaje máquina.",
+      "innovacion": "La primera capa de abstracción sobre el binario.",
+      "importancia": "Hizo la programación más legible y menos propensa a errores, sin perder control del hardware.",
+      "queCambio": "Frente al binario puro, introdujo nombres simbólicos; seguía siendo específico de cada máquina.",
+      "relacionHwSw": "Abstracción mínima que aún refleja fielmente la arquitectura del procesador.",
+      "imagen": "assets/img/hitos/h09-ensamblador.webp",
+      "imagenAlt": "Ejemplo de código en lenguaje ensamblador",
+      "fuentes": [
+        { "nombre": "CHM Timeline", "url": "https://www.computerhistory.org/timeline/1950/" }
+      ]
+    },
+    {
+      "id": "H10", "slug": "tx0", "titulo": "TX-0", "anio": 1956, "anioFin": null, "periodo": "1956",
+      "tipo": "puntual", "categoria": "hardware", "generacion": "g2", "aportacionPropia": false,
+      "queOcurrio": "El TX-0 del MIT Lincoln Laboratory es una de las primeras computadoras totalmente transistorizadas y programables de propósito general.",
+      "innovacion": "La transición práctica del tubo al transistor en una máquina completa e interactiva.",
+      "importancia": "Demostró en la práctica las ventajas del transistor y fomentó una cultura de programación interactiva.",
+      "queCambio": "Máquinas más pequeñas, confiables y con interacción más directa (pantalla, entrada en tiempo real).",
+      "relacionHwSw": "El hardware transistorizado habilitó estilos de programación más experimentales.",
+      "imagen": "assets/img/hitos/h10-tx0.webp",
+      "imagenAlt": "Computadora transistorizada TX-0 del MIT",
+      "fuentes": [
+        { "nombre": "CHM Timeline", "url": "https://www.computerhistory.org/timeline/1956/" }
+      ]
+    },
+    {
+      "id": "H11", "slug": "fortran", "titulo": "FORTRAN", "anio": 1957, "anioFin": null, "periodo": "1957",
+      "tipo": "puntual", "categoria": "programacion", "generacion": "g2", "aportacionPropia": false,
+      "queOcurrio": "IBM, con el equipo de John Backus, publica FORTRAN (FORmula TRANslation), el primer lenguaje de alto nivel de uso masivo.",
+      "innovacion": "Programar con fórmulas cercanas a las matemáticas, traducidas por un compilador.",
+      "importancia": "Multiplicó la productividad científica e ingenieril; probó que un compilador podía generar código eficiente.",
+      "queCambio": "Frente al ensamblador, el mismo programa podía portarse a distintas máquinas y escribirse mucho más rápido.",
+      "relacionHwSw": "Primer gran divorcio entre el programador y el hardware concreto.",
+      "imagen": "assets/img/hitos/h11-fortran.webp",
+      "imagenAlt": "Primer manual del lenguaje FORTRAN de IBM",
+      "fuentes": [
+        { "nombre": "CHM – John Backus", "url": "https://www.computerhistory.org/collections/catalog/102657970" },
+        { "nombre": "History of Information", "url": "https://www.historyofinformation.com/detail.php?entryid=968" }
+      ]
+    },
+    {
+      "id": "H12", "slug": "circuito-integrado", "titulo": "Circuito integrado", "anio": 1958, "anioFin": 1959, "periodo": "1958–1959",
+      "tipo": "puntual", "categoria": "hardware", "generacion": "g2", "aportacionPropia": false,
+      "queOcurrio": "Jack Kilby (TI, 1958) y Robert Noyce (Fairchild, 1959) desarrollan el circuito integrado: muchos transistores en una sola pieza de semiconductor. Noyce aporta el proceso planar de silicio.",
+      "innovacion": "Integrar muchos componentes en un solo chip.",
+      "importancia": "Base física de la tercera generación y de toda la microelectrónica posterior, incluido el microprocesador.",
+      "queCambio": "Frente a transistores sueltos soldados, permitió densidad, miniaturización y confiabilidad enormes.",
+      "relacionHwSw": "Más transistores por área ⇒ máquinas más potentes ⇒ software más complejo posible.",
+      "imagen": "assets/img/hitos/h12-circuito-integrado.webp",
+      "imagenAlt": "El primer circuito integrado de Jack Kilby, 1958",
+      "fuentes": [
+        { "nombre": "CHM – Kilby 1958", "url": "https://www.computerhistory.org/siliconengine/all-semiconductor-solid-circuit-is-demonstrated/" },
+        { "nombre": "CHM – Noyce 1959", "url": "https://www.computerhistory.org/siliconengine/practical-monolithic-integrated-circuit-concept-patented/" }
+      ]
+    },
+    {
+      "id": "H13", "slug": "cobol", "titulo": "COBOL", "anio": 1959, "anioFin": null, "periodo": "1959",
+      "tipo": "puntual", "categoria": "programacion", "generacion": "g2", "aportacionPropia": false,
+      "queOcurrio": "El comité CODASYL (con influencia decisiva de Grace Hopper) define COBOL, lenguaje orientado a procesamiento de datos administrativos.",
+      "innovacion": "Un lenguaje legible, cercano al inglés, pensado para negocios y portable entre fabricantes.",
+      "importancia": "Estandarizó el software empresarial; aún hoy corre en banca y gobierno.",
+      "queCambio": "Frente a FORTRAN (científico), atendió el mundo administrativo y priorizó la legibilidad.",
+      "relacionHwSw": "Impulsó la idea de portabilidad entre hardware de distintos fabricantes.",
+      "imagen": "assets/img/hitos/h13-cobol.webp",
+      "imagenAlt": "Grace Hopper y el lenguaje COBOL",
+      "fuentes": [
+        { "nombre": "CHM Timeline", "url": "https://www.computerhistory.org/timeline/1959/" }
+      ]
+    },
+    {
+      "id": "H14", "slug": "algol", "titulo": "ALGOL 60", "anio": 1960, "anioFin": null, "periodo": "1960",
+      "tipo": "puntual", "categoria": "programacion", "generacion": "g2", "aportacionPropia": false,
+      "queOcurrio": "Un comité internacional publica ALGOL 60, lenguaje algorítmico que introduce estructuras de bloques y se describe con la notación formal BNF.",
+      "innovacion": "Rigor formal en el diseño de lenguajes; base de la programación estructurada.",
+      "importancia": "Influyó en casi todos los lenguajes posteriores (C, Pascal, Java): el 'abuelo' de la sintaxis moderna.",
+      "queCambio": "Aportó la estructura de bloques y el ámbito de variables, ausentes en FORTRAN temprano.",
+      "relacionHwSw": "Consolidó la programación como disciplina teórica, no solo práctica.",
+      "imagen": "assets/img/hitos/h14-algol.webp",
+      "imagenAlt": "Reporte del lenguaje ALGOL 60",
+      "fuentes": [
+        { "nombre": "CHM Timeline", "url": "https://www.computerhistory.org/timeline/1960/" }
+      ]
+    },
+    {
+      "id": "H15", "slug": "pdp1", "titulo": "PDP-1", "anio": 1960, "anioFin": null, "periodo": "1960",
+      "tipo": "puntual", "categoria": "hardware", "generacion": "g2", "aportacionPropia": false,
+      "queOcurrio": "Digital Equipment Corporation (DEC) lanza la PDP-1, considerada la primera minicomputadora interactiva; en ella se creó Spacewar! (1962).",
+      "innovacion": "Cómputo interactivo y accesible, más que los mainframes gigantes.",
+      "importancia": "Democratizó parcialmente el acceso: laboratorios y universidades podían tener su propia máquina.",
+      "queCambio": "Frente a los mainframes por lotes, ofreció interacción directa con pantalla y teclado.",
+      "relacionHwSw": "La interactividad impulsó nuevas formas de software (juegos, editores, cultura hacker).",
+      "imagen": "assets/img/hitos/h15-pdp1.webp",
+      "imagenAlt": "Minicomputadora PDP-1 ejecutando Spacewar!",
+      "fuentes": [
+        { "nombre": "CHM Timeline", "url": "https://www.computerhistory.org/timeline/1960/" }
+      ]
+    },
+    {
+      "id": "H16", "slug": "system360", "titulo": "IBM System/360", "anio": 1964, "anioFin": null, "periodo": "1964",
+      "tipo": "puntual", "categoria": "hardware", "generacion": "g3", "aportacionPropia": false,
+      "queOcurrio": "IBM lanza el System/360, una familia de computadoras compatibles entre sí que comparten la misma arquitectura de instrucciones (ISA).",
+      "innovacion": "Separar la arquitectura (el contrato de software) de la implementación (el hardware). El byte de 8 bits se vuelve estándar.",
+      "importancia": "El software escrito para un modelo corría en toda la familia: nace la compatibilidad y la idea de 'plataforma'.",
+      "queCambio": "Frente a máquinas incompatibles, permitió escalar sin reescribir todo el software.",
+      "relacionHwSw": "Definió el concepto moderno de arquitectura como interfaz estable entre hardware y programas.",
+      "imagen": "assets/img/hitos/h16-system360.webp",
+      "imagenAlt": "Mainframe IBM System/360",
+      "fuentes": [
+        { "nombre": "IBM", "url": "https://www.ibm.com/history/system-360" },
+        { "nombre": "Computer History Museum", "url": "https://www.computerhistory.org/revolution/mainframe-computers/7/161" }
+      ]
+    },
+    {
+      "id": "H17", "slug": "basic", "titulo": "BASIC", "anio": 1964, "anioFin": null, "periodo": "1964",
+      "tipo": "puntual", "categoria": "programacion", "generacion": "g3", "aportacionPropia": false,
+      "queOcurrio": "John Kemeny y Thomas Kurtz crean BASIC en Dartmouth, un lenguaje sencillo para enseñar programación en sistemas de tiempo compartido.",
+      "innovacion": "Accesibilidad: programar sin ser especialista.",
+      "importancia": "Lenguaje de entrada de millones de personas en los 70–80 y clave en las primeras microcomputadoras (Microsoft Altair BASIC).",
+      "queCambio": "Bajó drásticamente la barrera de entrada a la programación.",
+      "relacionHwSw": "Ligado al tiempo compartido, permitió que muchos usuarios usaran una misma máquina a la vez.",
+      "imagen": "assets/img/hitos/h17-basic.webp",
+      "imagenAlt": "Programa en lenguaje BASIC en una terminal",
+      "fuentes": [
+        { "nombre": "CHM Timeline", "url": "https://www.computerhistory.org/timeline/1964/" }
+      ]
+    },
+    {
+      "id": "H18", "slug": "ley-moore", "titulo": "Ley de Moore", "anio": 1965, "anioFin": null, "periodo": "1965",
+      "tipo": "puntual", "categoria": "concepto", "generacion": "g3", "aportacionPropia": true,
+      "queOcurrio": "Gordon Moore observa que el número de transistores por chip se duplica aproximadamente cada 1–2 años (revisado en 1975), a costo decreciente.",
+      "innovacion": "No es una ley física, sino una tendencia económico-tecnológica que guió a la industria por décadas.",
+      "importancia": "Explica el ritmo sostenido del progreso: por qué las computadoras mejoraron de forma continua y predecible.",
+      "queCambio": "Convirtió la mejora en una expectativa planificable de la industria.",
+      "relacionHwSw": "Más transistores baratos ⇒ hardware más potente ⇒ software cada vez más ambicioso, sin cambiar el paradigma de golpe.",
+      "justificacionAportacion": "Es la mejor entrada para responder la pregunta guía: sostiene la tesis de la 'evolución progresiva' frente a la de 'rupturas'.",
+      "imagen": "assets/img/hitos/h18-ley-moore.webp",
+      "imagenAlt": "Gráfica de la Ley de Moore: transistores por chip en el tiempo",
+      "fuentes": [
+        { "nombre": "CHM – Silicon Engine", "url": "https://www.computerhistory.org/siliconengine/moores-law-predicts-the-future-of-integrated-circuits/" },
+        { "nombre": "Intel", "url": "https://www.intel.com/content/www/us/en/history/virtual-vault/articles/moores-law.html" }
+      ]
+    },
+    {
+      "id": "H19", "slug": "unix", "titulo": "UNIX", "anio": 1969, "anioFin": null, "periodo": "1969",
+      "tipo": "puntual", "categoria": "programacion", "generacion": "g3", "aportacionPropia": false,
+      "queOcurrio": "Ken Thompson y Dennis Ritchie, en Bell Labs, crean UNIX, un sistema operativo multitarea y multiusuario, portable y modular.",
+      "innovacion": "Un SO diseñado para ser simple, componible ('filosofía UNIX') y portable entre máquinas.",
+      "importancia": "Es el ancestro directo de Linux, macOS, Android y de la infraestructura de Internet.",
+      "queCambio": "Frente a SO atados a un solo hardware, priorizó la portabilidad (potenciada al reescribirse en C).",
+      "relacionHwSw": "Su portabilidad rompió la dependencia SO–hardware; un mismo sistema corría en máquinas distintas.",
+      "imagen": "assets/img/hitos/h19-unix.webp",
+      "imagenAlt": "Ken Thompson y Dennis Ritchie con una computadora ejecutando UNIX",
+      "fuentes": [
+        { "nombre": "National Inventors Hall of Fame", "url": "https://www.invent.org/inductees/dennis-ritchie" },
+        { "nombre": "Bell Labs (Ritchie, PDF)", "url": "https://www.nokia.com/bell-labs/about/dennis-m-ritchie/chist.pdf" }
+      ]
+    },
+    {
+      "id": "H20", "slug": "pdp11", "titulo": "PDP-11", "anio": 1970, "anioFin": null, "periodo": "1970",
+      "tipo": "puntual", "categoria": "hardware", "generacion": "g3", "aportacionPropia": false,
+      "queOcurrio": "DEC lanza la PDP-11, una de las minicomputadoras más exitosas e influyentes de la historia.",
+      "innovacion": "Una arquitectura elegante y ortogonal que influyó en el diseño del lenguaje C y de procesadores posteriores.",
+      "importancia": "Fue la plataforma donde maduraron UNIX y C; formó a una generación de ingenieros.",
+      "queCambio": "Ofreció mejor arquitectura y relación costo-desempeño que sus predecesoras.",
+      "relacionHwSw": "Ejemplo claro de co-evolución: su hardware moldeó el software (C) y viceversa.",
+      "imagen": "assets/img/hitos/h20-pdp11.webp",
+      "imagenAlt": "Minicomputadora DEC PDP-11",
+      "fuentes": [
+        { "nombre": "CHM Timeline", "url": "https://www.computerhistory.org/timeline/1970/" }
+      ]
+    },
+    {
+      "id": "H21", "slug": "intel4004", "titulo": "Intel 4004", "anio": 1971, "anioFin": null, "periodo": "1971",
+      "tipo": "puntual", "categoria": "hardware", "generacion": "g4", "aportacionPropia": false,
+      "queOcurrio": "Intel lanza el 4004, el primer microprocesador comercial: una CPU completa de 4 bits en un solo chip (equipo de Faggin, Hoff, Mazor y Shima).",
+      "innovacion": "Integrar la unidad central de procesamiento en un único circuito.",
+      "importancia": "Detonó la cuarta generación y la computadora personal: la CPU se volvió un componente barato y masivo.",
+      "queCambio": "Frente a CPUs hechas de muchos chips, todo cupo en uno solo.",
+      "relacionHwSw": "El microprocesador convirtió el cómputo en algo integrable en cualquier producto (semilla del cómputo ubicuo).",
+      "imagen": "assets/img/hitos/h21-intel4004.webp",
+      "imagenAlt": "El microprocesador Intel 4004, 1971",
+      "fuentes": [
+        { "nombre": "Intel", "url": "https://www.intel.com/content/www/us/en/history/virtual-vault/articles/the-intel-4004.html" },
+        { "nombre": "IEEE Spectrum", "url": "https://spectrum.ieee.org/chip-hall-of-fame-intel-4004-microprocessor" }
+      ]
+    },
+    {
+      "id": "H22", "slug": "lenguaje-c", "titulo": "Lenguaje C", "anio": 1972, "anioFin": null, "periodo": "1972",
+      "tipo": "puntual", "categoria": "programacion", "generacion": "g4", "aportacionPropia": false,
+      "queOcurrio": "Dennis Ritchie desarrolla C en Bell Labs para reescribir UNIX; combina control de bajo nivel con portabilidad de alto nivel.",
+      "innovacion": "Un lenguaje 'de sistemas' eficiente y portable a la vez.",
+      "importancia": "Base de casi todo el software moderno de sistemas; influyó en C++, Java, C#, Python (implementación).",
+      "queCambio": "Permitió escribir sistemas operativos portables sin renunciar al rendimiento del ensamblador.",
+      "relacionHwSw": "El puente definitivo entre 'cerca del hardware' y 'portable entre hardware'.",
+      "imagen": "assets/img/hitos/h22-lenguaje-c.webp",
+      "imagenAlt": "El lenguaje de programación C y el libro de Kernighan y Ritchie",
+      "fuentes": [
+        { "nombre": "Britannica – C", "url": "https://www.britannica.com/technology/C-computer-programming-language" },
+        { "nombre": "Bell Labs (Ritchie, PDF)", "url": "https://www.nokia.com/bell-labs/about/dennis-m-ritchie/chist.pdf" }
+      ]
+    },
+    {
+      "id": "H23", "slug": "intel8080", "titulo": "Intel 8080", "anio": 1974, "anioFin": null, "periodo": "1974",
+      "tipo": "puntual", "categoria": "hardware", "generacion": "g4", "aportacionPropia": false,
+      "queOcurrio": "Intel lanza el 8080, microprocesador de 8 bits mucho más capaz que el 4004.",
+      "innovacion": "Un micro suficientemente potente para construir computadoras de uso general.",
+      "importancia": "Fue el 'motor' del Altair 8800 y catalizador de la industria de la microcomputadora.",
+      "queCambio": "Mayor potencia, más memoria direccionable y un conjunto de instrucciones más rico.",
+      "relacionHwSw": "Su capacidad hizo viable software real de propósito general en microcomputadoras.",
+      "imagen": "assets/img/hitos/h23-intel8080.webp",
+      "imagenAlt": "Microprocesador Intel 8080, 1974",
+      "fuentes": [
+        { "nombre": "CHM Timeline", "url": "https://www.computerhistory.org/timeline/1974/" }
+      ]
+    },
+    {
+      "id": "H24", "slug": "altair", "titulo": "Altair 8800", "anio": 1975, "anioFin": null, "periodo": "1975",
+      "tipo": "puntual", "categoria": "hardware", "generacion": "g4", "aportacionPropia": false,
+      "queOcurrio": "MITS lanza el Altair 8800 (basado en el 8080), señalado como detonante de la revolución de la computadora personal. Su primer software: Altair BASIC, primer producto de Microsoft.",
+      "innovacion": "La computadora al alcance de aficionados, no solo de instituciones.",
+      "importancia": "Encendió el movimiento hobbyista (Homebrew Computer Club) del que surgieron Apple, Microsoft y el software personal.",
+      "queCambio": "Llevó el cómputo del laboratorio al escritorio del entusiasta.",
+      "relacionHwSw": "Creó por primera vez un mercado de software para computadoras personales.",
+      "imagen": "assets/img/hitos/h24-altair.webp",
+      "imagenAlt": "La microcomputadora Altair 8800, 1975",
+      "fuentes": [
+        { "nombre": "CHM Timeline", "url": "https://www.computerhistory.org/timeline/1975/" }
+      ]
+    },
+    {
+      "id": "H25", "slug": "apple2", "titulo": "Apple II", "anio": 1977, "anioFin": null, "periodo": "1977",
+      "tipo": "puntual", "categoria": "hardware", "generacion": "g4", "aportacionPropia": false,
+      "queOcurrio": "Wozniak y Jobs lanzan la Apple II, una de las primeras computadoras personales de éxito masivo, con gráficos a color y lista para usar.",
+      "innovacion": "La PC como producto de consumo terminado (no un kit).",
+      "importancia": "Con VisiCalc (1979) convirtió a la PC en herramienta de negocio: la 'app que vendía la máquina'.",
+      "queCambio": "Pasó del kit del aficionado al aparato listo para el hogar y la oficina.",
+      "relacionHwSw": "Demostró que el software (VisiCalc) podía justificar la compra del hardware.",
+      "imagen": "assets/img/hitos/h25-apple2.webp",
+      "imagenAlt": "La computadora personal Apple II, 1977",
+      "fuentes": [
+        { "nombre": "CHM Timeline", "url": "https://www.computerhistory.org/timeline/1977/" }
+      ]
+    },
+    {
+      "id": "H26", "slug": "ibm-pc", "titulo": "IBM PC", "anio": 1981, "anioFin": null, "periodo": "1981",
+      "tipo": "puntual", "categoria": "hardware", "generacion": "g4", "aportacionPropia": false,
+      "queOcurrio": "IBM lanza el IBM PC (modelo 5150) con arquitectura abierta y MS-DOS de Microsoft.",
+      "innovacion": "Un estándar de industria abierto que otros fabricantes podían clonar.",
+      "importancia": "Creó el ecosistema 'PC compatible' que aún domina; consolidó a Microsoft e Intel ('Wintel').",
+      "queCambio": "Frente a plataformas cerradas, su apertura permitió un mercado gigantesco de clones y software.",
+      "relacionHwSw": "La separación entre fabricante de hardware y proveedor de SO definió el modelo de negocio de la era PC.",
+      "imagen": "assets/img/hitos/h26-ibm-pc.webp",
+      "imagenAlt": "La IBM PC modelo 5150, 1981",
+      "fuentes": [
+        { "nombre": "CHM Timeline", "url": "https://www.computerhistory.org/timeline/1981/" }
+      ]
+    },
+    {
+      "id": "H27", "slug": "python", "titulo": "Python", "anio": 1991, "anioFin": null, "periodo": "1991",
+      "tipo": "puntual", "categoria": "programacion", "generacion": "posterior", "aportacionPropia": false,
+      "queOcurrio": "Guido van Rossum publica Python, un lenguaje de alto nivel que prioriza la legibilidad y la productividad.",
+      "innovacion": "Un lenguaje versátil, multiparadigma y de sintaxis clara.",
+      "importancia": "Se volvió el idioma dominante de la ciencia de datos, la IA y la automatización.",
+      "queCambio": "Priorizó el tiempo del programador sobre el de la máquina: código legible y rápido de escribir.",
+      "relacionHwSw": "Representa la etapa donde el hardware es tan potente que el foco se desplaza a la expresividad del software.",
+      "imagen": "assets/img/hitos/h27-python.webp",
+      "imagenAlt": "El lenguaje de programación Python",
+      "fuentes": [
+        { "nombre": "CHM – Guido van Rossum", "url": "https://computerhistory.org/profile/guido-van-rossum/" }
+      ]
+    },
+    {
+      "id": "H28", "slug": "32-64-bits", "titulo": "Microprocesadores de 32 y 64 bits", "anio": 1985, "anioFin": 2005, "periodo": "~1985–2003+",
+      "tipo": "banda", "categoria": "hardware", "generacion": "posterior", "aportacionPropia": false,
+      "queOcurrio": "Los micros pasan de 8/16 bits a 32 bits (Intel 80386, 1985) y luego a 64 bits (AMD64 / Opteron, 2003; también ARM de 64 bits).",
+      "innovacion": "Ampliar la memoria direccionable y el desempeño manteniendo la compatibilidad.",
+      "importancia": "Habilitó memorias grandes, multitarea real y aplicaciones cada vez más exigentes; base de la computación actual.",
+      "queCambio": "Más bits = más memoria direccionable y cálculo más ancho, sin cambiar el paradigma de golpe.",
+      "relacionHwSw": "Cada salto de bits obligó a SO y software a adaptarse: co-evolución constante.",
+      "imagen": "assets/img/hitos/h28-32-64-bits.webp",
+      "imagenAlt": "Evolución de los microprocesadores de 32 a 64 bits",
+      "fuentes": [
+        { "nombre": "CHM Timeline", "url": "https://www.computerhistory.org/timeline/1985/" }
+      ]
+    },
+    {
+      "id": "H29", "slug": "almacenamiento", "titulo": "Evolución del almacenamiento digital", "anio": 1956, "anioFin": 2025, "periodo": "1956–presente",
+      "tipo": "banda", "categoria": "almacenamiento", "generacion": "posterior", "aportacionPropia": false,
+      "queOcurrio": "El almacenamiento evoluciona: tarjetas perforadas → cinta → disco duro (IBM RAMAC, 1956) → disquete (1971) → CD/DVD → flash y SSD → nube.",
+      "innovacion": "Cada salto multiplicó capacidad, velocidad y accesibilidad de los datos.",
+      "importancia": "Sin almacenamiento barato no existirían el Big Data ni la ciencia de datos.",
+      "queCambio": "De kilobytes físicos y frágiles a terabytes en un chip o 'en la nube'.",
+      "relacionHwSw": "Más y mejor almacenamiento habilitó bases de datos, SO y aplicaciones cada vez mayores.",
+      "imagen": "assets/img/hitos/h29-almacenamiento.webp",
+      "imagenAlt": "Evolución del almacenamiento: de la tarjeta perforada a la nube",
+      "fuentes": [
+        { "nombre": "CHM – Storage Engine", "url": "https://www.computerhistory.org/storageengine/first-commercial-hard-disk-drive-shipped/" }
+      ]
+    },
+    {
+      "id": "H30", "slug": "internet-web", "titulo": "Expansión de Internet y la Web", "anio": 1969, "anioFin": 2025, "periodo": "1969–presente",
+      "tipo": "banda", "categoria": "redes", "generacion": "posterior", "aportacionPropia": false,
+      "queOcurrio": "ARPANET (1969) → estandarización de TCP/IP (1983) → World Wide Web de Tim Berners-Lee (propuesta 1989, pública 1991) → navegador Mosaic (1993) y masificación.",
+      "innovacion": "Convertir computadoras aisladas en una red global de información.",
+      "importancia": "Transformó comunicación, economía y acceso al conocimiento.",
+      "queCambio": "De máquinas independientes a un sistema interconectado; el dato deja de vivir en una sola computadora.",
+      "relacionHwSw": "Exigió nuevos protocolos (software) y nueva infraestructura (hardware de red): otra co-evolución.",
+      "imagen": "assets/img/hitos/h30-internet-web.webp",
+      "imagenAlt": "Expansión de Internet y la World Wide Web",
+      "fuentes": [
+        { "nombre": "CERN", "url": "https://home.cern/science/computing/the-birth-of-the-web/short-history-web/" }
+      ]
+    }
+  ]
+}
