@@ -794,7 +794,6 @@ function abrirPanel(id, trigger){
 
   $('#panel-meta').innerHTML = `
     <div class="panel__kicker">
-      <span class="panel__id mono">${h.id}</span>
       <span class="panel__periodo">${esc(h.periodo)}</span>
       <span class="panel__chip" style="--c:${g.color}">${esc(g.nombre)}</span>
       <span class="panel__chip panel__chip--cat" style="--c:${c.color}">${svgIco(c.icono, '')}${esc(c.nombre)}</span>
@@ -816,7 +815,7 @@ function abrirPanel(id, trigger){
     ${bloque('¿Qué cambió?', h.queCambio)}
     ${bloque('Relación hardware ↔ software', h.relacionHwSw)}
     ${h.justificacionAportacion ? `<div class="callout callout--propia">
-        <p class="callout__label">⭐ Por qué es mi aportación</p>
+        <p class="callout__label">⭐ Decidimos incluir este hito por:</p>
         <p class="callout__texto">${esc(h.justificacionAportacion)}</p></div>` : ''}
     ${h.notaTransicion ? `<div class="callout callout--transicion">
         <p class="callout__label">Nota de transición</p>

@@ -434,11 +434,13 @@ input{font:inherit}
 @keyframes sheet{from{transform:translateY(24px); opacity:0}to{transform:none; opacity:1}}
 @media (min-width:860px){
   .panel{
-    left:auto; top:0; bottom:0; width:min(520px,42vw); max-height:none;
-    border-radius:0; border-top:0; border-left:1px solid var(--line);
-    animation:drawer var(--t-mid) both;
+    left:50%; top:50%; right:auto; bottom:auto; max-height:82vh;
+    width:min(640px, 88vw);
+    transform:translate(-50%,-50%);
+    border-radius:var(--r-lg); border:1px solid var(--line);
+    animation:flotar var(--t-mid) both;
   }
-  @keyframes drawer{from{transform:translateX(30px); opacity:0}to{transform:none; opacity:1}}
+  @keyframes flotar{from{transform:translate(-50%,-50%) scale(.97); opacity:0}to{transform:translate(-50%,-50%) scale(1); opacity:1}}
 }
 .panel__grip{width:40px; height:4px; border-radius:999px; background:var(--line-strong); margin:8px auto 0}
 @media (min-width:860px){ .panel__grip{display:none} }
