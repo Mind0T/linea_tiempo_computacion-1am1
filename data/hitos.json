@@ -1193,17 +1193,17 @@
       "id": "H40",
       "slug": "www",
       "titulo": "World Wide Web",
-      "anio": 1991,
+      "anio": 1990,
       "anioFin": null,
       "periodo": "1989–1991",
       "tipo": "puntual",
       "categoria": "redes",
       "generacion": "internet",
       "aportacionPropia": false,
-      "queOcurrio": "Tim Berners-Lee, en el CERN, propone (1989) y libera al público (1991) la World Wide Web: hipertexto, direcciones URL, el protocolo HTTP y el lenguaje HTML.",
-      "innovacion": "Una capa de información navegable sobre Internet: páginas enlazadas entre sí y accesibles con un navegador.",
-      "importancia": "Convirtió Internet, hasta entonces técnica, en un medio universal de conocimiento y comunicación.",
-      "queCambio": "Distinguió «Internet» (la red) de «la Web» (la información sobre ella) y la abrió a todo el mundo.",
+      "queOcurrio": "A finales de 1990, el británico Tim Berners-Lee y su equipo, en el CERN, desarrollan la World Wide Web usando la computadora NeXT como primer servidor.",
+      "innovacion": "Navegadores y servidores que se comunican para compartir documentos de hipertexto (HTML).",
+      "importancia": "Aunque nació para uso interno del CERN, Nicola Pellow desarrolló un navegador público que permitió a más personas acceder a la información, abriendo nuevas vías de comunicación.",
+      "queCambio": "Permitió conectar una red de computadoras para compartir información de forma mucho más eficiente; fue el paso que dio origen a lo que hoy conocemos como Internet y a la democratización de la tecnología.",
       "relacionHwSw": "Puro software —protocolos y formatos— que multiplicó el valor de la infraestructura de red ya existente.",
       "imagen": "assets/img/hitos/h40-www.webp",
       "imagenAlt": "Tim Berners-Lee y el primer servidor web del CERN",
@@ -1211,6 +1211,10 @@
         {
           "nombre": "CERN – Short history of the Web",
           "url": "https://home.cern/science/computing/the-birth-of-the-web/short-history-web/"
+        },
+        {
+          "nombre": "El Orden Mundial – 12 nov. 1990",
+          "url": "https://elordenmundial.com/hoy-en-la-historia/12-noviembre/12-de-noviembre-de-1990-tim-berners-lee-propone-crear-la-world-wide-web/"
         }
       ]
     },
@@ -1254,10 +1258,10 @@
       "categoria": "redes",
       "generacion": "internet",
       "aportacionPropia": false,
-      "queOcurrio": "Larry Page y Sergey Brin, estudiantes de Stanford, fundan Google, con el algoritmo PageRank para ordenar la Web por relevancia.",
-      "innovacion": "Medir la importancia de una página por los enlaces que recibe: una forma nueva de organizar la información del mundo.",
-      "importancia": "Hizo la Web realmente utilizable al volverla buscable; hoy es la puerta de entrada a Internet para miles de millones de personas.",
-      "queCambio": "Frente a los buscadores que solo contaban palabras, PageRank evaluó la relevancia por la estructura de enlaces.",
+      "queOcurrio": "En 1998, Larry Page y Sergey Brin crean Google, como resultado de un proyecto en la Universidad de Stanford.",
+      "innovacion": "Organizar la información de la web y filtrarla con un algoritmo (PageRank) que mide la importancia de cada página según sus enlaces con otros sitios.",
+      "importancia": "Creó un ecosistema digital que cubría distintas necesidades —comunicación, navegación y acceso a la web—, expandiendo el uso de las computadoras personales.",
+      "queCambio": "Hizo que la búsqueda y, en general, el uso de dispositivos electrónicos fuera mucho más sencillo e intuitivo.",
       "relacionHwSw": "Un algoritmo (software) que, sobre enormes centros de datos, redefinió cómo accedemos al conocimiento.",
       "imagen": "assets/img/hitos/h42-google.webp",
       "imagenAlt": "Página de inicio original del buscador Google y sus fundadores",
@@ -1265,6 +1269,10 @@
         {
           "nombre": "Britannica – Google",
           "url": "https://www.britannica.com/money/Google-Inc"
+        },
+        {
+          "nombre": "Blogthinkbig – Historia de Google",
+          "url": "https://blogthinkbig.com/historia-de-google"
         }
       ]
     },
@@ -1349,15 +1357,15 @@
       "titulo": "Java",
       "anio": 1995,
       "anioFin": null,
-      "periodo": "1995",
+      "periodo": "1994–1995",
       "tipo": "puntual",
       "categoria": "programacion",
       "generacion": "internet",
       "aportacionPropia": false,
-      "queOcurrio": "Sun Microsystems, con el equipo de James Gosling, lanza Java, con el lema «escribe una vez, ejecuta en cualquier lugar».",
-      "innovacion": "Un lenguaje que corre sobre una máquina virtual (JVM), independiente del hardware y del sistema operativo.",
-      "importancia": "Se volvió base de la web empresarial, de Android y de millones de aplicaciones.",
-      "queCambio": "Llevó la portabilidad a otro nivel: el mismo programa compilado corre en cualquier plataforma con la JVM.",
+      "queOcurrio": "En 1994–1995, Sun Microsystems (hoy parte de Oracle) crea el lenguaje de programación Java.",
+      "innovacion": "Un lenguaje de programación orientada a objetos que se ejecuta sobre una máquina virtual (JVM).",
+      "importancia": "Permitía desarrollar aplicaciones para redes complejas sin comprometer la accesibilidad, con soporte de red integrado; se volvió el más usado para programar en Internet.",
+      "queCambio": "Buscó ser más simple y universal que C/C++ —sin descartar del todo su sintaxis— y ofrecía más seguridad que esos lenguajes.",
       "relacionHwSw": "Una capa intermedia (la JVM) que aísla por completo el software del hardware subyacente.",
       "imagen": "assets/img/hitos/h46-java.webp",
       "imagenAlt": "Logotipo del lenguaje de programación Java",
@@ -1365,6 +1373,10 @@
         {
           "nombre": "Britannica – Java",
           "url": "https://www.britannica.com/technology/Java-computer-programming-language"
+        },
+        {
+          "nombre": "CodeGym – Historia de Java",
+          "url": "https://codegym.cc/es/groups/posts/es.594.historia-de-java-una-historia-completa-del-desarrollo-de-java-de-1991-a-2021"
         }
       ]
     },
@@ -1470,6 +1482,10 @@
         {
           "nombre": "Britannica – iPhone",
           "url": "https://www.britannica.com/technology/iPhone"
+        },
+        {
+          "nombre": "Servinform – Sistemas operativos móviles",
+          "url": "https://www.servinform.es/como-cuando-y-donde-nacieron-los-primeros-sistemas-operativos-para-movil/"
         }
       ]
     },
@@ -1726,6 +1742,136 @@
         {
           "nombre": "Generative AI Platforms Compared (GPT-4o, 2024)",
           "url": "https://alicelabs.ai/en/insights/generative-ai-platforms-compared"
+        }
+      ]
+    },
+    {
+      "id": "H61",
+      "slug": "mpeg",
+      "titulo": "Formatos MPEG (audio y video digital)",
+      "anio": 1991,
+      "anioFin": null,
+      "periodo": "1991",
+      "tipo": "puntual",
+      "categoria": "almacenamiento",
+      "generacion": "internet",
+      "aportacionPropia": true,
+      "queOcurrio": "El Moving Picture Experts Group (MPEG) desarrolla sus estándares de compresión; de este trabajo surgiría el popular formato MP3 para audio.",
+      "innovacion": "Comprimir archivos de audio y video al menor tamaño posible sin sacrificar demasiada calidad.",
+      "importancia": "Con el auge de la web, la computadora dejó de ser solo herramienta de trabajo para volverse también un medio de distribución musical y de entretenimiento.",
+      "queCambio": "Mejoró radicalmente la relación entre almacenamiento y calidad.",
+      "relacionHwSw": "Software de compresión que permitió al hardware de la época almacenar y transmitir multimedia de forma práctica.",
+      "justificacionAportacion": "Lo incluimos porque marca un nuevo objetivo de las computadoras: dejar de ser solo herramienta de tareas para volverse una vía de acceso a archivos multimedia y entretenimiento.",
+      "imagen": "assets/img/hitos/h61-mpeg.webp",
+      "imagenAlt": "Formatos MPEG y el nacimiento del audio y video digital comprimido",
+      "fuentes": [
+        {
+          "nombre": "Mixup – El nacimiento del MP3",
+          "url": "https://www.mixup.com/blog-el-nacimiento-del-mp3-revolucion-en-la-musica-digital"
+        }
+      ]
+    },
+    {
+      "id": "H62",
+      "slug": "https-ssl",
+      "titulo": "HTTPS y el cifrado SSL",
+      "anio": 1994,
+      "anioFin": null,
+      "periodo": "1994",
+      "tipo": "puntual",
+      "categoria": "redes",
+      "generacion": "internet",
+      "aportacionPropia": true,
+      "queOcurrio": "La compañía Netscape crea el protocolo de cifrado SSL y, ese mismo año, se adapta HTTP a HTTPS.",
+      "innovacion": "La encriptación como base de una navegación más segura: aunque alguien intercepte los datos, no puede leerlos sin la clave de cifrado.",
+      "importancia": "Fue pionero en la seguridad de las páginas web, protegiendo información sensible: datos personales, bancarios y credenciales de acceso.",
+      "queCambio": "Mejoró la seguridad, el cifrado, la autenticación e incluso el rendimiento de los sitios web.",
+      "relacionHwSw": "Una capa de software (cifrado) que se volvió indispensable entre las aplicaciones web y la red.",
+      "justificacionAportacion": "Lo incluimos porque, al volverse la navegación menos controlada, había que garantizar la seguridad de la información —sobre todo la más sensible.",
+      "imagen": "assets/img/hitos/h62-https-ssl.webp",
+      "imagenAlt": "Candado de seguridad HTTPS y cifrado SSL en la navegación web",
+      "fuentes": [
+        {
+          "nombre": "SiteGround – Qué es HTTPS",
+          "url": "https://www.siteground.es/blog/que-es-https-y-para-que-sirve-guia-completa"
+        }
+      ]
+    },
+    {
+      "id": "H63",
+      "slug": "ssd",
+      "titulo": "Discos de estado sólido (SSD)",
+      "anio": 2006,
+      "anioFin": null,
+      "periodo": "2006",
+      "tipo": "puntual",
+      "categoria": "almacenamiento",
+      "generacion": "movil-nube",
+      "aportacionPropia": true,
+      "queOcurrio": "Samsung lanza las primeras unidades SSD de memoria flash para el mercado masivo, como reemplazo directo de los discos duros portátiles.",
+      "innovacion": "Una nueva forma de almacenamiento, sin partes móviles, mucho más rápida que el disco duro tradicional.",
+      "importancia": "Mejoraron enormemente la capacidad y la velocidad de lectura/escritura de los equipos.",
+      "queCambio": "Permiten muchas más reescrituras que las tarjetas flash anteriores y hoy resultan más accesibles que los discos duros.",
+      "relacionHwSw": "Hardware de almacenamiento más veloz que aceleró el arranque y la respuesta del software.",
+      "justificacionAportacion": "Lo incluimos porque muestra que, desde hace años, la factibilidad de un componente dejó de estar ligada solo a su tamaño o costo; los SSD son un claro ejemplo.",
+      "imagen": "assets/img/hitos/h63-ssd.webp",
+      "imagenAlt": "Unidad de estado sólido (SSD) de memoria flash",
+      "fuentes": [
+        {
+          "nombre": "Unidad de estado sólido (proyecto académico)",
+          "url": "https://fisi-grupo2-tema7-unidad-de-estado-solido.webnode.pe/l/new/"
+        }
+      ]
+    },
+    {
+      "id": "H64",
+      "slug": "economia-digital",
+      "titulo": "Auge de la economía digital",
+      "anio": 2010,
+      "anioFin": 2025,
+      "periodo": "2010–presente",
+      "tipo": "banda",
+      "categoria": "concepto",
+      "generacion": "movil-nube",
+      "aportacionPropia": true,
+      "queOcurrio": "Comienza el auge de la economía digital, impulsada por Internet, la inteligencia artificial y el machine learning.",
+      "innovacion": "Usar IA y aprendizaje automático para transformar procesos tradicionales en modelos automatizados.",
+      "importancia": "Se reconoce el impacto de Internet y la tecnología en la economía: dejan de ser exclusivos de las grandes empresas y se vuelven herramienta de trabajo general.",
+      "queCambio": "Nacieron nuevos productos y servicios digitales —apps de transporte y comida, tiendas en línea, comercio mayorista internacional— y se transformaron los ya existentes.",
+      "relacionHwSw": "La combinación de nube, datos y software puso el poder de cómputo al servicio de nuevos modelos de negocio.",
+      "justificacionAportacion": "Lo incluimos porque ayuda a entender cómo cambió la forma de vender y comprar productos y servicios, y cómo la tecnología ha creado nuevos empleos.",
+      "imagen": "assets/img/hitos/h64-economia-digital.webp",
+      "imagenAlt": "Economía digital: comercio electrónico, apps y servicios en línea",
+      "fuentes": [
+        {
+          "nombre": "Telefónica – La economía digital",
+          "url": "https://www.telefonica.com/es/sala-comunicacion/noticias/economia-digital-la-economia-surgida-de-la-revolucion-tecnologica/"
+        }
+      ]
+    },
+    {
+      "id": "H65",
+      "slug": "gpt2",
+      "titulo": "GPT-2 de OpenAI",
+      "anio": 2018,
+      "anioFin": null,
+      "periodo": "2018",
+      "tipo": "puntual",
+      "categoria": "ia",
+      "generacion": "ia-datos",
+      "aportacionPropia": true,
+      "queOcurrio": "OpenAI presenta GPT-2 (Generative Pre-trained Transformer), un modelo de IA generativa entrenado con enormes cantidades de texto.",
+      "innovacion": "Un modelo basado en la arquitectura Transformer, diseñado para procesar y generar lenguaje natural a partir de un preentrenamiento con datos masivos.",
+      "importancia": "Fue predecesor de ChatGPT y de otros modelos posteriores; en su momento, fue lo más cercano a que una IA imitara la comprensión del lenguaje humano mediante patrones.",
+      "queCambio": "Generaba texto mucho más coherente y natural que sus predecesores; las versiones siguientes ampliarían estas capacidades (más tarde, incluso a audio e imagen).",
+      "relacionHwSw": "Software de IA que exige gran cómputo (GPUs y nube) tanto para entrenarse como para responder.",
+      "justificacionAportacion": "Lo incluimos porque es el predecesor de muchas de las IA actuales y sigue siendo un referente: marcó un antes y un después en la IA generativa.",
+      "imagen": "assets/img/hitos/h65-gpt2.webp",
+      "imagenAlt": "GPT-2 de OpenAI, modelo de IA generativa basado en Transformers",
+      "fuentes": [
+        {
+          "nombre": "IBM – ¿Qué es GPT?",
+          "url": "https://www.ibm.com/mx-es/think/topics/gpt"
         }
       ]
     }

@@ -1,33 +1,313 @@
-Imágenes esperadas para cada hito (carpeta: assets/img/hitos/)
-Formato recomendado: .webp  (alternativas: .jpg / .png)
+LÍNEA DE TIEMPO — EVOLUCIÓN DE LA COMPUTACIÓN
+MANIFIESTO DE IMÁGENES  ·  64 hitos
+==============================================================================
+Carpeta:  assets/img/hitos/
+Formato:  .webp  (alternativas válidas: .jpg / .png — respeta la extensión)
 
-h01-turing.webp
-h02-z3.webp
-h03-colossus.webp
-h04-eniac.webp
-h05-lenguaje-maquina.webp
-h06-transistor.webp
-h07-manchester-baby.webp
-h08-univac.webp
-h09-ensamblador.webp
-h10-tx0.webp
-h11-fortran.webp
-h12-circuito-integrado.webp
-h13-cobol.webp
-h14-algol.webp
-h15-pdp1.webp
-h16-system360.webp
-h17-basic.webp
-h18-ley-moore.webp
-h19-unix.webp
-h20-pdp11.webp
-h21-intel4004.webp
-h22-lenguaje-c.webp
-h23-intel8080.webp
-h24-altair.webp
-h25-apple2.webp
-h26-ibm-pc.webp
-h27-python.webp
-h28-32-64-bits.webp
-h29-almacenamiento.webp
-h30-internet-web.webp
+LEYENDA DE ESTADO:
+   [YA]  ya cargada (primera versión) — no necesitas hacer nada
+   [ + ] POR BUSCAR — consíguela, renómbrala con el nombre exacto y colócala aquí
+
+RESUMEN:  29 ya cargadas   +   35 por buscar   =   64 total
+
+NOTA: 'h30-internet-web.webp' de la primera versión YA NO se usa (la banda de
+      Internet se dividió en ARPANET, TCP/IP, WWW, Mosaic y Google). Ignóralo o bórralo.
+
+==============================================================================
+           TODAS LAS IMÁGENES EN ORDEN CRONOLÓGICO
+==============================================================================
+
+[ + ] 1843  ·  h31-babbage-lovelace.webp
+        Título:     Máquina analítica y Ada Lovelace
+        Qué buscar: Retrato de Ada Lovelace y la Máquina Analítica de Charles Babbage
+
+[YA]  1936  ·  h01-turing.webp
+        Título:     Máquina de Turing
+        Qué buscar: Alan Turing y el esquema de la máquina de Turing
+
+[YA]  1940  ·  h05-lenguaje-maquina.webp
+        Título:     Programación en lenguaje máquina
+        Qué buscar: Programación en lenguaje máquina: código binario y tarjeta perforada
+
+[YA]  1941  ·  h02-z3.webp
+        Título:     Z3 de Konrad Zuse
+        Qué buscar: Réplica de la computadora Z3 de Konrad Zuse
+
+[YA]  1943  ·  h03-colossus.webp
+        Título:     Colossus
+        Qué buscar: Computadora Colossus con tubos de vacío en Bletchley Park
+
+[YA]  1945  ·  h04-eniac.webp
+        Título:     ENIAC
+        Qué buscar: La computadora ENIAC y sus operadoras
+
+[ + ] 1945  ·  h32-von-neumann.webp
+        Título:     Arquitectura de von Neumann (EDVAC)
+        Qué buscar: John von Neumann y el esquema de la arquitectura de programa almacenado
+
+[YA]  1947  ·  h06-transistor.webp
+        Título:     Invención del transistor
+        Qué buscar: El primer transistor de contacto de punto, Bell Labs 1947
+
+[YA]  1948  ·  h07-manchester-baby.webp
+        Título:     Manchester Baby y el programa almacenado
+        Qué buscar: Réplica del Manchester Baby, primera máquina de programa almacenado
+
+[YA]  1949  ·  h09-ensamblador.webp
+        Título:     Lenguaje ensamblador
+        Qué buscar: Ejemplo de código en lenguaje ensamblador
+
+[ + ] 1950  ·  h33-test-turing.webp
+        Título:     Test de Turing
+        Qué buscar: Ilustración del juego de imitación o test de Turing
+
+[YA]  1951  ·  h08-univac.webp
+        Título:     UNIVAC I
+        Qué buscar: La computadora comercial UNIVAC I, 1951
+
+[YA]  1956  ·  h10-tx0.webp
+        Título:     TX-0
+        Qué buscar: Computadora transistorizada TX-0 del MIT
+
+[YA]  1956  ·  h29-almacenamiento.webp
+        Título:     Evolución del almacenamiento digital
+        Qué buscar: Evolución del almacenamiento: de la tarjeta perforada a la nube
+
+[ + ] 1956  ·  h34-dartmouth.webp
+        Título:     Conferencia de Dartmouth: nace la «IA»
+        Qué buscar: Dartmouth College, sede de la conferencia fundacional de la inteligencia artificial en 1956
+
+[YA]  1957  ·  h11-fortran.webp
+        Título:     FORTRAN
+        Qué buscar: Primer manual del lenguaje FORTRAN de IBM
+
+[YA]  1958  ·  h12-circuito-integrado.webp
+        Título:     Circuito integrado
+        Qué buscar: El primer circuito integrado de Jack Kilby, 1958
+
+[ + ] 1958  ·  h35-perceptron.webp
+        Título:     El Perceptrón
+        Qué buscar: Frank Rosenblatt y el Perceptrón, primera red neuronal artificial
+
+[YA]  1959  ·  h13-cobol.webp
+        Título:     COBOL
+        Qué buscar: Grace Hopper y el lenguaje COBOL
+
+[YA]  1960  ·  h14-algol.webp
+        Título:     ALGOL 60
+        Qué buscar: Reporte del lenguaje ALGOL 60
+
+[YA]  1960  ·  h15-pdp1.webp
+        Título:     PDP-1
+        Qué buscar: Minicomputadora PDP-1 ejecutando Spacewar!
+
+[YA]  1964  ·  h16-system360.webp
+        Título:     IBM System/360
+        Qué buscar: Mainframe IBM System/360
+
+[YA]  1964  ·  h17-basic.webp
+        Título:     BASIC
+        Qué buscar: Programa en lenguaje BASIC en una terminal
+
+[YA]  1965  ·  h18-ley-moore.webp
+        Título:     Ley de Moore
+        Qué buscar: Gráfica de la Ley de Moore: transistores por chip en el tiempo
+
+[YA]  1969  ·  h19-unix.webp
+        Título:     UNIX
+        Qué buscar: Ken Thompson y Dennis Ritchie con una computadora ejecutando UNIX
+
+[ + ] 1969  ·  h38-arpanet.webp
+        Título:     ARPANET
+        Qué buscar: Mapa de los primeros nodos de la red ARPANET, 1969
+
+[YA]  1970  ·  h20-pdp11.webp
+        Título:     PDP-11
+        Qué buscar: Minicomputadora DEC PDP-11
+
+[ + ] 1970  ·  h36-modelo-relacional.webp
+        Título:     Modelo relacional (bases de datos)
+        Qué buscar: Diagrama de tablas relacionales y Edgar F. Codd
+
+[YA]  1971  ·  h21-intel4004.webp
+        Título:     Intel 4004
+        Qué buscar: El microprocesador Intel 4004, 1971
+
+[YA]  1972  ·  h22-lenguaje-c.webp
+        Título:     Lenguaje C
+        Qué buscar: El lenguaje de programación C y el libro de Kernighan y Ritchie
+
+[ + ] 1973  ·  h37-xerox-alto.webp
+        Título:     Xerox Alto: la primera interfaz gráfica
+        Qué buscar: La computadora Xerox Alto con su interfaz gráfica y mouse, 1973
+
+[YA]  1974  ·  h23-intel8080.webp
+        Título:     Intel 8080
+        Qué buscar: Microprocesador Intel 8080, 1974
+
+[YA]  1975  ·  h24-altair.webp
+        Título:     Altair 8800
+        Qué buscar: La microcomputadora Altair 8800, 1975
+
+[ + ] 1975  ·  h43-microsoft.webp
+        Título:     Fundación de Microsoft
+        Qué buscar: Bill Gates y Paul Allen en los inicios de Microsoft, 1975
+
+[YA]  1977  ·  h25-apple2.webp
+        Título:     Apple II
+        Qué buscar: La computadora personal Apple II, 1977
+
+[YA]  1981  ·  h26-ibm-pc.webp
+        Título:     IBM PC
+        Qué buscar: La IBM PC modelo 5150, 1981
+
+[ + ] 1983  ·  h39-tcp-ip.webp
+        Título:     TCP/IP: nace «Internet»
+        Qué buscar: Representación de la red de redes conectada mediante TCP/IP
+
+[ + ] 1984  ·  h44-macintosh.webp
+        Título:     Apple Macintosh: la GUI para las masas
+        Qué buscar: La computadora Apple Macintosh de 1984 con su interfaz gráfica
+
+[YA]  1985  ·  h28-32-64-bits.webp
+        Título:     Microprocesadores de 32 y 64 bits
+        Qué buscar: Evolución de los microprocesadores de 32 a 64 bits
+
+[ + ] 1990  ·  h40-www.webp
+        Título:     World Wide Web
+        Qué buscar: Tim Berners-Lee y el primer servidor web del CERN
+
+[YA]  1991  ·  h27-python.webp
+        Título:     Python
+        Qué buscar: El lenguaje de programación Python
+
+[ + ] 1991  ·  h45-linux.webp
+        Título:     Linux
+        Qué buscar: Tux, la mascota de Linux, y Linus Torvalds
+
+[ + ] 1991  ·  h61-mpeg.webp
+        Título:     Formatos MPEG (audio y video digital)
+        Qué buscar: Formatos MPEG y el nacimiento del audio y video digital comprimido
+
+[ + ] 1993  ·  h41-mosaic.webp
+        Título:     Mosaic: la web para todos
+        Qué buscar: Ventana del navegador NCSA Mosaic, 1993
+
+[ + ] 1994  ·  h62-https-ssl.webp
+        Título:     HTTPS y el cifrado SSL
+        Qué buscar: Candado de seguridad HTTPS y cifrado SSL en la navegación web
+
+[ + ] 1995  ·  h46-java.webp
+        Título:     Java
+        Qué buscar: Logotipo del lenguaje de programación Java
+
+[ + ] 1998  ·  h42-google.webp
+        Título:     Google: organizar la información del mundo
+        Qué buscar: Página de inicio original del buscador Google y sus fundadores
+
+[ + ] 1999  ·  h52-iot.webp
+        Título:     Internet de las cosas (IoT)
+        Qué buscar: Objetos cotidianos conectados en el Internet de las cosas
+
+[ + ] 2004  ·  h47-facebook.webp
+        Título:     Facebook y la Web 2.0
+        Qué buscar: Interfaz temprana de Facebook y Mark Zuckerberg
+
+[ + ] 2006  ·  h48-aws.webp
+        Título:     Amazon Web Services: el cómputo en la nube
+        Qué buscar: Centro de datos en la nube de Amazon Web Services
+
+[ + ] 2006  ·  h63-ssd.webp
+        Título:     Discos de estado sólido (SSD)
+        Qué buscar: Unidad de estado sólido (SSD) de memoria flash
+
+[ + ] 2007  ·  h49-iphone.webp
+        Título:     iPhone: el smartphone moderno
+        Qué buscar: El primer iPhone de Apple, 2007
+
+[ + ] 2008  ·  h50-android.webp
+        Título:     Android
+        Qué buscar: El primer teléfono Android, HTC Dream / T-Mobile G1, 2008
+
+[ + ] 2010  ·  h51-ipad.webp
+        Título:     iPad: la era de las tablets
+        Qué buscar: El primer iPad de Apple, 2010
+
+[ + ] 2010  ·  h64-economia-digital.webp
+        Título:     Auge de la economía digital
+        Qué buscar: Economía digital: comercio electrónico, apps y servicios en línea
+
+[ + ] 2011  ·  h53-watson.webp
+        Título:     IBM Watson gana Jeopardy!
+        Qué buscar: La computadora IBM Watson compitiendo en Jeopardy!, 2011
+
+[ + ] 2012  ·  h54-alexnet.webp
+        Título:     AlexNet: la revolución del deep learning
+        Qué buscar: Diagrama de la red neuronal profunda AlexNet
+
+[ + ] 2016  ·  h55-alphago.webp
+        Título:     AlphaGo vence a Lee Sedol
+        Qué buscar: Partida de Go entre AlphaGo y Lee Sedol, 2016
+
+[ + ] 2017  ·  h56-transformers.webp
+        Título:     Transformers («Attention Is All You Need»)
+        Qué buscar: Diagrama de la arquitectura Transformer del artículo «Attention Is All You Need»
+
+[ + ] 2018  ·  h65-gpt2.webp
+        Título:     GPT-2 de OpenAI
+        Qué buscar: GPT-2 de OpenAI, modelo de IA generativa basado en Transformers
+
+[ + ] 2020  ·  h57-gpt3.webp
+        Título:     GPT-3
+        Qué buscar: Representación del modelo de lenguaje GPT-3 de OpenAI
+
+[ + ] 2022  ·  h58-chatgpt.webp
+        Título:     ChatGPT
+        Qué buscar: Interfaz de chat de ChatGPT de OpenAI, 2022
+
+[ + ] 2023  ·  h59-gpt4-gemini-claude.webp
+        Título:     GPT-4, Gemini y Claude: la IA generativa se masifica
+        Qué buscar: Los asistentes de IA generativa GPT-4, Gemini y Claude
+
+[ + ] 2024  ·  h60-ia-multimodal-agentes.webp
+        Título:     IA multimodal y agentes
+        Qué buscar: Representación de una IA multimodal que procesa texto, imagen y audio
+
+==============================================================================
+SOLO LAS QUE FALTAN (lista rápida de nombres de archivo)
+==============================================================================
+  1843  h31-babbage-lovelace.webp
+  1945  h32-von-neumann.webp
+  1950  h33-test-turing.webp
+  1956  h34-dartmouth.webp
+  1958  h35-perceptron.webp
+  1969  h38-arpanet.webp
+  1970  h36-modelo-relacional.webp
+  1973  h37-xerox-alto.webp
+  1975  h43-microsoft.webp
+  1983  h39-tcp-ip.webp
+  1984  h44-macintosh.webp
+  1990  h40-www.webp
+  1991  h45-linux.webp
+  1991  h61-mpeg.webp
+  1993  h41-mosaic.webp
+  1994  h62-https-ssl.webp
+  1995  h46-java.webp
+  1998  h42-google.webp
+  1999  h52-iot.webp
+  2004  h47-facebook.webp
+  2006  h48-aws.webp
+  2006  h63-ssd.webp
+  2007  h49-iphone.webp
+  2008  h50-android.webp
+  2010  h51-ipad.webp
+  2010  h64-economia-digital.webp
+  2011  h53-watson.webp
+  2012  h54-alexnet.webp
+  2016  h55-alphago.webp
+  2017  h56-transformers.webp
+  2018  h65-gpt2.webp
+  2020  h57-gpt3.webp
+  2022  h58-chatgpt.webp
+  2023  h59-gpt4-gemini-claude.webp
+  2024  h60-ia-multimodal-agentes.webp
