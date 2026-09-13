@@ -54,61 +54,199 @@
       "conclusion": "Conclusión: hubo **umbrales tecnológicos** claros —el tubo, el transistor, el circuito integrado, el microprocesador— pero sus efectos se difundieron de forma gradual y traslapada. La historia de la computación se lee mejor como una **co-evolución continua** entre hardware, arquitectura y programación que como una sucesión de rupturas."
     }
   },
-
   "generaciones": [
-    { "id": "antecedente", "nombre": "Antecedentes", "tecnologia": "Bases teóricas y primeras máquinas", "rango": "1936–1943", "color": "#64748b" },
-    { "id": "g1", "nombre": "Primera generación", "tecnologia": "Tubos de vacío", "rango": "1943–1956", "color": "#ea580c" },
-    { "id": "transicion", "nombre": "Hito de transición", "tecnologia": "Del tubo al transistor", "rango": "1947", "color": "#f59e0b" },
-    { "id": "g2", "nombre": "Segunda generación", "tecnologia": "Transistores", "rango": "1956–1964", "color": "#0d9488" },
-    { "id": "g3", "nombre": "Tercera generación", "tecnologia": "Circuitos integrados", "rango": "1964–1971", "color": "#2563eb" },
-    { "id": "g4", "nombre": "Cuarta generación", "tecnologia": "Microprocesadores", "rango": "1971–", "color": "#7c3aed" },
-    { "id": "posterior", "nombre": "Evolución posterior", "tecnologia": "Post-generacional", "rango": "1985–presente", "color": "#db2777" }
+    {
+      "id": "antecedente",
+      "nombre": "Antecedentes",
+      "tecnologia": "Bases teóricas y primeras máquinas",
+      "rango": "1843–1943",
+      "color": "#64748b"
+    },
+    {
+      "id": "g1",
+      "nombre": "Primera generación",
+      "tecnologia": "Tubos de vacío",
+      "rango": "1943–1956",
+      "color": "#ea580c"
+    },
+    {
+      "id": "transicion",
+      "nombre": "Hito de transición",
+      "tecnologia": "Del tubo al transistor",
+      "rango": "1947",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "g2",
+      "nombre": "Segunda generación",
+      "tecnologia": "Transistores",
+      "rango": "1956–1964",
+      "color": "#0d9488"
+    },
+    {
+      "id": "g3",
+      "nombre": "Tercera generación",
+      "tecnologia": "Circuitos integrados",
+      "rango": "1964–1971",
+      "color": "#2563eb"
+    },
+    {
+      "id": "g4",
+      "nombre": "Cuarta generación",
+      "tecnologia": "Microprocesadores y PC",
+      "rango": "1971–1990",
+      "color": "#7c3aed"
+    },
+    {
+      "id": "internet",
+      "nombre": "Era de Internet y la Web",
+      "tecnologia": "Web, navegadores y buscadores",
+      "rango": "1990–2006",
+      "color": "#db2777"
+    },
+    {
+      "id": "movil-nube",
+      "nombre": "Era móvil y la nube",
+      "tecnologia": "Smartphones, nube y redes sociales",
+      "rango": "2006–2012",
+      "color": "#e11d48"
+    },
+    {
+      "id": "ia-datos",
+      "nombre": "Era de los datos y la IA",
+      "tecnologia": "Aprendizaje profundo e IA generativa",
+      "rango": "2012–2025",
+      "color": "#eab308"
+    }
   ],
-
   "categorias": [
-    { "id": "hardware", "nombre": "Hardware", "emoji": "🖥️", "icono": "cpu", "color": "#7c3aed" },
-    { "id": "programacion", "nombre": "Programación", "emoji": "⌨️", "icono": "code", "color": "#0d9488" },
-    { "id": "concepto", "nombre": "Concepto / Arquitectura", "emoji": "🧠", "icono": "brain", "color": "#64748b" },
-    { "id": "almacenamiento", "nombre": "Almacenamiento", "emoji": "💾", "icono": "hard-drive", "color": "#ca8a04" },
-    { "id": "redes", "nombre": "Redes / Web", "emoji": "🌐", "icono": "globe", "color": "#0284c7" }
+    {
+      "id": "hardware",
+      "nombre": "Hardware",
+      "emoji": "🖥️",
+      "icono": "cpu",
+      "color": "#7c3aed"
+    },
+    {
+      "id": "programacion",
+      "nombre": "Programación",
+      "emoji": "⌨️",
+      "icono": "code",
+      "color": "#0d9488"
+    },
+    {
+      "id": "concepto",
+      "nombre": "Concepto / Arquitectura",
+      "emoji": "🧠",
+      "icono": "brain",
+      "color": "#64748b"
+    },
+    {
+      "id": "almacenamiento",
+      "nombre": "Almacenamiento",
+      "emoji": "💾",
+      "icono": "hard-drive",
+      "color": "#ca8a04"
+    },
+    {
+      "id": "redes",
+      "nombre": "Redes / Web",
+      "emoji": "🌐",
+      "icono": "globe",
+      "color": "#0284c7"
+    },
+    {
+      "id": "ia",
+      "nombre": "Inteligencia Artificial",
+      "emoji": "🤖",
+      "icono": "bot",
+      "color": "#e11d48"
+    },
+    {
+      "id": "dispositivos",
+      "nombre": "Dispositivos",
+      "emoji": "📱",
+      "icono": "smartphone",
+      "color": "#0891b2"
+    },
+    {
+      "id": "nube",
+      "nombre": "Nube y datos",
+      "emoji": "☁️",
+      "icono": "cloud",
+      "color": "#6366f1"
+    }
   ],
-
   "hitos": [
     {
-      "id": "H01", "slug": "turing", "titulo": "Máquina de Turing", "anio": 1936, "anioFin": null, "periodo": "1936",
-      "tipo": "puntual", "categoria": "concepto", "generacion": "antecedente", "aportacionPropia": true,
+      "id": "H01",
+      "slug": "turing",
+      "titulo": "Máquina de Turing",
+      "anio": 1936,
+      "anioFin": null,
+      "periodo": "1936",
+      "tipo": "puntual",
+      "categoria": "concepto",
+      "generacion": "antecedente",
+      "aportacionPropia": false,
       "queOcurrio": "Alan Turing publica \"On Computable Numbers\", un modelo matemático abstracto que define formalmente qué significa computar y qué problemas son computables.",
       "innovacion": "La fundación teórica de la computación: la idea de una máquina universal capaz de ejecutar cualquier algoritmo.",
       "importancia": "Toda computadora moderna es, conceptualmente, una aproximación física a la máquina universal de Turing. Separó el 'qué se computa' del 'cómo se construye la máquina'.",
       "queCambio": "Por primera vez existió una definición rigurosa de 'cálculo mecánico' y la noción de programa como secuencia de instrucciones.",
       "relacionHwSw": "Es el puente conceptual: justifica que una misma máquina resuelva problemas distintos según su programa.",
-      "justificacionAportacion": "Conecta la teoría con toda la línea de tiempo: explica por qué el hardware pudo evolucionar sin reinventar la idea de computar.",
       "imagen": "assets/img/hitos/h01-turing.webp",
       "imagenAlt": "Alan Turing y el esquema de la máquina de Turing",
       "fuentes": [
-        { "nombre": "History of Information", "url": "https://www.historyofinformation.com/detail.php?id=619" },
-        { "nombre": "Texto original (LMS, PDF)", "url": "https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf" }
+        {
+          "nombre": "History of Information",
+          "url": "https://www.historyofinformation.com/detail.php?id=619"
+        },
+        {
+          "nombre": "Texto original (LMS, PDF)",
+          "url": "https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf"
+        }
       ]
     },
     {
-      "id": "H02", "slug": "z3", "titulo": "Z3 de Konrad Zuse", "anio": 1941, "anioFin": null, "periodo": "1941",
-      "tipo": "puntual", "categoria": "hardware", "generacion": "antecedente", "aportacionPropia": true,
+      "id": "H02",
+      "slug": "z3",
+      "titulo": "Z3 de Konrad Zuse",
+      "anio": 1941,
+      "anioFin": null,
+      "periodo": "1941",
+      "tipo": "puntual",
+      "categoria": "hardware",
+      "generacion": "antecedente",
+      "aportacionPropia": false,
       "queOcurrio": "El ingeniero alemán Konrad Zuse termina la Z3, considerada la primera computadora digital programable y totalmente automática (relés electromecánicos, binario de punto flotante).",
       "innovacion": "Programabilidad automática mediante cinta perforada, antes que Colossus y ENIAC.",
       "importancia": "Demuestra que la computación no nació de una sola línea: hubo esfuerzos paralelos (Alemania, Reino Unido, EE.UU.) que coexistieron.",
       "queCambio": "Frente a calculadoras mecánicas fijas, la Z3 ejecutaba secuencias de instrucciones distintas sin rediseñar la máquina.",
       "relacionHwSw": "Primeros pasos de la programación como algo separable del cableado físico.",
-      "justificacionAportacion": "Refuerza la pregunta guía: las generaciones no fueron rupturas limpias, sino desarrollos simultáneos y traslapados.",
       "imagen": "assets/img/hitos/h02-z3.webp",
       "imagenAlt": "Réplica de la computadora Z3 de Konrad Zuse",
       "fuentes": [
-        { "nombre": "Britannica – Zuse computer", "url": "https://www.britannica.com/technology/Zuse-computer" },
-        { "nombre": "Britannica – Z3", "url": "https://www.britannica.com/technology/Z3" }
+        {
+          "nombre": "Britannica – Zuse computer",
+          "url": "https://www.britannica.com/technology/Zuse-computer"
+        },
+        {
+          "nombre": "Britannica – Z3",
+          "url": "https://www.britannica.com/technology/Z3"
+        }
       ]
     },
     {
-      "id": "H03", "slug": "colossus", "titulo": "Colossus", "anio": 1943, "anioFin": null, "periodo": "1943",
-      "tipo": "puntual", "categoria": "hardware", "generacion": "g1", "aportacionPropia": false,
+      "id": "H03",
+      "slug": "colossus",
+      "titulo": "Colossus",
+      "anio": 1943,
+      "anioFin": null,
+      "periodo": "1943",
+      "tipo": "puntual",
+      "categoria": "hardware",
+      "generacion": "g1",
+      "aportacionPropia": false,
       "queOcurrio": "En Bletchley Park, Tommy Flowers y su equipo construyen Colossus para descifrar el cifrado alemán Lorenz durante la Segunda Guerra Mundial.",
       "innovacion": "Primera computadora electrónica digital programable (por conmutadores y clavijas), con ~1,600–2,400 tubos de vacío.",
       "importancia": "Probó que la electrónica de tubos procesaba información mucho más rápido que lo electromecánico. Su existencia fue secreta por décadas.",
@@ -117,12 +255,23 @@
       "imagen": "assets/img/hitos/h03-colossus.webp",
       "imagenAlt": "Computadora Colossus con tubos de vacío en Bletchley Park",
       "fuentes": [
-        { "nombre": "The National Museum of Computing", "url": "https://www.tnmoc.org/colossus" }
+        {
+          "nombre": "The National Museum of Computing",
+          "url": "https://www.tnmoc.org/colossus"
+        }
       ]
     },
     {
-      "id": "H04", "slug": "eniac", "titulo": "ENIAC", "anio": 1945, "anioFin": null, "periodo": "1945",
-      "tipo": "puntual", "categoria": "hardware", "generacion": "g1", "aportacionPropia": false,
+      "id": "H04",
+      "slug": "eniac",
+      "titulo": "ENIAC",
+      "anio": 1945,
+      "anioFin": null,
+      "periodo": "1945",
+      "tipo": "puntual",
+      "categoria": "hardware",
+      "generacion": "g1",
+      "aportacionPropia": false,
       "queOcurrio": "Eckert y Mauchly terminan ENIAC en la Universidad de Pensilvania: la primera computadora electrónica de propósito general a gran escala en EE.UU., con ~17,468 tubos de vacío.",
       "innovacion": "Cómputo electrónico de propósito general (no dedicado a una sola tarea), aritmética decimal.",
       "importancia": "Marcó el inicio de la computación electrónica moderna a gran escala; miles de veces más rápida que las calculadoras electromecánicas.",
@@ -131,13 +280,27 @@
       "imagen": "assets/img/hitos/h04-eniac.webp",
       "imagenAlt": "La computadora ENIAC y sus operadoras",
       "fuentes": [
-        { "nombre": "Britannica – ENIAC", "url": "https://www.britannica.com/technology/computer/ENIAC" },
-        { "nombre": "Computer History Museum", "url": "https://www.computerhistory.org/revolution/birth-of-the-computer/4/78" }
+        {
+          "nombre": "Britannica – ENIAC",
+          "url": "https://www.britannica.com/technology/computer/ENIAC"
+        },
+        {
+          "nombre": "Computer History Museum",
+          "url": "https://www.computerhistory.org/revolution/birth-of-the-computer/4/78"
+        }
       ]
     },
     {
-      "id": "H05", "slug": "lenguaje-maquina", "titulo": "Programación en lenguaje máquina", "anio": 1940, "anioFin": 1955, "periodo": "Década de 1940",
-      "tipo": "banda", "categoria": "programacion", "generacion": "g1", "aportacionPropia": false,
+      "id": "H05",
+      "slug": "lenguaje-maquina",
+      "titulo": "Programación en lenguaje máquina",
+      "anio": 1940,
+      "anioFin": 1955,
+      "periodo": "Década de 1940",
+      "tipo": "banda",
+      "categoria": "programacion",
+      "generacion": "g1",
+      "aportacionPropia": false,
       "queOcurrio": "Las primeras máquinas se programaban directamente en código binario o reconfigurando hardware; cada instrucción correspondía a operaciones específicas de esa máquina.",
       "innovacion": "El software en su forma más primitiva: instrucciones legibles solo por la máquina.",
       "importancia": "Estableció la idea de 'instrucción' como unidad de cómputo, base de todo lo que vendría.",
@@ -146,12 +309,23 @@
       "imagen": "assets/img/hitos/h05-lenguaje-maquina.webp",
       "imagenAlt": "Programación en lenguaje máquina: código binario y tarjeta perforada",
       "fuentes": [
-        { "nombre": "CHM Timeline", "url": "https://www.computerhistory.org/timeline/1948/" }
+        {
+          "nombre": "CHM Timeline",
+          "url": "https://www.computerhistory.org/timeline/1948/"
+        }
       ]
     },
     {
-      "id": "H06", "slug": "transistor", "titulo": "Invención del transistor", "anio": 1947, "anioFin": null, "periodo": "1947",
-      "tipo": "puntual", "categoria": "hardware", "generacion": "transicion", "aportacionPropia": false,
+      "id": "H06",
+      "slug": "transistor",
+      "titulo": "Invención del transistor",
+      "anio": 1947,
+      "anioFin": null,
+      "periodo": "1947",
+      "tipo": "puntual",
+      "categoria": "hardware",
+      "generacion": "transicion",
+      "aportacionPropia": false,
       "queOcurrio": "En los Laboratorios Bell, Bardeen, Brattain y Shockley inventan el transistor (de contacto de punto), premiado con el Nobel en 1956.",
       "innovacion": "Un componente de estado sólido que amplifica y conmuta señales: el sustituto del tubo de vacío.",
       "importancia": "Habilitador físico de la segunda generación: más pequeño, frío, confiable y barato que el tubo.",
@@ -161,13 +335,27 @@
       "imagen": "assets/img/hitos/h06-transistor.webp",
       "imagenAlt": "El primer transistor de contacto de punto, Bell Labs 1947",
       "fuentes": [
-        { "nombre": "CHM – Silicon Engine", "url": "https://www.computerhistory.org/siliconengine/invention-of-the-point-contact-transistor/" },
-        { "nombre": "Nokia Bell Labs", "url": "https://www.nokia.com/blog/the-transistor-75-years-since-the-famed-nokia-bell-labs-invention-changed-the-world/" }
+        {
+          "nombre": "CHM – Silicon Engine",
+          "url": "https://www.computerhistory.org/siliconengine/invention-of-the-point-contact-transistor/"
+        },
+        {
+          "nombre": "Nokia Bell Labs",
+          "url": "https://www.nokia.com/blog/the-transistor-75-years-since-the-famed-nokia-bell-labs-invention-changed-the-world/"
+        }
       ]
     },
     {
-      "id": "H07", "slug": "manchester-baby", "titulo": "Manchester Baby y el programa almacenado", "anio": 1948, "anioFin": null, "periodo": "1948",
-      "tipo": "puntual", "categoria": "concepto", "generacion": "g1", "aportacionPropia": false,
+      "id": "H07",
+      "slug": "manchester-baby",
+      "titulo": "Manchester Baby y el programa almacenado",
+      "anio": 1948,
+      "anioFin": null,
+      "periodo": "1948",
+      "tipo": "puntual",
+      "categoria": "concepto",
+      "generacion": "g1",
+      "aportacionPropia": false,
       "queOcurrio": "La Small-Scale Experimental Machine ('Baby') de la Universidad de Mánchester ejecuta, el 21 de junio de 1948, el primer programa almacenado en memoria electrónica.",
       "innovacion": "La arquitectura de programa almacenado (línea de von Neumann / informe EDVAC): programa y datos conviven en la misma memoria.",
       "importancia": "Es el modelo conceptual de toda computadora actual: cambiar de tarea = cargar otro programa, no recablear.",
@@ -176,13 +364,27 @@
       "imagen": "assets/img/hitos/h07-manchester-baby.webp",
       "imagenAlt": "Réplica del Manchester Baby, primera máquina de programa almacenado",
       "fuentes": [
-        { "nombre": "CHM Timeline", "url": "https://www.computerhistory.org/timeline/1948/" },
-        { "nombre": "Science and Industry Museum", "url": "https://www.scienceandindustrymuseum.org.uk/objects-and-stories/baby-and-modern-computing" }
+        {
+          "nombre": "CHM Timeline",
+          "url": "https://www.computerhistory.org/timeline/1948/"
+        },
+        {
+          "nombre": "Science and Industry Museum",
+          "url": "https://www.scienceandindustrymuseum.org.uk/objects-and-stories/baby-and-modern-computing"
+        }
       ]
     },
     {
-      "id": "H08", "slug": "univac", "titulo": "UNIVAC I", "anio": 1951, "anioFin": null, "periodo": "1951",
-      "tipo": "puntual", "categoria": "hardware", "generacion": "g1", "aportacionPropia": false,
+      "id": "H08",
+      "slug": "univac",
+      "titulo": "UNIVAC I",
+      "anio": 1951,
+      "anioFin": null,
+      "periodo": "1951",
+      "tipo": "puntual",
+      "categoria": "hardware",
+      "generacion": "g1",
+      "aportacionPropia": false,
       "queOcurrio": "Eckert y Mauchly (Remington Rand) entregan UNIVAC I, la primera computadora comercial de EE.UU.; célebre por predecir la elección presidencial de 1952 en TV.",
       "innovacion": "El paso de la computadora de laboratorio a producto comercial; usaba cinta magnética en lugar de tarjetas.",
       "importancia": "Inauguró la computación como negocio y herramienta administrativa/estadística, no solo científica o militar.",
@@ -191,12 +393,23 @@
       "imagen": "assets/img/hitos/h08-univac.webp",
       "imagenAlt": "La computadora comercial UNIVAC I, 1951",
       "fuentes": [
-        { "nombre": "CHM Timeline", "url": "https://www.computerhistory.org/timeline/1951/" }
+        {
+          "nombre": "CHM Timeline",
+          "url": "https://www.computerhistory.org/timeline/1951/"
+        }
       ]
     },
     {
-      "id": "H09", "slug": "ensamblador", "titulo": "Lenguaje ensamblador", "anio": 1949, "anioFin": 1965, "periodo": "Década de 1950",
-      "tipo": "banda", "categoria": "programacion", "generacion": "g2", "aportacionPropia": false,
+      "id": "H09",
+      "slug": "ensamblador",
+      "titulo": "Lenguaje ensamblador",
+      "anio": 1949,
+      "anioFin": 1965,
+      "periodo": "Década de 1950",
+      "tipo": "banda",
+      "categoria": "programacion",
+      "generacion": "g2",
+      "aportacionPropia": false,
       "queOcurrio": "Aparecen los lenguajes ensambladores: mnemónicos (ADD, MOV) que un 'ensamblador' traduce a lenguaje máquina.",
       "innovacion": "La primera capa de abstracción sobre el binario.",
       "importancia": "Hizo la programación más legible y menos propensa a errores, sin perder control del hardware.",
@@ -205,12 +418,23 @@
       "imagen": "assets/img/hitos/h09-ensamblador.webp",
       "imagenAlt": "Ejemplo de código en lenguaje ensamblador",
       "fuentes": [
-        { "nombre": "CHM Timeline", "url": "https://www.computerhistory.org/timeline/1950/" }
+        {
+          "nombre": "CHM Timeline",
+          "url": "https://www.computerhistory.org/timeline/1950/"
+        }
       ]
     },
     {
-      "id": "H10", "slug": "tx0", "titulo": "TX-0", "anio": 1956, "anioFin": null, "periodo": "1956",
-      "tipo": "puntual", "categoria": "hardware", "generacion": "g2", "aportacionPropia": false,
+      "id": "H10",
+      "slug": "tx0",
+      "titulo": "TX-0",
+      "anio": 1956,
+      "anioFin": null,
+      "periodo": "1956",
+      "tipo": "puntual",
+      "categoria": "hardware",
+      "generacion": "g2",
+      "aportacionPropia": false,
       "queOcurrio": "El TX-0 del MIT Lincoln Laboratory es una de las primeras computadoras totalmente transistorizadas y programables de propósito general.",
       "innovacion": "La transición práctica del tubo al transistor en una máquina completa e interactiva.",
       "importancia": "Demostró en la práctica las ventajas del transistor y fomentó una cultura de programación interactiva.",
@@ -219,12 +443,23 @@
       "imagen": "assets/img/hitos/h10-tx0.webp",
       "imagenAlt": "Computadora transistorizada TX-0 del MIT",
       "fuentes": [
-        { "nombre": "CHM Timeline", "url": "https://www.computerhistory.org/timeline/1956/" }
+        {
+          "nombre": "CHM Timeline",
+          "url": "https://www.computerhistory.org/timeline/1956/"
+        }
       ]
     },
     {
-      "id": "H11", "slug": "fortran", "titulo": "FORTRAN", "anio": 1957, "anioFin": null, "periodo": "1957",
-      "tipo": "puntual", "categoria": "programacion", "generacion": "g2", "aportacionPropia": false,
+      "id": "H11",
+      "slug": "fortran",
+      "titulo": "FORTRAN",
+      "anio": 1957,
+      "anioFin": null,
+      "periodo": "1957",
+      "tipo": "puntual",
+      "categoria": "programacion",
+      "generacion": "g2",
+      "aportacionPropia": false,
       "queOcurrio": "IBM, con el equipo de John Backus, publica FORTRAN (FORmula TRANslation), el primer lenguaje de alto nivel de uso masivo.",
       "innovacion": "Programar con fórmulas cercanas a las matemáticas, traducidas por un compilador.",
       "importancia": "Multiplicó la productividad científica e ingenieril; probó que un compilador podía generar código eficiente.",
@@ -233,13 +468,27 @@
       "imagen": "assets/img/hitos/h11-fortran.webp",
       "imagenAlt": "Primer manual del lenguaje FORTRAN de IBM",
       "fuentes": [
-        { "nombre": "CHM – John Backus", "url": "https://www.computerhistory.org/collections/catalog/102657970" },
-        { "nombre": "History of Information", "url": "https://www.historyofinformation.com/detail.php?entryid=968" }
+        {
+          "nombre": "CHM – John Backus",
+          "url": "https://www.computerhistory.org/collections/catalog/102657970"
+        },
+        {
+          "nombre": "History of Information",
+          "url": "https://www.historyofinformation.com/detail.php?entryid=968"
+        }
       ]
     },
     {
-      "id": "H12", "slug": "circuito-integrado", "titulo": "Circuito integrado", "anio": 1958, "anioFin": 1959, "periodo": "1958–1959",
-      "tipo": "puntual", "categoria": "hardware", "generacion": "g2", "aportacionPropia": false,
+      "id": "H12",
+      "slug": "circuito-integrado",
+      "titulo": "Circuito integrado",
+      "anio": 1958,
+      "anioFin": 1959,
+      "periodo": "1958–1959",
+      "tipo": "puntual",
+      "categoria": "hardware",
+      "generacion": "g2",
+      "aportacionPropia": false,
       "queOcurrio": "Jack Kilby (TI, 1958) y Robert Noyce (Fairchild, 1959) desarrollan el circuito integrado: muchos transistores en una sola pieza de semiconductor. Noyce aporta el proceso planar de silicio.",
       "innovacion": "Integrar muchos componentes en un solo chip.",
       "importancia": "Base física de la tercera generación y de toda la microelectrónica posterior, incluido el microprocesador.",
@@ -248,13 +497,27 @@
       "imagen": "assets/img/hitos/h12-circuito-integrado.webp",
       "imagenAlt": "El primer circuito integrado de Jack Kilby, 1958",
       "fuentes": [
-        { "nombre": "CHM – Kilby 1958", "url": "https://www.computerhistory.org/siliconengine/all-semiconductor-solid-circuit-is-demonstrated/" },
-        { "nombre": "CHM – Noyce 1959", "url": "https://www.computerhistory.org/siliconengine/practical-monolithic-integrated-circuit-concept-patented/" }
+        {
+          "nombre": "CHM – Kilby 1958",
+          "url": "https://www.computerhistory.org/siliconengine/all-semiconductor-solid-circuit-is-demonstrated/"
+        },
+        {
+          "nombre": "CHM – Noyce 1959",
+          "url": "https://www.computerhistory.org/siliconengine/practical-monolithic-integrated-circuit-concept-patented/"
+        }
       ]
     },
     {
-      "id": "H13", "slug": "cobol", "titulo": "COBOL", "anio": 1959, "anioFin": null, "periodo": "1959",
-      "tipo": "puntual", "categoria": "programacion", "generacion": "g2", "aportacionPropia": false,
+      "id": "H13",
+      "slug": "cobol",
+      "titulo": "COBOL",
+      "anio": 1959,
+      "anioFin": null,
+      "periodo": "1959",
+      "tipo": "puntual",
+      "categoria": "programacion",
+      "generacion": "g2",
+      "aportacionPropia": false,
       "queOcurrio": "El comité CODASYL (con influencia decisiva de Grace Hopper) define COBOL, lenguaje orientado a procesamiento de datos administrativos.",
       "innovacion": "Un lenguaje legible, cercano al inglés, pensado para negocios y portable entre fabricantes.",
       "importancia": "Estandarizó el software empresarial; aún hoy corre en banca y gobierno.",
@@ -263,12 +526,23 @@
       "imagen": "assets/img/hitos/h13-cobol.webp",
       "imagenAlt": "Grace Hopper y el lenguaje COBOL",
       "fuentes": [
-        { "nombre": "CHM Timeline", "url": "https://www.computerhistory.org/timeline/1959/" }
+        {
+          "nombre": "CHM Timeline",
+          "url": "https://www.computerhistory.org/timeline/1959/"
+        }
       ]
     },
     {
-      "id": "H14", "slug": "algol", "titulo": "ALGOL 60", "anio": 1960, "anioFin": null, "periodo": "1960",
-      "tipo": "puntual", "categoria": "programacion", "generacion": "g2", "aportacionPropia": false,
+      "id": "H14",
+      "slug": "algol",
+      "titulo": "ALGOL 60",
+      "anio": 1960,
+      "anioFin": null,
+      "periodo": "1960",
+      "tipo": "puntual",
+      "categoria": "programacion",
+      "generacion": "g2",
+      "aportacionPropia": false,
       "queOcurrio": "Un comité internacional publica ALGOL 60, lenguaje algorítmico que introduce estructuras de bloques y se describe con la notación formal BNF.",
       "innovacion": "Rigor formal en el diseño de lenguajes; base de la programación estructurada.",
       "importancia": "Influyó en casi todos los lenguajes posteriores (C, Pascal, Java): el 'abuelo' de la sintaxis moderna.",
@@ -277,12 +551,23 @@
       "imagen": "assets/img/hitos/h14-algol.webp",
       "imagenAlt": "Reporte del lenguaje ALGOL 60",
       "fuentes": [
-        { "nombre": "CHM Timeline", "url": "https://www.computerhistory.org/timeline/1960/" }
+        {
+          "nombre": "CHM Timeline",
+          "url": "https://www.computerhistory.org/timeline/1960/"
+        }
       ]
     },
     {
-      "id": "H15", "slug": "pdp1", "titulo": "PDP-1", "anio": 1960, "anioFin": null, "periodo": "1960",
-      "tipo": "puntual", "categoria": "hardware", "generacion": "g2", "aportacionPropia": false,
+      "id": "H15",
+      "slug": "pdp1",
+      "titulo": "PDP-1",
+      "anio": 1960,
+      "anioFin": null,
+      "periodo": "1960",
+      "tipo": "puntual",
+      "categoria": "hardware",
+      "generacion": "g2",
+      "aportacionPropia": false,
       "queOcurrio": "Digital Equipment Corporation (DEC) lanza la PDP-1, considerada la primera minicomputadora interactiva; en ella se creó Spacewar! (1962).",
       "innovacion": "Cómputo interactivo y accesible, más que los mainframes gigantes.",
       "importancia": "Democratizó parcialmente el acceso: laboratorios y universidades podían tener su propia máquina.",
@@ -291,12 +576,23 @@
       "imagen": "assets/img/hitos/h15-pdp1.webp",
       "imagenAlt": "Minicomputadora PDP-1 ejecutando Spacewar!",
       "fuentes": [
-        { "nombre": "CHM Timeline", "url": "https://www.computerhistory.org/timeline/1960/" }
+        {
+          "nombre": "CHM Timeline",
+          "url": "https://www.computerhistory.org/timeline/1960/"
+        }
       ]
     },
     {
-      "id": "H16", "slug": "system360", "titulo": "IBM System/360", "anio": 1964, "anioFin": null, "periodo": "1964",
-      "tipo": "puntual", "categoria": "hardware", "generacion": "g3", "aportacionPropia": false,
+      "id": "H16",
+      "slug": "system360",
+      "titulo": "IBM System/360",
+      "anio": 1964,
+      "anioFin": null,
+      "periodo": "1964",
+      "tipo": "puntual",
+      "categoria": "hardware",
+      "generacion": "g3",
+      "aportacionPropia": false,
       "queOcurrio": "IBM lanza el System/360, una familia de computadoras compatibles entre sí que comparten la misma arquitectura de instrucciones (ISA).",
       "innovacion": "Separar la arquitectura (el contrato de software) de la implementación (el hardware). El byte de 8 bits se vuelve estándar.",
       "importancia": "El software escrito para un modelo corría en toda la familia: nace la compatibilidad y la idea de 'plataforma'.",
@@ -305,13 +601,27 @@
       "imagen": "assets/img/hitos/h16-system360.webp",
       "imagenAlt": "Mainframe IBM System/360",
       "fuentes": [
-        { "nombre": "IBM", "url": "https://www.ibm.com/history/system-360" },
-        { "nombre": "Computer History Museum", "url": "https://www.computerhistory.org/revolution/mainframe-computers/7/161" }
+        {
+          "nombre": "IBM",
+          "url": "https://www.ibm.com/history/system-360"
+        },
+        {
+          "nombre": "Computer History Museum",
+          "url": "https://www.computerhistory.org/revolution/mainframe-computers/7/161"
+        }
       ]
     },
     {
-      "id": "H17", "slug": "basic", "titulo": "BASIC", "anio": 1964, "anioFin": null, "periodo": "1964",
-      "tipo": "puntual", "categoria": "programacion", "generacion": "g3", "aportacionPropia": false,
+      "id": "H17",
+      "slug": "basic",
+      "titulo": "BASIC",
+      "anio": 1964,
+      "anioFin": null,
+      "periodo": "1964",
+      "tipo": "puntual",
+      "categoria": "programacion",
+      "generacion": "g3",
+      "aportacionPropia": false,
       "queOcurrio": "John Kemeny y Thomas Kurtz crean BASIC en Dartmouth, un lenguaje sencillo para enseñar programación en sistemas de tiempo compartido.",
       "innovacion": "Accesibilidad: programar sin ser especialista.",
       "importancia": "Lenguaje de entrada de millones de personas en los 70–80 y clave en las primeras microcomputadoras (Microsoft Altair BASIC).",
@@ -320,28 +630,52 @@
       "imagen": "assets/img/hitos/h17-basic.webp",
       "imagenAlt": "Programa en lenguaje BASIC en una terminal",
       "fuentes": [
-        { "nombre": "CHM Timeline", "url": "https://www.computerhistory.org/timeline/1964/" }
+        {
+          "nombre": "CHM Timeline",
+          "url": "https://www.computerhistory.org/timeline/1964/"
+        }
       ]
     },
     {
-      "id": "H18", "slug": "ley-moore", "titulo": "Ley de Moore", "anio": 1965, "anioFin": null, "periodo": "1965",
-      "tipo": "puntual", "categoria": "concepto", "generacion": "g3", "aportacionPropia": true,
+      "id": "H18",
+      "slug": "ley-moore",
+      "titulo": "Ley de Moore",
+      "anio": 1965,
+      "anioFin": null,
+      "periodo": "1965",
+      "tipo": "puntual",
+      "categoria": "concepto",
+      "generacion": "g3",
+      "aportacionPropia": false,
       "queOcurrio": "Gordon Moore observa que el número de transistores por chip se duplica aproximadamente cada 1–2 años (revisado en 1975), a costo decreciente.",
       "innovacion": "No es una ley física, sino una tendencia económico-tecnológica que guió a la industria por décadas.",
       "importancia": "Explica el ritmo sostenido del progreso: por qué las computadoras mejoraron de forma continua y predecible.",
       "queCambio": "Convirtió la mejora en una expectativa planificable de la industria.",
       "relacionHwSw": "Más transistores baratos ⇒ hardware más potente ⇒ software cada vez más ambicioso, sin cambiar el paradigma de golpe.",
-      "justificacionAportacion": "Es la mejor entrada para responder la pregunta guía: sostiene la tesis de la 'evolución progresiva' frente a la de 'rupturas'.",
       "imagen": "assets/img/hitos/h18-ley-moore.webp",
       "imagenAlt": "Gráfica de la Ley de Moore: transistores por chip en el tiempo",
       "fuentes": [
-        { "nombre": "CHM – Silicon Engine", "url": "https://www.computerhistory.org/siliconengine/moores-law-predicts-the-future-of-integrated-circuits/" },
-        { "nombre": "Intel", "url": "https://www.intel.com/content/www/us/en/history/virtual-vault/articles/moores-law.html" }
+        {
+          "nombre": "CHM – Silicon Engine",
+          "url": "https://www.computerhistory.org/siliconengine/moores-law-predicts-the-future-of-integrated-circuits/"
+        },
+        {
+          "nombre": "Intel",
+          "url": "https://www.intel.com/content/www/us/en/history/virtual-vault/articles/moores-law.html"
+        }
       ]
     },
     {
-      "id": "H19", "slug": "unix", "titulo": "UNIX", "anio": 1969, "anioFin": null, "periodo": "1969",
-      "tipo": "puntual", "categoria": "programacion", "generacion": "g3", "aportacionPropia": false,
+      "id": "H19",
+      "slug": "unix",
+      "titulo": "UNIX",
+      "anio": 1969,
+      "anioFin": null,
+      "periodo": "1969",
+      "tipo": "puntual",
+      "categoria": "programacion",
+      "generacion": "g3",
+      "aportacionPropia": false,
       "queOcurrio": "Ken Thompson y Dennis Ritchie, en Bell Labs, crean UNIX, un sistema operativo multitarea y multiusuario, portable y modular.",
       "innovacion": "Un SO diseñado para ser simple, componible ('filosofía UNIX') y portable entre máquinas.",
       "importancia": "Es el ancestro directo de Linux, macOS, Android y de la infraestructura de Internet.",
@@ -350,13 +684,27 @@
       "imagen": "assets/img/hitos/h19-unix.webp",
       "imagenAlt": "Ken Thompson y Dennis Ritchie con una computadora ejecutando UNIX",
       "fuentes": [
-        { "nombre": "National Inventors Hall of Fame", "url": "https://www.invent.org/inductees/dennis-ritchie" },
-        { "nombre": "Bell Labs (Ritchie, PDF)", "url": "https://www.nokia.com/bell-labs/about/dennis-m-ritchie/chist.pdf" }
+        {
+          "nombre": "National Inventors Hall of Fame",
+          "url": "https://www.invent.org/inductees/dennis-ritchie"
+        },
+        {
+          "nombre": "Bell Labs (Ritchie, PDF)",
+          "url": "https://www.nokia.com/bell-labs/about/dennis-m-ritchie/chist.pdf"
+        }
       ]
     },
     {
-      "id": "H20", "slug": "pdp11", "titulo": "PDP-11", "anio": 1970, "anioFin": null, "periodo": "1970",
-      "tipo": "puntual", "categoria": "hardware", "generacion": "g3", "aportacionPropia": false,
+      "id": "H20",
+      "slug": "pdp11",
+      "titulo": "PDP-11",
+      "anio": 1970,
+      "anioFin": null,
+      "periodo": "1970",
+      "tipo": "puntual",
+      "categoria": "hardware",
+      "generacion": "g3",
+      "aportacionPropia": false,
       "queOcurrio": "DEC lanza la PDP-11, una de las minicomputadoras más exitosas e influyentes de la historia.",
       "innovacion": "Una arquitectura elegante y ortogonal que influyó en el diseño del lenguaje C y de procesadores posteriores.",
       "importancia": "Fue la plataforma donde maduraron UNIX y C; formó a una generación de ingenieros.",
@@ -365,12 +713,23 @@
       "imagen": "assets/img/hitos/h20-pdp11.webp",
       "imagenAlt": "Minicomputadora DEC PDP-11",
       "fuentes": [
-        { "nombre": "CHM Timeline", "url": "https://www.computerhistory.org/timeline/1970/" }
+        {
+          "nombre": "CHM Timeline",
+          "url": "https://www.computerhistory.org/timeline/1970/"
+        }
       ]
     },
     {
-      "id": "H21", "slug": "intel4004", "titulo": "Intel 4004", "anio": 1971, "anioFin": null, "periodo": "1971",
-      "tipo": "puntual", "categoria": "hardware", "generacion": "g4", "aportacionPropia": false,
+      "id": "H21",
+      "slug": "intel4004",
+      "titulo": "Intel 4004",
+      "anio": 1971,
+      "anioFin": null,
+      "periodo": "1971",
+      "tipo": "puntual",
+      "categoria": "hardware",
+      "generacion": "g4",
+      "aportacionPropia": false,
       "queOcurrio": "Intel lanza el 4004, el primer microprocesador comercial: una CPU completa de 4 bits en un solo chip (equipo de Faggin, Hoff, Mazor y Shima).",
       "innovacion": "Integrar la unidad central de procesamiento en un único circuito.",
       "importancia": "Detonó la cuarta generación y la computadora personal: la CPU se volvió un componente barato y masivo.",
@@ -379,13 +738,27 @@
       "imagen": "assets/img/hitos/h21-intel4004.webp",
       "imagenAlt": "El microprocesador Intel 4004, 1971",
       "fuentes": [
-        { "nombre": "Intel", "url": "https://www.intel.com/content/www/us/en/history/virtual-vault/articles/the-intel-4004.html" },
-        { "nombre": "IEEE Spectrum", "url": "https://spectrum.ieee.org/chip-hall-of-fame-intel-4004-microprocessor" }
+        {
+          "nombre": "Intel",
+          "url": "https://www.intel.com/content/www/us/en/history/virtual-vault/articles/the-intel-4004.html"
+        },
+        {
+          "nombre": "IEEE Spectrum",
+          "url": "https://spectrum.ieee.org/chip-hall-of-fame-intel-4004-microprocessor"
+        }
       ]
     },
     {
-      "id": "H22", "slug": "lenguaje-c", "titulo": "Lenguaje C", "anio": 1972, "anioFin": null, "periodo": "1972",
-      "tipo": "puntual", "categoria": "programacion", "generacion": "g4", "aportacionPropia": false,
+      "id": "H22",
+      "slug": "lenguaje-c",
+      "titulo": "Lenguaje C",
+      "anio": 1972,
+      "anioFin": null,
+      "periodo": "1972",
+      "tipo": "puntual",
+      "categoria": "programacion",
+      "generacion": "g4",
+      "aportacionPropia": false,
       "queOcurrio": "Dennis Ritchie desarrolla C en Bell Labs para reescribir UNIX; combina control de bajo nivel con portabilidad de alto nivel.",
       "innovacion": "Un lenguaje 'de sistemas' eficiente y portable a la vez.",
       "importancia": "Base de casi todo el software moderno de sistemas; influyó en C++, Java, C#, Python (implementación).",
@@ -394,13 +767,27 @@
       "imagen": "assets/img/hitos/h22-lenguaje-c.webp",
       "imagenAlt": "El lenguaje de programación C y el libro de Kernighan y Ritchie",
       "fuentes": [
-        { "nombre": "Britannica – C", "url": "https://www.britannica.com/technology/C-computer-programming-language" },
-        { "nombre": "Bell Labs (Ritchie, PDF)", "url": "https://www.nokia.com/bell-labs/about/dennis-m-ritchie/chist.pdf" }
+        {
+          "nombre": "Britannica – C",
+          "url": "https://www.britannica.com/technology/C-computer-programming-language"
+        },
+        {
+          "nombre": "Bell Labs (Ritchie, PDF)",
+          "url": "https://www.nokia.com/bell-labs/about/dennis-m-ritchie/chist.pdf"
+        }
       ]
     },
     {
-      "id": "H23", "slug": "intel8080", "titulo": "Intel 8080", "anio": 1974, "anioFin": null, "periodo": "1974",
-      "tipo": "puntual", "categoria": "hardware", "generacion": "g4", "aportacionPropia": false,
+      "id": "H23",
+      "slug": "intel8080",
+      "titulo": "Intel 8080",
+      "anio": 1974,
+      "anioFin": null,
+      "periodo": "1974",
+      "tipo": "puntual",
+      "categoria": "hardware",
+      "generacion": "g4",
+      "aportacionPropia": false,
       "queOcurrio": "Intel lanza el 8080, microprocesador de 8 bits mucho más capaz que el 4004.",
       "innovacion": "Un micro suficientemente potente para construir computadoras de uso general.",
       "importancia": "Fue el 'motor' del Altair 8800 y catalizador de la industria de la microcomputadora.",
@@ -409,12 +796,23 @@
       "imagen": "assets/img/hitos/h23-intel8080.webp",
       "imagenAlt": "Microprocesador Intel 8080, 1974",
       "fuentes": [
-        { "nombre": "CHM Timeline", "url": "https://www.computerhistory.org/timeline/1974/" }
+        {
+          "nombre": "CHM Timeline",
+          "url": "https://www.computerhistory.org/timeline/1974/"
+        }
       ]
     },
     {
-      "id": "H24", "slug": "altair", "titulo": "Altair 8800", "anio": 1975, "anioFin": null, "periodo": "1975",
-      "tipo": "puntual", "categoria": "hardware", "generacion": "g4", "aportacionPropia": false,
+      "id": "H24",
+      "slug": "altair",
+      "titulo": "Altair 8800",
+      "anio": 1975,
+      "anioFin": null,
+      "periodo": "1975",
+      "tipo": "puntual",
+      "categoria": "hardware",
+      "generacion": "g4",
+      "aportacionPropia": false,
       "queOcurrio": "MITS lanza el Altair 8800 (basado en el 8080), señalado como detonante de la revolución de la computadora personal. Su primer software: Altair BASIC, primer producto de Microsoft.",
       "innovacion": "La computadora al alcance de aficionados, no solo de instituciones.",
       "importancia": "Encendió el movimiento hobbyista (Homebrew Computer Club) del que surgieron Apple, Microsoft y el software personal.",
@@ -423,12 +821,23 @@
       "imagen": "assets/img/hitos/h24-altair.webp",
       "imagenAlt": "La microcomputadora Altair 8800, 1975",
       "fuentes": [
-        { "nombre": "CHM Timeline", "url": "https://www.computerhistory.org/timeline/1975/" }
+        {
+          "nombre": "CHM Timeline",
+          "url": "https://www.computerhistory.org/timeline/1975/"
+        }
       ]
     },
     {
-      "id": "H25", "slug": "apple2", "titulo": "Apple II", "anio": 1977, "anioFin": null, "periodo": "1977",
-      "tipo": "puntual", "categoria": "hardware", "generacion": "g4", "aportacionPropia": false,
+      "id": "H25",
+      "slug": "apple2",
+      "titulo": "Apple II",
+      "anio": 1977,
+      "anioFin": null,
+      "periodo": "1977",
+      "tipo": "puntual",
+      "categoria": "hardware",
+      "generacion": "g4",
+      "aportacionPropia": false,
       "queOcurrio": "Wozniak y Jobs lanzan la Apple II, una de las primeras computadoras personales de éxito masivo, con gráficos a color y lista para usar.",
       "innovacion": "La PC como producto de consumo terminado (no un kit).",
       "importancia": "Con VisiCalc (1979) convirtió a la PC en herramienta de negocio: la 'app que vendía la máquina'.",
@@ -437,12 +846,23 @@
       "imagen": "assets/img/hitos/h25-apple2.webp",
       "imagenAlt": "La computadora personal Apple II, 1977",
       "fuentes": [
-        { "nombre": "CHM Timeline", "url": "https://www.computerhistory.org/timeline/1977/" }
+        {
+          "nombre": "CHM Timeline",
+          "url": "https://www.computerhistory.org/timeline/1977/"
+        }
       ]
     },
     {
-      "id": "H26", "slug": "ibm-pc", "titulo": "IBM PC", "anio": 1981, "anioFin": null, "periodo": "1981",
-      "tipo": "puntual", "categoria": "hardware", "generacion": "g4", "aportacionPropia": false,
+      "id": "H26",
+      "slug": "ibm-pc",
+      "titulo": "IBM PC",
+      "anio": 1981,
+      "anioFin": null,
+      "periodo": "1981",
+      "tipo": "puntual",
+      "categoria": "hardware",
+      "generacion": "g4",
+      "aportacionPropia": false,
       "queOcurrio": "IBM lanza el IBM PC (modelo 5150) con arquitectura abierta y MS-DOS de Microsoft.",
       "innovacion": "Un estándar de industria abierto que otros fabricantes podían clonar.",
       "importancia": "Creó el ecosistema 'PC compatible' que aún domina; consolidó a Microsoft e Intel ('Wintel').",
@@ -451,12 +871,23 @@
       "imagen": "assets/img/hitos/h26-ibm-pc.webp",
       "imagenAlt": "La IBM PC modelo 5150, 1981",
       "fuentes": [
-        { "nombre": "CHM Timeline", "url": "https://www.computerhistory.org/timeline/1981/" }
+        {
+          "nombre": "CHM Timeline",
+          "url": "https://www.computerhistory.org/timeline/1981/"
+        }
       ]
     },
     {
-      "id": "H27", "slug": "python", "titulo": "Python", "anio": 1991, "anioFin": null, "periodo": "1991",
-      "tipo": "puntual", "categoria": "programacion", "generacion": "posterior", "aportacionPropia": false,
+      "id": "H27",
+      "slug": "python",
+      "titulo": "Python",
+      "anio": 1991,
+      "anioFin": null,
+      "periodo": "1991",
+      "tipo": "puntual",
+      "categoria": "programacion",
+      "generacion": "internet",
+      "aportacionPropia": false,
       "queOcurrio": "Guido van Rossum publica Python, un lenguaje de alto nivel que prioriza la legibilidad y la productividad.",
       "innovacion": "Un lenguaje versátil, multiparadigma y de sintaxis clara.",
       "importancia": "Se volvió el idioma dominante de la ciencia de datos, la IA y la automatización.",
@@ -465,12 +896,23 @@
       "imagen": "assets/img/hitos/h27-python.webp",
       "imagenAlt": "El lenguaje de programación Python",
       "fuentes": [
-        { "nombre": "CHM – Guido van Rossum", "url": "https://computerhistory.org/profile/guido-van-rossum/" }
+        {
+          "nombre": "CHM – Guido van Rossum",
+          "url": "https://computerhistory.org/profile/guido-van-rossum/"
+        }
       ]
     },
     {
-      "id": "H28", "slug": "32-64-bits", "titulo": "Microprocesadores de 32 y 64 bits", "anio": 1985, "anioFin": 2005, "periodo": "~1985–2003+",
-      "tipo": "banda", "categoria": "hardware", "generacion": "posterior", "aportacionPropia": false,
+      "id": "H28",
+      "slug": "32-64-bits",
+      "titulo": "Microprocesadores de 32 y 64 bits",
+      "anio": 1985,
+      "anioFin": 2005,
+      "periodo": "~1985–2003+",
+      "tipo": "banda",
+      "categoria": "hardware",
+      "generacion": "internet",
+      "aportacionPropia": false,
       "queOcurrio": "Los micros pasan de 8/16 bits a 32 bits (Intel 80386, 1985) y luego a 64 bits (AMD64 / Opteron, 2003; también ARM de 64 bits).",
       "innovacion": "Ampliar la memoria direccionable y el desempeño manteniendo la compatibilidad.",
       "importancia": "Habilitó memorias grandes, multitarea real y aplicaciones cada vez más exigentes; base de la computación actual.",
@@ -479,12 +921,23 @@
       "imagen": "assets/img/hitos/h28-32-64-bits.webp",
       "imagenAlt": "Evolución de los microprocesadores de 32 a 64 bits",
       "fuentes": [
-        { "nombre": "CHM Timeline", "url": "https://www.computerhistory.org/timeline/1985/" }
+        {
+          "nombre": "CHM Timeline",
+          "url": "https://www.computerhistory.org/timeline/1985/"
+        }
       ]
     },
     {
-      "id": "H29", "slug": "almacenamiento", "titulo": "Evolución del almacenamiento digital", "anio": 1956, "anioFin": 2025, "periodo": "1956–presente",
-      "tipo": "banda", "categoria": "almacenamiento", "generacion": "posterior", "aportacionPropia": false,
+      "id": "H29",
+      "slug": "almacenamiento",
+      "titulo": "Evolución del almacenamiento digital",
+      "anio": 1956,
+      "anioFin": 2025,
+      "periodo": "1956–presente",
+      "tipo": "banda",
+      "categoria": "almacenamiento",
+      "generacion": "g2",
+      "aportacionPropia": false,
       "queOcurrio": "El almacenamiento evoluciona: tarjetas perforadas → cinta → disco duro (IBM RAMAC, 1956) → disquete (1971) → CD/DVD → flash y SSD → nube.",
       "innovacion": "Cada salto multiplicó capacidad, velocidad y accesibilidad de los datos.",
       "importancia": "Sin almacenamiento barato no existirían el Big Data ni la ciencia de datos.",
@@ -493,21 +946,787 @@
       "imagen": "assets/img/hitos/h29-almacenamiento.webp",
       "imagenAlt": "Evolución del almacenamiento: de la tarjeta perforada a la nube",
       "fuentes": [
-        { "nombre": "CHM – Storage Engine", "url": "https://www.computerhistory.org/storageengine/first-commercial-hard-disk-drive-shipped/" }
+        {
+          "nombre": "CHM – Storage Engine",
+          "url": "https://www.computerhistory.org/storageengine/first-commercial-hard-disk-drive-shipped/"
+        }
       ]
     },
     {
-      "id": "H30", "slug": "internet-web", "titulo": "Expansión de Internet y la Web", "anio": 1969, "anioFin": 2025, "periodo": "1969–presente",
-      "tipo": "banda", "categoria": "redes", "generacion": "posterior", "aportacionPropia": false,
-      "queOcurrio": "ARPANET (1969) → estandarización de TCP/IP (1983) → World Wide Web de Tim Berners-Lee (propuesta 1989, pública 1991) → navegador Mosaic (1993) y masificación.",
-      "innovacion": "Convertir computadoras aisladas en una red global de información.",
-      "importancia": "Transformó comunicación, economía y acceso al conocimiento.",
-      "queCambio": "De máquinas independientes a un sistema interconectado; el dato deja de vivir en una sola computadora.",
-      "relacionHwSw": "Exigió nuevos protocolos (software) y nueva infraestructura (hardware de red): otra co-evolución.",
-      "imagen": "assets/img/hitos/h30-internet-web.webp",
-      "imagenAlt": "Expansión de Internet y la World Wide Web",
+      "id": "H31",
+      "slug": "babbage-lovelace",
+      "titulo": "Máquina analítica y Ada Lovelace",
+      "anio": 1843,
+      "anioFin": null,
+      "periodo": "1843",
+      "tipo": "puntual",
+      "categoria": "concepto",
+      "generacion": "antecedente",
+      "aportacionPropia": false,
+      "queOcurrio": "Ada Lovelace publica, en sus «Notas» a un artículo sobre la Máquina Analítica de Charles Babbage, el primer algoritmo pensado para ser ejecutado por una máquina (calcular los números de Bernoulli).",
+      "innovacion": "La idea de «programa» —una secuencia de instrucciones— casi un siglo antes de la primera computadora electrónica, y la visión de que una máquina podría manipular símbolos, no solo números.",
+      "importancia": "Es el origen conceptual de la programación; Lovelace es reconocida como la primera programadora de la historia.",
+      "queCambio": "Antes, las máquinas de cálculo se concebían solo como calculadoras; Lovelace vislumbró la computadora de propósito general.",
+      "relacionHwSw": "Separó por primera vez la idea de «máquina» (hardware) de las «instrucciones» (software) que la gobiernan.",
+      "imagen": "assets/img/hitos/h31-babbage-lovelace.webp",
+      "imagenAlt": "Retrato de Ada Lovelace y la Máquina Analítica de Charles Babbage",
       "fuentes": [
-        { "nombre": "CERN", "url": "https://home.cern/science/computing/the-birth-of-the-web/short-history-web/" }
+        {
+          "nombre": "Britannica – Ada Lovelace",
+          "url": "https://www.britannica.com/biography/Ada-Lovelace"
+        }
+      ]
+    },
+    {
+      "id": "H32",
+      "slug": "von-neumann",
+      "titulo": "Arquitectura de von Neumann (EDVAC)",
+      "anio": 1945,
+      "anioFin": null,
+      "periodo": "1945",
+      "tipo": "puntual",
+      "categoria": "concepto",
+      "generacion": "g1",
+      "aportacionPropia": false,
+      "queOcurrio": "John von Neumann distribuye el «First Draft of a Report on the EDVAC», la primera descripción publicada de una computadora de programa almacenado.",
+      "innovacion": "La «arquitectura de von Neumann»: datos e instrucciones conviven en una misma memoria y la máquina puede leer y modificar su propio programa.",
+      "importancia": "Es el modelo lógico sobre el que se han construido casi todas las computadoras hasta hoy.",
+      "queCambio": "Formalizó y difundió el concepto de programa almacenado que el Manchester Baby demostraría físicamente en 1948.",
+      "relacionHwSw": "Definió la relación fundamental entre memoria, unidad de control y aritmética que estructura todo el software moderno.",
+      "imagen": "assets/img/hitos/h32-von-neumann.webp",
+      "imagenAlt": "John von Neumann y el esquema de la arquitectura de programa almacenado",
+      "fuentes": [
+        {
+          "nombre": "History of Information – First Draft (EDVAC)",
+          "url": "https://www.historyofinformation.com/detail.php?id=644"
+        }
+      ]
+    },
+    {
+      "id": "H33",
+      "slug": "test-turing",
+      "titulo": "Test de Turing",
+      "anio": 1950,
+      "anioFin": null,
+      "periodo": "1950",
+      "tipo": "puntual",
+      "categoria": "ia",
+      "generacion": "g1",
+      "aportacionPropia": false,
+      "queOcurrio": "Alan Turing publica «Computing Machinery and Intelligence» en la revista Mind y propone el «juego de imitación» (test de Turing) para juzgar si una máquina puede «pensar».",
+      "innovacion": "Un criterio práctico y conductual para la inteligencia de las máquinas, que esquiva las definiciones filosóficas de «pensar».",
+      "importancia": "Marcó el punto de partida conceptual de la inteligencia artificial y sigue siendo referencia obligada 75 años después.",
+      "queCambio": "Trasladó la pregunta «¿pueden pensar las máquinas?» de la filosofía a un experimento verificable.",
+      "relacionHwSw": "Anticipó que el software podría exhibir comportamientos inteligentes sobre hardware de propósito general.",
+      "imagen": "assets/img/hitos/h33-test-turing.webp",
+      "imagenAlt": "Ilustración del juego de imitación o test de Turing",
+      "fuentes": [
+        {
+          "nombre": "Britannica – Turing test",
+          "url": "https://www.britannica.com/technology/Turing-test"
+        }
+      ]
+    },
+    {
+      "id": "H34",
+      "slug": "dartmouth",
+      "titulo": "Conferencia de Dartmouth: nace la «IA»",
+      "anio": 1956,
+      "anioFin": null,
+      "periodo": "1956",
+      "tipo": "puntual",
+      "categoria": "ia",
+      "generacion": "g2",
+      "aportacionPropia": false,
+      "queOcurrio": "En el Dartmouth Summer Research Project, John McCarthy, Marvin Minsky, Nathaniel Rochester y Claude Shannon reúnen a los pioneros del campo y acuñan el término «inteligencia artificial».",
+      "innovacion": "El nacimiento de la IA como disciplina con nombre, comunidad y agenda de investigación propios.",
+      "importancia": "Es el acta de fundación de la inteligencia artificial; de ahí surgieron los grandes laboratorios (MIT, CMU, Stanford).",
+      "queCambio": "Unificó esfuerzos dispersos —redes neuronales, lógica, teoría de juegos— bajo una sola disciplina.",
+      "relacionHwSw": "Fijó la meta de que el software simulara capacidades humanas: aprender, razonar y usar el lenguaje.",
+      "imagen": "assets/img/hitos/h34-dartmouth.webp",
+      "imagenAlt": "Dartmouth College, sede de la conferencia fundacional de la inteligencia artificial en 1956",
+      "fuentes": [
+        {
+          "nombre": "Dartmouth – AI coined at Dartmouth",
+          "url": "https://home.dartmouth.edu/about/artificial-intelligence-ai-coined-dartmouth"
+        },
+        {
+          "nombre": "Computer History Museum",
+          "url": "https://computerhistory.org/events/1956-dartmouth-workshop-its-immediate/"
+        }
+      ]
+    },
+    {
+      "id": "H35",
+      "slug": "perceptron",
+      "titulo": "El Perceptrón",
+      "anio": 1958,
+      "anioFin": null,
+      "periodo": "1958",
+      "tipo": "puntual",
+      "categoria": "ia",
+      "generacion": "g2",
+      "aportacionPropia": false,
+      "queOcurrio": "Frank Rosenblatt presenta el Perceptrón en el Cornell Aeronautical Laboratory: la primera red neuronal artificial capaz de aprender a partir de ejemplos.",
+      "innovacion": "Una máquina que ajusta sus propios «pesos» para clasificar patrones: el germen del aprendizaje automático.",
+      "importancia": "Es el ancestro directo de las redes neuronales y del aprendizaje profundo que domina la IA actual.",
+      "queCambio": "Frente a los programas de reglas fijas, introdujo la idea de un sistema que mejora con la experiencia.",
+      "relacionHwSw": "Fundó una vía de la IA basada en aprender de los datos, no en programar reglas a mano.",
+      "imagen": "assets/img/hitos/h35-perceptron.webp",
+      "imagenAlt": "Frank Rosenblatt y el Perceptrón, primera red neuronal artificial",
+      "fuentes": [
+        {
+          "nombre": "Cornell Chronicle",
+          "url": "https://news.cornell.edu/stories/2019/09/professors-perceptron-paved-way-ai-60-years-too-soon"
+        }
+      ]
+    },
+    {
+      "id": "H38",
+      "slug": "arpanet",
+      "titulo": "ARPANET",
+      "anio": 1969,
+      "anioFin": null,
+      "periodo": "1969",
+      "tipo": "puntual",
+      "categoria": "redes",
+      "generacion": "g3",
+      "aportacionPropia": false,
+      "queOcurrio": "Se envía el primer mensaje entre dos nodos de ARPANET, la red del Departamento de Defensa de EE. UU. que fue el origen de Internet.",
+      "innovacion": "La conmutación de paquetes: la información se divide en paquetes que viajan por rutas distintas y se reensamblan en el destino.",
+      "importancia": "Es el proyecto —militar y académico— del que evolucionó Internet.",
+      "queCambio": "Conectó por primera vez computadoras distintas y distantes, rompiendo el aislamiento de cada máquina.",
+      "relacionHwSw": "Exigió nuevos protocolos (software de red) y equipos dedicados, inaugurando el cómputo en red.",
+      "imagen": "assets/img/hitos/h38-arpanet.webp",
+      "imagenAlt": "Mapa de los primeros nodos de la red ARPANET, 1969",
+      "fuentes": [
+        {
+          "nombre": "Britannica – ARPANET",
+          "url": "https://www.britannica.com/topic/ARPANET"
+        },
+        {
+          "nombre": "DARPA",
+          "url": "https://www.darpa.mil/news/features/arpanet"
+        }
+      ]
+    },
+    {
+      "id": "H36",
+      "slug": "modelo-relacional",
+      "titulo": "Modelo relacional (bases de datos)",
+      "anio": 1970,
+      "anioFin": null,
+      "periodo": "1970",
+      "tipo": "puntual",
+      "categoria": "programacion",
+      "generacion": "g3",
+      "aportacionPropia": false,
+      "queOcurrio": "Edgar F. Codd, en IBM, publica «A Relational Model of Data for Large Shared Data Banks», que define las bases de datos relacionales.",
+      "innovacion": "Organizar los datos en tablas (relaciones) y consultarlos describiéndolos, no navegando punteros: el origen de SQL.",
+      "importancia": "Es el fundamento de casi todas las bases de datos modernas y, por tanto, de la ciencia de datos.",
+      "queCambio": "Separó el significado de los datos de su almacenamiento físico: los programas dejaron de romperse al cambiar la estructura.",
+      "relacionHwSw": "Creó una capa de abstracción entre las aplicaciones y la forma en que el hardware guarda la información.",
+      "imagen": "assets/img/hitos/h36-modelo-relacional.webp",
+      "imagenAlt": "Diagrama de tablas relacionales y Edgar F. Codd",
+      "fuentes": [
+        {
+          "nombre": "History of Information – Codd (1970)",
+          "url": "https://www.historyofinformation.com/detail.php?id=94"
+        }
+      ]
+    },
+    {
+      "id": "H37",
+      "slug": "xerox-alto",
+      "titulo": "Xerox Alto: la primera interfaz gráfica",
+      "anio": 1973,
+      "anioFin": null,
+      "periodo": "1973",
+      "tipo": "puntual",
+      "categoria": "hardware",
+      "generacion": "g4",
+      "aportacionPropia": false,
+      "queOcurrio": "Xerox PARC construye el Alto, la primera computadora con interfaz gráfica (ventanas e íconos), mouse y red Ethernet integrados.",
+      "innovacion": "La computadora personal tal como la conocemos: interacción visual directa en lugar de comandos de texto.",
+      "importancia": "Inspiró a Apple (Lisa y Macintosh) y a Microsoft (Windows); definió cómo usamos las computadoras hoy.",
+      "queCambio": "Sustituyó la línea de comandos por la manipulación directa con mouse, ventanas e íconos.",
+      "relacionHwSw": "Unió hardware (mouse, pantalla de mapa de bits) y software (la GUI) en un paradigma de interacción totalmente nuevo.",
+      "imagen": "assets/img/hitos/h37-xerox-alto.webp",
+      "imagenAlt": "La computadora Xerox Alto con su interfaz gráfica y mouse, 1973",
+      "fuentes": [
+        {
+          "nombre": "Computer History Museum – Xerox Alto",
+          "url": "https://www.computerhistory.org/revolution/input-output/14/347"
+        }
+      ]
+    },
+    {
+      "id": "H39",
+      "slug": "tcp-ip",
+      "titulo": "TCP/IP: nace «Internet»",
+      "anio": 1983,
+      "anioFin": null,
+      "periodo": "1983",
+      "tipo": "puntual",
+      "categoria": "redes",
+      "generacion": "g4",
+      "aportacionPropia": false,
+      "queOcurrio": "El 1 de enero de 1983 ARPANET adopta TCP/IP como protocolo estándar; para muchos, ahí nace «Internet» propiamente dicho.",
+      "innovacion": "Un «idioma común» (TCP/IP) que permite que redes distintas se comuniquen entre sí formando una red de redes.",
+      "importancia": "Es el conjunto de protocolos que sigue sosteniendo Internet hasta hoy.",
+      "queCambio": "Pasó de una red única a un sistema abierto donde cualquier red podía conectarse.",
+      "relacionHwSw": "Estandarizó el software de comunicación, independizándolo del hardware de cada red.",
+      "imagen": "assets/img/hitos/h39-tcp-ip.webp",
+      "imagenAlt": "Representación de la red de redes conectada mediante TCP/IP",
+      "fuentes": [
+        {
+          "nombre": "Britannica – ARPANET (TCP/IP, 1983)",
+          "url": "https://www.britannica.com/topic/ARPANET"
+        },
+        {
+          "nombre": "DARPA",
+          "url": "https://www.darpa.mil/news/features/arpanet"
+        }
+      ]
+    },
+    {
+      "id": "H40",
+      "slug": "www",
+      "titulo": "World Wide Web",
+      "anio": 1991,
+      "anioFin": null,
+      "periodo": "1989–1991",
+      "tipo": "puntual",
+      "categoria": "redes",
+      "generacion": "internet",
+      "aportacionPropia": false,
+      "queOcurrio": "Tim Berners-Lee, en el CERN, propone (1989) y libera al público (1991) la World Wide Web: hipertexto, direcciones URL, el protocolo HTTP y el lenguaje HTML.",
+      "innovacion": "Una capa de información navegable sobre Internet: páginas enlazadas entre sí y accesibles con un navegador.",
+      "importancia": "Convirtió Internet, hasta entonces técnica, en un medio universal de conocimiento y comunicación.",
+      "queCambio": "Distinguió «Internet» (la red) de «la Web» (la información sobre ella) y la abrió a todo el mundo.",
+      "relacionHwSw": "Puro software —protocolos y formatos— que multiplicó el valor de la infraestructura de red ya existente.",
+      "imagen": "assets/img/hitos/h40-www.webp",
+      "imagenAlt": "Tim Berners-Lee y el primer servidor web del CERN",
+      "fuentes": [
+        {
+          "nombre": "CERN – Short history of the Web",
+          "url": "https://home.cern/science/computing/the-birth-of-the-web/short-history-web/"
+        }
+      ]
+    },
+    {
+      "id": "H41",
+      "slug": "mosaic",
+      "titulo": "Mosaic: la web para todos",
+      "anio": 1993,
+      "anioFin": null,
+      "periodo": "1993",
+      "tipo": "puntual",
+      "categoria": "redes",
+      "generacion": "internet",
+      "aportacionPropia": false,
+      "queOcurrio": "El NCSA de la Universidad de Illinois libera Mosaic, el primer navegador gráfico popular, que mostraba imágenes junto al texto en la misma página.",
+      "innovacion": "Una interfaz amigable que hizo la Web usable para el público general, no solo para especialistas.",
+      "importancia": "Detonó la explosión de la Web y dio origen a Netscape; inauguró la era de los navegadores.",
+      "queCambio": "Transformó la Web de herramienta académica a medio masivo.",
+      "relacionHwSw": "Software cliente que, corriendo en PCs comunes, abrió Internet a millones de personas.",
+      "imagen": "assets/img/hitos/h41-mosaic.webp",
+      "imagenAlt": "Ventana del navegador NCSA Mosaic, 1993",
+      "fuentes": [
+        {
+          "nombre": "Universidad de Illinois – Distributed Museum",
+          "url": "https://distributedmuseum.illinois.edu/exhibit/mosaic/"
+        },
+        {
+          "nombre": "NSF – Mosaic",
+          "url": "https://nsf.gov/news/mosaic-launches-internet-revolution"
+        }
+      ]
+    },
+    {
+      "id": "H42",
+      "slug": "google",
+      "titulo": "Google: organizar la información del mundo",
+      "anio": 1998,
+      "anioFin": null,
+      "periodo": "1998",
+      "tipo": "puntual",
+      "categoria": "redes",
+      "generacion": "internet",
+      "aportacionPropia": false,
+      "queOcurrio": "Larry Page y Sergey Brin, estudiantes de Stanford, fundan Google, con el algoritmo PageRank para ordenar la Web por relevancia.",
+      "innovacion": "Medir la importancia de una página por los enlaces que recibe: una forma nueva de organizar la información del mundo.",
+      "importancia": "Hizo la Web realmente utilizable al volverla buscable; hoy es la puerta de entrada a Internet para miles de millones de personas.",
+      "queCambio": "Frente a los buscadores que solo contaban palabras, PageRank evaluó la relevancia por la estructura de enlaces.",
+      "relacionHwSw": "Un algoritmo (software) que, sobre enormes centros de datos, redefinió cómo accedemos al conocimiento.",
+      "imagen": "assets/img/hitos/h42-google.webp",
+      "imagenAlt": "Página de inicio original del buscador Google y sus fundadores",
+      "fuentes": [
+        {
+          "nombre": "Britannica – Google",
+          "url": "https://www.britannica.com/money/Google-Inc"
+        }
+      ]
+    },
+    {
+      "id": "H43",
+      "slug": "microsoft",
+      "titulo": "Fundación de Microsoft",
+      "anio": 1975,
+      "anioFin": null,
+      "periodo": "1975",
+      "tipo": "puntual",
+      "categoria": "programacion",
+      "generacion": "g4",
+      "aportacionPropia": false,
+      "queOcurrio": "Bill Gates y Paul Allen fundan Microsoft y crean Altair BASIC, el primer lenguaje para una microcomputadora y primer producto de la empresa.",
+      "innovacion": "La idea de que el software podía ser un negocio propio, independiente del fabricante del hardware.",
+      "importancia": "Microsoft definiría el software de la era PC —MS-DOS, Windows, Office— y el modelo comercial del software.",
+      "queCambio": "Consolidó el software como una industria por derecho propio: el programa se vendía por sí mismo.",
+      "relacionHwSw": "Reforzó la separación entre quien fabrica el hardware y quien produce el software que lo hace útil.",
+      "imagen": "assets/img/hitos/h43-microsoft.webp",
+      "imagenAlt": "Bill Gates y Paul Allen en los inicios de Microsoft, 1975",
+      "fuentes": [
+        {
+          "nombre": "Britannica – Microsoft",
+          "url": "https://www.britannica.com/money/Microsoft-Corporation"
+        }
+      ]
+    },
+    {
+      "id": "H44",
+      "slug": "macintosh",
+      "titulo": "Apple Macintosh: la GUI para las masas",
+      "anio": 1984,
+      "anioFin": null,
+      "periodo": "1984",
+      "tipo": "puntual",
+      "categoria": "hardware",
+      "generacion": "g4",
+      "aportacionPropia": false,
+      "queOcurrio": "Apple lanza el Macintosh, la primera computadora personal de éxito masivo con interfaz gráfica y mouse.",
+      "innovacion": "Llevó al gran público la GUI que Xerox había inventado: ventanas, íconos y manipulación directa.",
+      "importancia": "Popularizó la forma de usar computadoras que sigue vigente e impulsó a Microsoft a crear Windows.",
+      "queCambio": "Hizo la computadora accesible para personas sin conocimientos técnicos.",
+      "relacionHwSw": "Integró hardware y software en un producto pensado «para el resto de nosotros».",
+      "imagen": "assets/img/hitos/h44-macintosh.webp",
+      "imagenAlt": "La computadora Apple Macintosh de 1984 con su interfaz gráfica",
+      "fuentes": [
+        {
+          "nombre": "Computer History Museum – Macintosh",
+          "url": "https://www.computerhistory.org/revolution/personal-computers/17/303"
+        }
+      ]
+    },
+    {
+      "id": "H45",
+      "slug": "linux",
+      "titulo": "Linux",
+      "anio": 1991,
+      "anioFin": null,
+      "periodo": "1991",
+      "tipo": "puntual",
+      "categoria": "programacion",
+      "generacion": "internet",
+      "aportacionPropia": false,
+      "queOcurrio": "Linus Torvalds, estudiante en Helsinki, libera el kernel de Linux como software libre y de código abierto.",
+      "innovacion": "Un sistema tipo UNIX gratuito, desarrollado de forma colaborativa por miles de personas a través de Internet.",
+      "importancia": "Hoy hace funcionar la mayoría de los servidores web, la nube, las supercomputadoras y Android.",
+      "queCambio": "Demostró que un proyecto abierto y distribuido podía producir software de nivel industrial.",
+      "relacionHwSw": "Un núcleo portable que corre lo mismo en teléfonos que en supercomputadoras.",
+      "imagen": "assets/img/hitos/h45-linux.webp",
+      "imagenAlt": "Tux, la mascota de Linux, y Linus Torvalds",
+      "fuentes": [
+        {
+          "nombre": "Britannica – Linux",
+          "url": "https://www.britannica.com/technology/Linux"
+        }
+      ]
+    },
+    {
+      "id": "H46",
+      "slug": "java",
+      "titulo": "Java",
+      "anio": 1995,
+      "anioFin": null,
+      "periodo": "1995",
+      "tipo": "puntual",
+      "categoria": "programacion",
+      "generacion": "internet",
+      "aportacionPropia": false,
+      "queOcurrio": "Sun Microsystems, con el equipo de James Gosling, lanza Java, con el lema «escribe una vez, ejecuta en cualquier lugar».",
+      "innovacion": "Un lenguaje que corre sobre una máquina virtual (JVM), independiente del hardware y del sistema operativo.",
+      "importancia": "Se volvió base de la web empresarial, de Android y de millones de aplicaciones.",
+      "queCambio": "Llevó la portabilidad a otro nivel: el mismo programa compilado corre en cualquier plataforma con la JVM.",
+      "relacionHwSw": "Una capa intermedia (la JVM) que aísla por completo el software del hardware subyacente.",
+      "imagen": "assets/img/hitos/h46-java.webp",
+      "imagenAlt": "Logotipo del lenguaje de programación Java",
+      "fuentes": [
+        {
+          "nombre": "Britannica – Java",
+          "url": "https://www.britannica.com/technology/Java-computer-programming-language"
+        }
+      ]
+    },
+    {
+      "id": "H52",
+      "slug": "iot",
+      "titulo": "Internet de las cosas (IoT)",
+      "anio": 1999,
+      "anioFin": null,
+      "periodo": "1999",
+      "tipo": "puntual",
+      "categoria": "nube",
+      "generacion": "internet",
+      "aportacionPropia": false,
+      "queOcurrio": "Kevin Ashton acuña el término «Internet de las cosas» en el MIT, al conectar objetos físicos a la red mediante sensores y etiquetas RFID.",
+      "innovacion": "Extender Internet más allá de las computadoras: que objetos cotidianos capten y compartan datos.",
+      "importancia": "Es la base de los hogares y ciudades inteligentes y de la enorme generación de datos actual.",
+      "queCambio": "La red dejó de conectar solo a personas y computadoras para conectar también a las cosas.",
+      "relacionHwSw": "Unió hardware diminuto (sensores) con software y nube para dar «inteligencia» a los objetos.",
+      "imagen": "assets/img/hitos/h52-iot.webp",
+      "imagenAlt": "Objetos cotidianos conectados en el Internet de las cosas",
+      "fuentes": [
+        {
+          "nombre": "Wikipedia – Kevin Ashton (acuñó «IoT»)",
+          "url": "https://en.wikipedia.org/wiki/Kevin_Ashton"
+        }
+      ]
+    },
+    {
+      "id": "H47",
+      "slug": "facebook",
+      "titulo": "Facebook y la Web 2.0",
+      "anio": 2004,
+      "anioFin": null,
+      "periodo": "2004",
+      "tipo": "puntual",
+      "categoria": "redes",
+      "generacion": "internet",
+      "aportacionPropia": false,
+      "queOcurrio": "Mark Zuckerberg y compañeros de Harvard lanzan Facebook, que se convertiría en la mayor red social del mundo.",
+      "innovacion": "La Web 2.0: los usuarios dejan de solo consumir y pasan a crear, compartir y construir su identidad en línea.",
+      "importancia": "Redefinió la comunicación, la publicidad y la vida social de miles de millones, y masificó los datos personales.",
+      "queCambio": "La Web pasó de páginas estáticas a plataformas sociales impulsadas por los propios usuarios.",
+      "relacionHwSw": "Software a escala planetaria que dio origen a la economía de los datos y a enormes centros de datos.",
+      "imagen": "assets/img/hitos/h47-facebook.webp",
+      "imagenAlt": "Interfaz temprana de Facebook y Mark Zuckerberg",
+      "fuentes": [
+        {
+          "nombre": "Britannica – Facebook",
+          "url": "https://www.britannica.com/money/Facebook"
+        }
+      ]
+    },
+    {
+      "id": "H48",
+      "slug": "aws",
+      "titulo": "Amazon Web Services: el cómputo en la nube",
+      "anio": 2006,
+      "anioFin": null,
+      "periodo": "2006",
+      "tipo": "puntual",
+      "categoria": "nube",
+      "generacion": "movil-nube",
+      "aportacionPropia": true,
+      "queOcurrio": "Amazon lanza Amazon Web Services (S3 y EC2), que permiten rentar almacenamiento y cómputo por Internet, pagando solo por lo que se usa.",
+      "innovacion": "El cómputo en la nube: la infraestructura de TI se vuelve un servicio bajo demanda, sin comprar hardware.",
+      "importancia": "Es la base sobre la que corren buena parte de Internet, las startups y la IA moderna.",
+      "queCambio": "El poder de cómputo dejó de ser un bien físico que se compra para volverse un servicio que se renta.",
+      "relacionHwSw": "Desacopló el software del hardware físico: los servidores viven «en la nube», no en tu edificio.",
+      "justificacionAportacion": "Decidimos incluirlo porque marca el nacimiento del cómputo en la nube comercial —el modelo que hoy sostiene casi todo el software y la IA— y muestra una de las transformaciones más importantes de la computación reciente: el giro de «comprar computadoras» a «consumir cómputo como servicio».",
+      "imagen": "assets/img/hitos/h48-aws.webp",
+      "imagenAlt": "Centro de datos en la nube de Amazon Web Services",
+      "fuentes": [
+        {
+          "nombre": "IT Brew – Historia de AWS (S3/EC2, 2006)",
+          "url": "https://www.itbrew.com/stories/2025/03/21/how-aws-opened-the-floodgates-for-modern-day-cloud-computing"
+        },
+        {
+          "nombre": "Wikipedia – Amazon S3 (2006)",
+          "url": "https://en.wikipedia.org/wiki/Amazon_S3"
+        }
+      ]
+    },
+    {
+      "id": "H49",
+      "slug": "iphone",
+      "titulo": "iPhone: el smartphone moderno",
+      "anio": 2007,
+      "anioFin": null,
+      "periodo": "2007",
+      "tipo": "puntual",
+      "categoria": "dispositivos",
+      "generacion": "movil-nube",
+      "aportacionPropia": false,
+      "queOcurrio": "Apple presenta el iPhone, un teléfono con pantalla táctil que unía teléfono, iPod, cámara e Internet en un solo aparato.",
+      "innovacion": "El smartphone moderno: una computadora de bolsillo controlada con los dedos y con tienda de aplicaciones.",
+      "importancia": "Puso una computadora potente en el bolsillo de miles de millones y creó la economía de las apps.",
+      "queCambio": "La computación dejó de vivir en el escritorio para estar siempre con nosotros.",
+      "relacionHwSw": "Hardware (multitáctil) y software (iOS, App Store) diseñados juntos redefinieron la informática personal.",
+      "imagen": "assets/img/hitos/h49-iphone.webp",
+      "imagenAlt": "El primer iPhone de Apple, 2007",
+      "fuentes": [
+        {
+          "nombre": "Britannica – iPhone",
+          "url": "https://www.britannica.com/technology/iPhone"
+        }
+      ]
+    },
+    {
+      "id": "H50",
+      "slug": "android",
+      "titulo": "Android",
+      "anio": 2008,
+      "anioFin": null,
+      "periodo": "2008",
+      "tipo": "puntual",
+      "categoria": "dispositivos",
+      "generacion": "movil-nube",
+      "aportacionPropia": false,
+      "queOcurrio": "Google libera Android; el primer teléfono con este sistema (HTC Dream / T-Mobile G1) sale a la venta en 2008.",
+      "innovacion": "Un sistema operativo móvil abierto, basado en Linux, adoptado por muchos fabricantes.",
+      "importancia": "Se volvió el sistema operativo más usado del mundo y llevó el smartphone a todos los precios.",
+      "queCambio": "Democratizó el acceso al smartphone frente al modelo cerrado de Apple.",
+      "relacionHwSw": "Un mismo software corriendo en hardware de decenas de marcas, al estilo «PC compatible» pero móvil.",
+      "imagen": "assets/img/hitos/h50-android.webp",
+      "imagenAlt": "El primer teléfono Android, HTC Dream / T-Mobile G1, 2008",
+      "fuentes": [
+        {
+          "nombre": "Android Authority – Historia de Android",
+          "url": "https://www.androidauthority.com/history-android-os-name-789433/"
+        }
+      ]
+    },
+    {
+      "id": "H51",
+      "slug": "ipad",
+      "titulo": "iPad: la era de las tablets",
+      "anio": 2010,
+      "anioFin": null,
+      "periodo": "2010",
+      "tipo": "puntual",
+      "categoria": "dispositivos",
+      "generacion": "movil-nube",
+      "aportacionPropia": false,
+      "queOcurrio": "Apple presenta el iPad y populariza la categoría de las tablets: una pantalla táctil situada entre el teléfono y la laptop.",
+      "innovacion": "Un dispositivo pensado para consumir y crear contenido con solo tocar la pantalla, sin teclado ni mouse.",
+      "importancia": "Abrió un nuevo formato de cómputo personal, muy útil en educación, trabajo y creatividad.",
+      "queCambio": "Mostró que se podía computar sin las interfaces clásicas del escritorio.",
+      "relacionHwSw": "Reforzó el modelo de hardware y software integrados y la interfaz táctil como norma.",
+      "imagen": "assets/img/hitos/h51-ipad.webp",
+      "imagenAlt": "El primer iPad de Apple, 2010",
+      "fuentes": [
+        {
+          "nombre": "Al Jazeera – Apple presenta el iPad (2010)",
+          "url": "https://www.aljazeera.com/news/2010/1/28/apple-unveils-the-ipad"
+        }
+      ]
+    },
+    {
+      "id": "H53",
+      "slug": "watson",
+      "titulo": "IBM Watson gana Jeopardy!",
+      "anio": 2011,
+      "anioFin": null,
+      "periodo": "2011",
+      "tipo": "puntual",
+      "categoria": "ia",
+      "generacion": "movil-nube",
+      "aportacionPropia": false,
+      "queOcurrio": "La computadora Watson de IBM vence a los campeones humanos Ken Jennings y Brad Rutter en el concurso de televisión Jeopardy!.",
+      "innovacion": "Procesamiento de lenguaje natural a gran escala: entender preguntas con juegos de palabras y responder en segundos.",
+      "importancia": "Devolvió la IA a la conversación pública y mostró su utilidad para comprender el lenguaje humano.",
+      "queCambio": "Frente a los sistemas de reglas fijas, combinó cientos de algoritmos y evidencia para estimar la respuesta más probable.",
+      "relacionHwSw": "Hardware masivo y software de lenguaje al servicio de una tarea antes exclusivamente humana.",
+      "imagen": "assets/img/hitos/h53-watson.webp",
+      "imagenAlt": "La computadora IBM Watson compitiendo en Jeopardy!, 2011",
+      "fuentes": [
+        {
+          "nombre": "IBM – Watson en Jeopardy!",
+          "url": "https://www.ibm.com/history/watson-jeopardy"
+        }
+      ]
+    },
+    {
+      "id": "H54",
+      "slug": "alexnet",
+      "titulo": "AlexNet: la revolución del deep learning",
+      "anio": 2012,
+      "anioFin": null,
+      "periodo": "2012",
+      "tipo": "puntual",
+      "categoria": "ia",
+      "generacion": "ia-datos",
+      "aportacionPropia": false,
+      "queOcurrio": "La red neuronal AlexNet (Krizhevsky, Sutskever y Hinton) gana el reto de visión ImageNet por amplio margen, usando aprendizaje profundo sobre GPUs.",
+      "innovacion": "Demostró que las redes neuronales profundas, entrenadas con muchos datos y GPUs, superaban a todo lo anterior en visión por computadora.",
+      "importancia": "Encendió la revolución del aprendizaje profundo que domina la IA actual.",
+      "queCambio": "Frente a las características diseñadas a mano, la máquina aprendía a «ver» directamente de los datos.",
+      "relacionHwSw": "Unió grandes datos (ImageNet), hardware (GPU) y software (redes profundas): la receta de la IA moderna.",
+      "imagen": "assets/img/hitos/h54-alexnet.webp",
+      "imagenAlt": "Diagrama de la red neuronal profunda AlexNet",
+      "fuentes": [
+        {
+          "nombre": "Pinecone – AlexNet e ImageNet",
+          "url": "https://www.pinecone.io/learn/series/image-search/imagenet/"
+        }
+      ]
+    },
+    {
+      "id": "H55",
+      "slug": "alphago",
+      "titulo": "AlphaGo vence a Lee Sedol",
+      "anio": 2016,
+      "anioFin": null,
+      "periodo": "2016",
+      "tipo": "puntual",
+      "categoria": "ia",
+      "generacion": "ia-datos",
+      "aportacionPropia": false,
+      "queOcurrio": "AlphaGo, de Google DeepMind, vence 4-1 al campeón mundial Lee Sedol en el juego de Go.",
+      "innovacion": "Aprendizaje por refuerzo profundo más búsqueda para dominar un juego con más posiciones que átomos en el universo.",
+      "importancia": "Logró una década antes de lo previsto algo que se creía exclusivo de la intuición humana.",
+      "queCambio": "Mostró que la IA podía ser creativa y estratégica, no solo rápida (la célebre «jugada 37»).",
+      "relacionHwSw": "Combinó enorme cómputo con software de aprendizaje que se entrenó jugando contra sí mismo.",
+      "imagen": "assets/img/hitos/h55-alphago.webp",
+      "imagenAlt": "Partida de Go entre AlphaGo y Lee Sedol, 2016",
+      "fuentes": [
+        {
+          "nombre": "Google / DeepMind",
+          "url": "https://blog.google/innovation-and-ai/products/alphagos-ultimate-challenge/"
+        }
+      ]
+    },
+    {
+      "id": "H56",
+      "slug": "transformers",
+      "titulo": "Transformers («Attention Is All You Need»)",
+      "anio": 2017,
+      "anioFin": null,
+      "periodo": "2017",
+      "tipo": "puntual",
+      "categoria": "ia",
+      "generacion": "ia-datos",
+      "aportacionPropia": true,
+      "queOcurrio": "Investigadores de Google publican «Attention Is All You Need» e introducen la arquitectura Transformer.",
+      "innovacion": "Reemplazar el procesamiento secuencial por el mecanismo de «atención», que permite entrenar modelos enormes en paralelo.",
+      "importancia": "Es la base de todos los grandes modelos de lenguaje actuales: la «T» de GPT, Claude, Gemini y BERT significa Transformer.",
+      "queCambio": "Desbloqueó la escala: modelos más grandes, entrenados más rápido y con mejor comprensión del lenguaje.",
+      "relacionHwSw": "Una arquitectura de software diseñada para aprovechar al máximo el hardware paralelo (GPUs y TPUs).",
+      "justificacionAportacion": "Aunque no estaba en la lista original, es el hito técnico que hace posible toda la IA generativa de hoy. Decidimos incluirlo porque es el eslabón que conecta la historia clásica de la computación con la revolución de la IA que estamos viviendo.",
+      "imagen": "assets/img/hitos/h56-transformers.webp",
+      "imagenAlt": "Diagrama de la arquitectura Transformer del artículo «Attention Is All You Need»",
+      "fuentes": [
+        {
+          "nombre": "Google Research – Attention Is All You Need",
+          "url": "https://research.google/pubs/attention-is-all-you-need/"
+        }
+      ]
+    },
+    {
+      "id": "H57",
+      "slug": "gpt3",
+      "titulo": "GPT-3",
+      "anio": 2020,
+      "anioFin": null,
+      "periodo": "2020",
+      "tipo": "puntual",
+      "categoria": "ia",
+      "generacion": "ia-datos",
+      "aportacionPropia": false,
+      "queOcurrio": "OpenAI presenta GPT-3, un modelo de lenguaje con 175 mil millones de parámetros capaz de escribir texto sorprendentemente humano.",
+      "innovacion": "Demostró que basta con escalar —más datos y más parámetros— para lograr capacidades generales de lenguaje.",
+      "importancia": "Sentó las bases de la IA generativa y de la explosión que vendría con ChatGPT.",
+      "queCambio": "Un solo modelo podía traducir, resumir, programar o conversar sin entrenarse para cada tarea por separado.",
+      "relacionHwSw": "Requirió cómputo en la nube a escala masiva: la IA se volvió también un reto de infraestructura.",
+      "imagen": "assets/img/hitos/h57-gpt3.webp",
+      "imagenAlt": "Representación del modelo de lenguaje GPT-3 de OpenAI",
+      "fuentes": [
+        {
+          "nombre": "TechTarget – GPT-3",
+          "url": "https://www.techtarget.com/searchenterpriseai/definition/GPT-3"
+        }
+      ]
+    },
+    {
+      "id": "H58",
+      "slug": "chatgpt",
+      "titulo": "ChatGPT",
+      "anio": 2022,
+      "anioFin": null,
+      "periodo": "2022",
+      "tipo": "puntual",
+      "categoria": "ia",
+      "generacion": "ia-datos",
+      "aportacionPropia": false,
+      "queOcurrio": "OpenAI lanza ChatGPT el 30 de noviembre de 2022 y se convierte en el producto tecnológico de crecimiento más rápido de la historia.",
+      "innovacion": "Poner un modelo de lenguaje potente en una interfaz de chat simple, gratuita y para cualquier persona.",
+      "importancia": "Llevó la IA generativa al público masivo y disparó la carrera actual de la inteligencia artificial.",
+      "queCambio": "La IA dejó de ser cosa de especialistas para volverse una herramienta cotidiana de millones de personas.",
+      "relacionHwSw": "Software conversacional sobre enormes centros de datos, accesible desde cualquier dispositivo.",
+      "imagen": "assets/img/hitos/h58-chatgpt.webp",
+      "imagenAlt": "Interfaz de chat de ChatGPT de OpenAI, 2022",
+      "fuentes": [
+        {
+          "nombre": "HISTORY – Lanzamiento de ChatGPT (2022)",
+          "url": "https://www.history.com/this-day-in-history/november-30/chatgpt-released-openai"
+        }
+      ]
+    },
+    {
+      "id": "H59",
+      "slug": "gpt4-gemini-claude",
+      "titulo": "GPT-4, Gemini y Claude: la IA generativa se masifica",
+      "anio": 2023,
+      "anioFin": null,
+      "periodo": "2023",
+      "tipo": "puntual",
+      "categoria": "ia",
+      "generacion": "ia-datos",
+      "aportacionPropia": true,
+      "queOcurrio": "En 2023 llegan GPT-4 (OpenAI), Claude (Anthropic) y Gemini (Google): la IA generativa entra a la vida diaria de estudio y trabajo.",
+      "innovacion": "Modelos mucho más capaces —con razonamiento, código e imágenes— integrados en productos de uso común.",
+      "importancia": "La IA se vuelve herramienta de estudio, trabajo y creación para cientos de millones de personas.",
+      "queCambio": "De un solo chatbot a un ecosistema competitivo de asistentes de IA de propósito general.",
+      "relacionHwSw": "Consolidó el modelo de «IA como servicio» en la nube, consumido desde cualquier aparato.",
+      "justificacionAportacion": "Decidimos incluirlo porque marca el momento en que la IA generativa dejó de ser un experimento de laboratorio para volverse una herramienta cotidiana de estudio, trabajo y creación para cientos de millones de personas.",
+      "imagen": "assets/img/hitos/h59-gpt4-gemini-claude.webp",
+      "imagenAlt": "Los asistentes de IA generativa GPT-4, Gemini y Claude",
+      "fuentes": [
+        {
+          "nombre": "Wikipedia – GPT-4 (marzo 2023)",
+          "url": "https://en.wikipedia.org/wiki/GPT-4"
+        },
+        {
+          "nombre": "IntuitionLabs – Gemini (dic. 2023) y Claude (2023)",
+          "url": "https://intuitionlabs.ai/articles/anthropic-claude-4-llm-evolution"
+        }
+      ]
+    },
+    {
+      "id": "H60",
+      "slug": "ia-multimodal-agentes",
+      "titulo": "IA multimodal y agentes",
+      "anio": 2024,
+      "anioFin": null,
+      "periodo": "2024",
+      "tipo": "puntual",
+      "categoria": "ia",
+      "generacion": "ia-datos",
+      "aportacionPropia": false,
+      "queOcurrio": "Aparecen modelos multimodales nativos (como GPT-4o, mayo de 2024) que manejan texto, imagen y audio a la vez, y crecen los «agentes» de IA que ejecutan tareas por sí mismos.",
+      "innovacion": "IA que percibe y responde en varios formatos al mismo tiempo, y que empieza a actuar de forma autónoma usando herramientas.",
+      "importancia": "Acerca la IA a asistentes que ven, escuchan, hablan y hacen, no solo que escriben.",
+      "queCambio": "De responder texto a interactuar con el mundo de una forma más parecida a como lo hacemos las personas.",
+      "relacionHwSw": "Integra múltiples tipos de datos y herramientas sobre una infraestructura de nube cada vez mayor.",
+      "imagen": "assets/img/hitos/h60-ia-multimodal-agentes.webp",
+      "imagenAlt": "Representación de una IA multimodal que procesa texto, imagen y audio",
+      "fuentes": [
+        {
+          "nombre": "Generative AI Platforms Compared (GPT-4o, 2024)",
+          "url": "https://alicelabs.ai/en/insights/generative-ai-platforms-compared"
+        }
       ]
     }
   ]
