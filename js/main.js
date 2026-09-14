@@ -30,9 +30,11 @@ const NEAR      = 760;  // radio de "foco" de la cámara, en px de camino
 const S = {
   data:null, geom:null, mode:null, total:0,
   pins:[],                       // {id, L, el, pin}
+  nav:[],                        // {id, L} — pines + bandas, para la burbuja y las flechas
   gens:new Set(), cats:new Set(), propias:false, q:'',
   activeId:null, lastTrigger:null,
-  burbuja:null, burbujaId:null, avgGap:0   // burbuja flotante que emerge al pasar el viajero
+  burbuja:null, burbujaId:null, avgGap:0,      // burbuja flotante que emerge al pasar el viajero
+  burbujaManual:false, burbujaPos:null         // posición fijada por el usuario al arrastrarla
 };
 
 /* ---------- Iconografía por categoría ---------- */
@@ -651,6 +653,23 @@ function renderCamino(){
   S.viajero = $('#viajero');
   S.pins.forEach(o => { o.el = document.getElementById('n-' + o.id); o.pin = document.getElementById('p-' + o.id); });
 
+  // Lista de navegación de la burbuja: pines (posición fija) + bandas.
+  // Cada banda recibe un punto de detección en el HUECO que sigue al último pin
+  // de su año de inicio, para que caiga entre dos años distintos y tenga su
+  // propia celda (p. ej. el almacenamiento no queda apretado entre los dos de 1956).
+  S.nav = S.pins.map(o => ({ id:o.id, L:o.L }));
+  bandas.forEach(h => {
+    let i = -1;
+    S.pins.forEach((o, k) => {
+      const ph = S.data.hitos.find(x => x.id === o.id);
+      if(ph && ph.anio <= h.anio) i = k;
+    });
+    const a = i >= 0 ? S.pins[i].L : 0;
+    const b = (i + 1 < S.pins.length) ? S.pins[i + 1].L : total;
+    S.nav.push({ id:h.id, L:(a + b) / 2 });
+  });
+  S.nav.sort((x, y) => x.L - y.L);
+
   $$('[data-abrir]', $('#road-stage')).forEach(el => {
     el.addEventListener('click', () => abrirPanel(el.dataset.abrir, el));
   });
@@ -927,7 +946,10 @@ function crearBurbuja(){
   b.id = 'burbuja';
   b.hidden = true;
   b.setAttribute('aria-hidden', 'true');
-  b.innerHTML = `<div class="burbuja__meta" id="burbuja-meta"></div>
+  b.innerHTML = `<div class="burbuja__asa" id="burbuja-asa" title="Arrastra para mover">
+      <span class="burbuja__grip" aria-hidden="true"></span>
+    </div>
+    <div class="burbuja__meta" id="burbuja-meta"></div>
     <div class="burbuja__body" id="burbuja-body" tabindex="0"></div>
     <div class="burbuja__foot">
       <button type="button" class="burbuja__nav" data-bnav="-1" aria-label="Hito anterior">←</button>
@@ -945,6 +967,28 @@ function crearBurbuja(){
   b.querySelectorAll('[data-bnav]').forEach(btn => {
     btn.addEventListener('click', e => { e.stopPropagation(); burbujaNav(+btn.dataset.bnav); });
   });
+  // Arrastre por el asa (dedo o mouse) — la burbuja se queda donde la sueltes
+  const asa = b.querySelector('#burbuja-asa');
+  let drag = false, sx = 0, sy = 0, sl = 0, st = 0;
+  asa.addEventListener('pointerdown', e => {
+    drag = true;
+    try{ asa.setPointerCapture(e.pointerId); }catch(_){}
+    const r = b.getBoundingClientRect();
+    sx = e.clientX; sy = e.clientY; sl = r.left; st = r.top;
+    b.classList.add('is-dragging');
+    e.preventDefault();
+  });
+  asa.addEventListener('pointermove', e => {
+    if(!drag) return;
+    const vw = window.innerWidth, vh = window.innerHeight, bw = b.offsetWidth, bh = b.offsetHeight;
+    const left = clamp(sl + (e.clientX - sx), 8, vw - bw - 8);
+    const top  = clamp(st + (e.clientY - sy), 8, vh - bh - 8);
+    b.style.left = left + 'px'; b.style.top = top + 'px';
+    S.burbujaManual = true; S.burbujaPos = { left, top };
+  });
+  const finDrag = e => { if(drag){ drag = false; b.classList.remove('is-dragging'); try{ asa.releasePointerCapture(e.pointerId); }catch(_){} } };
+  asa.addEventListener('pointerup', finDrag);
+  asa.addEventListener('pointercancel', finDrag);
 }
 
 function mostrarBurbuja(){
@@ -959,6 +1003,7 @@ function ocultarBurbuja(){
   if(!b || b.hidden) return;
   b.classList.remove('is-open');
   S.burbujaId = null;
+  S.burbujaManual = false; S.burbujaPos = null;   // al salir de la ruta vuelve a acomodarse sola
   clearTimeout(S._bt);
   S._bt = setTimeout(() => { b.hidden = true; b.setAttribute('aria-hidden', 'true'); }, 200);
 }
@@ -967,6 +1012,11 @@ function posBurbuja(dotX, dotY){
   const b = S.burbuja; if(!b || b.hidden) return;
   const vw = window.innerWidth, vh = window.innerHeight;
   const bw = b.offsetWidth, bh = b.offsetHeight;
+  if(S.burbujaManual && S.burbujaPos){            // el usuario la arrastró: respeta su lugar
+    b.style.left = r1(clamp(S.burbujaPos.left, 8, vw - bw - 8)) + 'px';
+    b.style.top  = r1(clamp(S.burbujaPos.top,  8, vh - bh - 8)) + 'px';
+    return;
+  }
   let left, top;
   if(vw < 760){                                   // móvil: tarjeta flotante abajo
     left = clamp((vw - bw) / 2, 8, vw - bw - 8);
@@ -981,19 +1031,19 @@ function posBurbuja(dotX, dotY){
   b.style.top  = r1(top) + 'px';
 }
 
-/** Lista de hitos visibles (puntuales) en orden del camino */
-function pinsVisibles(){
-  return S.pins.filter(o => { const h = S.data.hitos.find(x => x.id === o.id); return h && pasa(h); });
+/** Hitos navegables visibles (pines + bandas) en orden del camino */
+function navVisibles(){
+  return S.nav.filter(o => { const h = S.data.hitos.find(x => x.id === o.id); return h && pasa(h); });
 }
 
 /** Mientras el viajero recorre la ruta, la burbuja muestra SIEMPRE el hito más
- *  cercano (sin zonas muertas): así los hitos pegados se aprecian todos y
- *  funciona igual al avanzar que al retroceder. */
+ *  cercano (sin zonas muertas): así los hitos pegados y las bandas se aprecian
+ *  todos y funciona igual al avanzar que al retroceder. */
 function actualizarBurbuja(enRuta, L, dotX, dotY){
   if(!S.burbuja) return;
-  if(!enRuta || !$('#panel').hidden || !S.pins.length){ ocultarBurbuja(); return; }
+  if(!enRuta || !$('#panel').hidden || !S.nav.length){ ocultarBurbuja(); return; }
 
-  const vis = pinsVisibles();
+  const vis = navVisibles();
   if(!vis.length){ ocultarBurbuja(); return; }
 
   let best = null, bd = Infinity, idx = -1;
@@ -1016,9 +1066,9 @@ function actualizarBurbuja(enRuta, L, dotX, dotY){
   posBurbuja(dotX, dotY);
 }
 
-/** Lleva el punto viajero exactamente sobre un hito (scroll calculado) */
+/** Lleva el punto viajero exactamente sobre un hito o banda (scroll calculado) */
 function irAHito(id){
-  const o = S.pins.find(p => p.id === id);
+  const o = S.nav.find(p => p.id === id);
   if(!o || !S.total) return;
   const r = $('#road-stage').getBoundingClientRect();
   const t = o.L / S.total;
@@ -1026,9 +1076,9 @@ function irAHito(id){
   window.scrollTo({ top: Math.max(0, target), behavior: reduceMotion ? 'auto' : 'smooth' });
 }
 
-/** Flechas de la burbuja: salta el viajero al hito anterior/siguiente visible */
+/** Flechas de la burbuja: salta el viajero al hito/banda anterior o siguiente */
 function burbujaNav(delta){
-  const vis = pinsVisibles();
+  const vis = navVisibles();
   const i = vis.findIndex(o => o.id === S.burbujaId);
   const sig = vis[i + delta];
   if(sig) irAHito(sig.id);

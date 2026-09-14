@@ -97,24 +97,25 @@ input{font:inherit}
     var(--surface);
   border-bottom:1px solid var(--line);
 }
-.hero__inner{max-width:1320px; margin:0 auto; padding:30px 20px 26px; text-align:center}
-.hero__title{font-size:clamp(1.7rem,4.4vw,2.9rem); font-weight:700; margin:0}
+.hero__inner{max-width:1320px; margin:0 auto; padding:44px 20px 38px; text-align:center}
+.hero__title{font-size:clamp(2.2rem,6vw,4rem); font-weight:700; margin:0; line-height:1.08}
 .hero__credito{
-  margin:8px auto 0; display:flex; flex-direction:column; align-items:center; gap:2px;
-  font-size:.72rem; line-height:1.5; color:var(--muted);
+  margin:16px auto 0; display:flex; flex-direction:column; align-items:center; gap:4px;
+  font-size:clamp(.9rem,1.4vw,1.08rem); line-height:1.55; color:var(--muted);
 }
-.hero__subtitle{margin:8px auto 0; max-width:70ch; font-size:clamp(.94rem,1.3vw,1.06rem); color:var(--muted)}
+.hero__credito :first-child{color:var(--text); font-weight:600}
+.hero__subtitle{margin:14px auto 0; max-width:70ch; font-size:clamp(1.02rem,1.5vw,1.2rem); color:var(--muted)}
 .hero__pregunta{
-  margin:16px auto 0; max-width:92ch;
-  display:flex; flex-wrap:wrap; justify-content:center; gap:6px 12px; align-items:baseline;
-  padding:12px 16px; border-radius:var(--r-md);
+  margin:24px auto 0; max-width:92ch;
+  display:flex; flex-wrap:wrap; justify-content:center; gap:8px 14px; align-items:baseline;
+  padding:18px 22px; border-radius:var(--r-md);
   background:var(--surface-2); border:1px solid var(--line);
-  border-left:3px solid var(--g-g3);
-  font-size:.96rem; font-weight:500; text-align:left;
+  border-left:4px solid var(--g-g3);
+  font-size:clamp(1.1rem,1.9vw,1.4rem); font-weight:500; text-align:left; line-height:1.4;
 }
 .hero__pregunta-label{
-  font-size:.66rem; letter-spacing:.14em; text-transform:uppercase;
-  color:var(--muted); font-weight:500; flex:0 0 auto;
+  font-size:.78rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--muted); font-weight:600; flex:0 0 auto;
 }
 
 .btn{
@@ -317,18 +318,27 @@ input{font:inherit}
 }
 
 .pin-fin{
-  position:absolute; display:inline-flex; align-items:center; gap:9px;
-  padding:9px 15px; border-radius:var(--r-pill);
-  background:var(--surface); border:1px dashed var(--line-strong);
-  color:var(--muted); font-size:.82rem; font-weight:500; text-decoration:none;
-  max-width:min(400px, calc(100% - 24px)); line-height:1.35;
-  transition:border-color var(--t-fast), color var(--t-fast);
+  position:absolute; display:inline-flex; align-items:center; gap:12px;
+  padding:12px 18px 12px 14px; border-radius:var(--r-pill);
+  background:linear-gradient(135deg, color-mix(in oklab, var(--g-posterior) 16%, var(--surface)), var(--surface));
+  border:2px solid var(--g-posterior); color:var(--text);
+  text-decoration:none; max-width:min(420px, calc(100% - 24px)); line-height:1.3;
+  box-shadow:0 8px 26px color-mix(in oklab, var(--g-posterior) 28%, transparent);
+  transition:transform var(--t-fast), box-shadow var(--t-fast);
 }
-.pin-fin:hover{border-color:var(--g-posterior); color:var(--text)}
+.pin-fin:hover{box-shadow:0 12px 34px color-mix(in oklab, var(--g-posterior) 42%, transparent); border-color:var(--text)}
+.pin-fin__punto{
+  flex:0 0 auto; width:20px; height:20px; border-radius:50%;
+  background:var(--g-posterior);
+  box-shadow:0 0 0 5px color-mix(in oklab, var(--g-posterior) 25%, transparent),
+             0 0 0 10px color-mix(in oklab, var(--g-posterior) 12%, transparent);
+}
+.pin-fin__txt{display:flex; flex-direction:column; gap:2px; text-align:left}
 .pin-fin .mono{
-  font-size:.66rem; letter-spacing:.12em; text-transform:uppercase;
-  color:var(--g-posterior); font-weight:600;
+  font-size:.9rem; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--g-posterior); font-weight:700;
 }
+.pin-fin__sub{font-size:.76rem; color:var(--muted); font-weight:500}
 
 /* HUD */
 .hud{
@@ -531,34 +541,92 @@ input{font:inherit}
 .tooltip b{font-family:var(--fm); font-weight:600}
 .tooltip span{display:block; opacity:.7; font-size:.72rem}
 
+/* ---------- 8b. Burbuja flotante (emerge sola al pasar el viajero) ---------- */
+.burbuja{
+  position:fixed; z-index:55; left:0; top:0;
+  width:min(380px,92vw); max-height:74vh;
+  display:flex; flex-direction:column;
+  background:color-mix(in oklab, var(--surface) 72%, transparent);
+  backdrop-filter:blur(16px) saturate(1.3);
+  -webkit-backdrop-filter:blur(16px) saturate(1.3);
+  border:1px solid color-mix(in oklab, var(--line) 55%, transparent);
+  border-left:5px solid var(--c,var(--g-g3));
+  border-radius:var(--r-lg); box-shadow:var(--shadow-lg,0 24px 60px rgba(0,0,0,.28));
+  overflow:hidden;
+  opacity:0; transform:scale(.94) translateY(6px);
+  transition:opacity .2s ease, transform .2s ease;
+  will-change:transform,opacity;
+}
+.burbuja.is-open{opacity:1; transform:none}
+.burbuja__meta{
+  padding:15px 18px 12px; border-bottom:1px solid color-mix(in oklab, var(--line) 55%, transparent);
+  background:linear-gradient(180deg, color-mix(in oklab, var(--c) 16%, transparent), transparent);
+}
+.burbuja__meta .panel__titulo{font-size:1.12rem; margin-top:6px}
+.burbuja__body{
+  overflow-y:auto; -webkit-overflow-scrolling:touch;
+  padding:16px 18px; display:grid; gap:14px;
+}
+.burbuja__body::-webkit-scrollbar{width:10px}
+.burbuja__body::-webkit-scrollbar-thumb{background:color-mix(in oklab, var(--muted) 45%, transparent); border-radius:8px; border:3px solid transparent; background-clip:padding-box}
+.burbuja__foot{
+  flex:0 0 auto; display:flex; align-items:center; gap:8px;
+  padding:10px 12px; border-top:1px solid color-mix(in oklab, var(--line) 55%, transparent);
+  background:color-mix(in oklab, var(--surface) 35%, transparent);
+}
+.burbuja__nav{
+  flex:0 0 auto; width:38px; height:38px; border-radius:999px;
+  border:1px solid var(--line); background:color-mix(in oklab, var(--surface) 60%, transparent); color:var(--text);
+  font-size:1.05rem; line-height:1; cursor:pointer; display:grid; place-items:center;
+  transition:border-color var(--t-fast), color var(--t-fast);
+}
+.burbuja__nav:hover:not(:disabled){border-color:var(--c,var(--g-g3)); color:var(--c,var(--g-g3))}
+.burbuja__nav:disabled{opacity:.35; cursor:not-allowed}
+.burbuja__mas{
+  flex:1 1 auto; padding:10px 14px; cursor:pointer; text-align:center;
+  border:1px solid var(--c,var(--g-g3)); border-radius:999px;
+  background:transparent; color:var(--c,var(--g-g3)); font-weight:600; font-size:.9rem;
+}
+.burbuja__mas:hover{background:color-mix(in oklab, var(--c) 12%, transparent)}
+@media (max-width:760px){
+  .burbuja{width:94vw; max-height:48vh}
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))){
+  .burbuja{background:color-mix(in oklab, var(--surface) 94%, transparent)}
+}
+@media (prefers-reduced-motion: reduce){
+  .burbuja{transition:none}
+  .burbuja.is-open{transform:none}
+}
+
 /* ---------- 9. Cierre, leyenda y pie ---------- */
 .seccion--cierre{border-top:1px solid var(--line); text-align:center}
-.cierre__label{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--g-g4); font-weight:600}
+.cierre__label{font-size:.84rem; letter-spacing:.16em; text-transform:uppercase; color:var(--g-g4); font-weight:600}
 [data-theme="dark"] .cierre__label{color:#c4a6ff}
 .cierre__pregunta{
-  margin:12px auto 0; max-width:78ch; font-size:clamp(1rem,1.8vw,1.2rem); font-weight:500;
-  padding-left:14px; border-left:3px solid var(--g-g3); text-align:left;
+  margin:16px auto 0; max-width:80ch; font-size:clamp(1.2rem,2.2vw,1.55rem); font-weight:500;
+  padding-left:16px; border-left:4px solid var(--g-g3); text-align:left; line-height:1.4;
 }
-.seccion--cierre .seccion__titulo{margin:18px auto 0; max-width:34ch}
-.cierre__tesis{margin:18px auto 0; max-width:74ch; font-size:clamp(1rem,1.5vw,1.12rem); color:var(--muted)}
+.seccion--cierre .seccion__titulo{margin:24px auto 0; max-width:38ch; font-size:clamp(1.7rem,3.6vw,2.5rem); line-height:1.15}
+.cierre__tesis{margin:24px auto 0; max-width:76ch; font-size:clamp(1.12rem,1.8vw,1.35rem); color:var(--muted); line-height:1.6}
 .cierre__tesis em{color:var(--text); font-style:italic}
 
 .evidencias{
-  list-style:none; margin:40px 0 0; padding:0;
-  display:grid; gap:16px;
-  grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));
+  list-style:none; margin:48px 0 0; padding:0;
+  display:grid; gap:18px;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));
 }
 .evidencia{
-  padding:20px; border:1px solid var(--line); border-radius:var(--r-md);
-  background:var(--surface); display:grid; gap:8px; align-content:start; justify-items:center;
+  padding:24px; border:1px solid var(--line); border-radius:var(--r-md);
+  background:var(--surface); display:grid; gap:9px; align-content:start; justify-items:center;
 }
-.evidencia__num{font-size:.74rem; color:var(--muted); letter-spacing:.1em}
-.evidencia__titulo{font-size:1rem; font-weight:600}
-.evidencia p{font-size:.9rem; color:var(--muted)}
-.evidencia__link a{font-size:.84rem; font-weight:600; color:var(--g-g3); text-decoration:none}
+.evidencia__num{font-size:.82rem; color:var(--muted); letter-spacing:.1em}
+.evidencia__titulo{font-size:1.15rem; font-weight:600}
+.evidencia p{font-size:1rem; color:var(--muted); line-height:1.55}
+.evidencia__link a{font-size:.92rem; font-weight:600; color:var(--g-g3); text-decoration:none}
 [data-theme="dark"] .evidencia__link a{color:#93b4fd}
 .evidencia__link a:hover{text-decoration:underline}
-.cierre__cierre{margin:32px auto 0; max-width:80ch; font-size:1rem; padding-top:24px; border-top:1px solid var(--line)}
+.cierre__cierre{margin:40px auto 0; max-width:82ch; font-size:clamp(1.08rem,1.7vw,1.28rem); line-height:1.6; padding-top:28px; border-top:1px solid var(--line)}
 
 .leyenda{display:grid; gap:24px; grid-template-columns:1fr; margin-bottom:26px}
 @media (min-width:800px){ .leyenda{grid-template-columns:1.3fr 1fr; gap:36px} }

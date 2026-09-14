@@ -31,7 +31,8 @@ const S = {
   data:null, geom:null, mode:null, total:0,
   pins:[],                       // {id, L, el, pin}
   gens:new Set(), cats:new Set(), propias:false, q:'',
-  activeId:null, lastTrigger:null
+  activeId:null, lastTrigger:null,
+  burbuja:null, burbujaId:null, avgGap:0   // burbuja flotante que emerge al pasar el viajero
 };
 
 /* ---------- Iconografía por categoría ---------- */
@@ -102,6 +103,7 @@ async function init(){
   setupPanel();
   setupTooltip();
   setupTeclado();
+  crearBurbuja();
 
   dibujar();
   let t;
@@ -115,6 +117,7 @@ function dibujar(){
   renderMinimapa();
   aplicarFiltros();
   observarReveal();
+  S.avgGap = 0;   // se recalcula en el próximo scroll (S.total/S.pins pudo cambiar)
   onScroll();
 }
 
@@ -233,10 +236,36 @@ function renderFiltros(){
    Con eso se ubica cualquier año, su normal (para los pines)
    y cualquier tramo de color (dasharray por zona).
    ============================================================= */
-function buildDesktop(W){
+function buildDesktop(W, puntuales){
   const rowW = W - 2 * D.MARGIN;
-  const ypr  = rowW / D.PX_YEAR;                       // años por fila
-  const rows = Math.max(2, Math.ceil((RMAX - YMIN) / ypr));
+  // Espaciado tipo roadmap: cada hito ocupa un "slot" casi uniforme (con leve
+  // influencia del salto de años, acotada). Así los periodos vacíos NO generan
+  // tramos enormes y ningún hito domina el recorrido.
+  const DGMIN = 320, DGMAX = 580, SCALE = 44;
+  const anchors = [];                       // {year, pos} posición efectiva en el camino
+  let pos = 0;
+  puntuales.forEach((h, i) => {
+    if(i > 0) pos += clamp((h.anio - puntuales[i-1].anio) * SCALE, DGMIN, DGMAX);
+    anchors.push({ year:h.anio, pos });
+  });
+  const tail = DGMIN;                        // espacio final hasta "presente"
+  const totalPos = (anchors.length ? anchors[anchors.length - 1].pos : 0) + tail;
+  const rows = Math.max(2, Math.ceil(totalPos / rowW));
+
+  // Año en una posición efectiva q (interpola las anclas de los hitos)
+  const yearAtPos = q => {
+    if(!anchors.length) return YMIN;
+    if(q <= anchors[0].pos) return anchors[0].year;
+    for(let i = 1; i < anchors.length; i++){
+      if(q <= anchors[i].pos){
+        const a = anchors[i-1], b = anchors[i];
+        return a.year + (b.year - a.year) * ((q - a.pos) / (b.pos - a.pos));
+      }
+    }
+    const last = anchors[anchors.length - 1];
+    return last.year + (RMAX - last.year) * clamp((q - last.pos) / tail, 0, 1);
+  };
+
   const s = [];
   let len = 0, px = null, py = null;
   const push = (x, y, year, row, turn) => {
@@ -254,13 +283,13 @@ function buildDesktop(W){
       const x = dir > 0 ? D.MARGIN + f * rowW : D.MARGIN + rowW - f * rowW;
       // onda suave que se anula en los extremos (empalme limpio con la vuelta)
       const y = yRow + D.WAVE * Math.sin(f * Math.PI * 4) * Math.sin(f * Math.PI);
-      push(x, y, Math.min(RMAX, YMIN + (r + f) * ypr), r);
+      push(x, y, yearAtPos((r + f) * rowW), r);
     }
     if(r < rows - 1){                                  // vuelta en U (bezier)
       const xe = dir > 0 ? D.MARGIN + rowW : D.MARGIN;
       const y0 = yRow, y1 = yRow + D.ROW_GAP;
       const cx = xe + dir * D.BULGE;
-      const yEnd = Math.min(RMAX, YMIN + (r + 1) * ypr);
+      const yEnd = yearAtPos((r + 1) * rowW);
       for(let i = 1; i <= 40; i++){       // muestreo fino: la curva paralela exterior se estira
         const t = i / 40, mt = 1 - t;
         const x = mt*mt*mt*xe + 3*mt*mt*t*cx + 3*mt*t*t*cx + t*t*t*xe;
@@ -269,7 +298,7 @@ function buildDesktop(W){
       }
     }
   }
-  return { mode:'h', w:W, h: D.TOP + (rows - 1) * D.ROW_GAP + D.BOTTOM, samples:s, rows, ypr };
+  return { mode:'h', w:W, h: D.TOP + (rows - 1) * D.ROW_GAP + D.BOTTOM, samples:s, rows };
 }
 
 function buildMobile(W, puntuales){
@@ -386,7 +415,7 @@ function renderCamino(){
   const W = Math.max(320, stage.clientWidth);
   const puntuales = S.data.hitos.filter(h => h.tipo !== 'banda');
 
-  const g = W >= 860 ? buildDesktop(W) : buildMobile(W, puntuales);
+  const g = W >= 860 ? buildDesktop(W, puntuales) : buildMobile(W, puntuales);
   S.geom = g; S.mode = g.mode;
   const total = S.total = g.samples[g.samples.length - 1].len;
   stage.style.height = g.h + 'px';
@@ -507,9 +536,16 @@ function renderCamino(){
   let pinsSvg = '', stalks = '', cards = '';
   S.pins = [];
   const lastL = { '-1': -1e9, '1': -1e9 };
+  // Separación mínima entre pines contiguos: evita que hitos del MISMO año
+  // (o muy cercanos) caigan en el mismo punto del camino. En móvil equivale al
+  // hueco ya reservado entre anclas; en escritorio, un valor fijo prudente.
+  const PIN_SEP = g.mode === 'v' ? M.GAP_MIN : 60;
+  let prevPinL = -1e9;
 
   puntuales.forEach((h, i) => {
-    const L = lenAtYear(g, h.anio);
+    let L = lenAtYear(g, h.anio);
+    L = Math.min(total, Math.max(L, prevPinL + PIN_SEP));   // separa hitos encimados
+    prevPinL = L;
     const p = atLen(g, L);
     const cat = CAT[h.categoria], color = GEN[h.generacion].color;
     let side = 1, cardL = L;
@@ -585,7 +621,11 @@ function renderCamino(){
   const finLado = g.mode === 'v' ? `left:${M.CARD_X}px; top:${r1(fin.y + 26)}px`
                                  : `left:${r1(fin.x)}px; top:${r1(fin.y + 34)}px; transform:translateX(-50%)`;
   cards += `<a class="pin-fin" href="#cierre" style="${finLado}">
-      <span class="mono">presente</span> Las cintas siguen corriendo · lee la respuesta →</a>`;
+      <span class="pin-fin__punto" aria-hidden="true"></span>
+      <span class="pin-fin__txt">
+        <b class="mono">PRESENTE</b>
+        <span class="pin-fin__sub">Meta de la línea de tiempo · lee la conclusión →</span>
+      </span></a>`;
 
   $('#road-pines').innerHTML = cards + ribLabels;
   $('#road-zonas').innerHTML = zonasHTML(g);
@@ -729,6 +769,10 @@ function onScroll(){
       const near = Math.abs(o.L - L) < NEAR;
       if(o.el) o.el.classList.toggle('is-near', near);
     });
+
+    // Burbuja flotante: mientras el viajero recorre el camino, muestra el hito más cercano
+    const enRuta = r.top <= window.innerHeight * 0.5 && r.bottom >= window.innerHeight * 0.5;
+    actualizarBurbuja(enRuta, L, r.left + p.x, r.top + p.y);
   });
 }
 
@@ -766,6 +810,7 @@ function aplicarFiltros(){
   [['#cnt-gen', S.gens.size], ['#cnt-cat', S.cats.size]].forEach(([sel, n]) => {
     const b = $(sel); b.textContent = n; b.hidden = !n;
   });
+  onScroll();   // reevaluar la burbuja si el hito activo quedó filtrado
 }
 
 function observarReveal(){
@@ -785,29 +830,23 @@ function observarReveal(){
    ============================================================= */
 const listaFiltrada = () => S.data.hitos.filter(pasa);
 
-function abrirPanel(id, trigger){
-  const h = S.data.hitos.find(x => x.id === id);
-  if(!h) return;
-  S.activeId = id;
-  S.lastTrigger = trigger || S.lastTrigger;
-
-  const g = GEN[h.generacion], c = CAT[h.categoria];
-  const color = h.tipo === 'banda' ? c.color : g.color;
-  $('#panel').style.setProperty('--c', color);
-
-  $('#panel-meta').innerHTML = `
+/** Encabezado (periodo + chips + título) de un hito, reutilizable en panel y burbuja */
+function metaHTML(h, g, c){
+  return `
     <div class="panel__kicker">
       <span class="panel__periodo">${esc(h.periodo)}</span>
       <span class="panel__chip" style="--c:${g.color}">${esc(g.nombre)}</span>
       <span class="panel__chip panel__chip--cat" style="--c:${c.color}">${svgIco(c.icono, '')}${esc(c.nombre)}</span>
       ${h.tipo === 'banda' ? '<span class="panel__chip mono" style="--c:var(--muted)">banda transversal</span>' : ''}
     </div>
-    <h2 class="panel__titulo" id="panel-titulo">${h.aportacionPropia ? '<span title="Aportación propia">⭐ </span>' : ''}${esc(h.titulo)}</h2>`;
+    <h2 class="panel__titulo">${h.aportacionPropia ? '<span title="Aportación propia">⭐ </span>' : ''}${esc(h.titulo)}</h2>`;
+}
 
+/** Cuerpo (imagen + bloques + callouts + fuentes) de un hito, reutilizable */
+function bodyHTML(h){
   const bloque = (label, texto) => texto
     ? `<div class="bloque"><p class="bloque__label">${label}</p><p class="bloque__texto">${esc(texto)}</p></div>` : '';
-
-  $('#panel-body').innerHTML = `
+  return `
     <figure class="figura" data-figura>
       <img class="figura__img" src="${esc(h.imagen)}" alt="${esc(h.imagenAlt)}" loading="lazy" width="640" height="400">
       <figcaption class="figura__cap">${esc(h.imagenAlt)}</figcaption>
@@ -828,15 +867,35 @@ function abrirPanel(id, trigger){
       ${(h.fuentes || []).map(f => `<a class="fuente" href="${esc(f.url)}" target="_blank" rel="noopener noreferrer">
         ${esc(f.nombre)} ${svgIco('link', '')}</a>`).join('')}
     </div>`;
+}
 
-  // Placeholder elegante si la imagen aún no existe (404)
-  const img = $('#panel-body img');
+/** Enlaza el placeholder de imagen (404) dentro de un contenedor */
+function montarFigura(scope, h, color, c){
+  const img = scope.querySelector('img');
+  if(!img) return;
   img.addEventListener('error', () => {
     const fig = img.closest('[data-figura]');
-    fig.innerHTML = `<div class="figura__ph" style="--c:${color}">
+    if(fig) fig.innerHTML = `<div class="figura__ph" style="--c:${color}">
         ${svgIco(c.icono, '')}<b>Imagen pendiente</b><small>${esc(h.imagenAlt)}</small>
       </div><figcaption class="figura__cap mono">${esc(h.imagen)}</figcaption>`;
   }, { once:true });
+}
+
+function abrirPanel(id, trigger){
+  const h = S.data.hitos.find(x => x.id === id);
+  if(!h) return;
+  S.activeId = id;
+  S.lastTrigger = trigger || S.lastTrigger;
+
+  const g = GEN[h.generacion], c = CAT[h.categoria];
+  const color = h.tipo === 'banda' ? c.color : g.color;
+  $('#panel').style.setProperty('--c', color);
+
+  $('#panel-meta').innerHTML = metaHTML(h, g, c);
+  const tit = $('#panel-meta .panel__titulo'); if(tit) tit.id = 'panel-titulo';
+  $('#panel-body').innerHTML = bodyHTML(h);
+  montarFigura($('#panel-body'), h, color, c);
+  ocultarBurbuja();   // si el panel se abre, la burbuja se retira
 
   const lista = listaFiltrada();
   const i = lista.findIndex(x => x.id === id);
@@ -855,6 +914,124 @@ function cerrarPanel(){
   $('#overlay').hidden = true;
   if(S.lastTrigger && document.contains(S.lastTrigger) && S.lastTrigger.focus) S.lastTrigger.focus();
   S.activeId = null;
+  onScroll();   // reevaluar si debe reaparecer la burbuja del hito bajo el viajero
+}
+
+/* =============================================================
+   7b. BURBUJA FLOTANTE — emerge sola al pasar el viajero por un hito
+   ============================================================= */
+function crearBurbuja(){
+  if(S.burbuja) return;
+  const b = document.createElement('aside');
+  b.className = 'burbuja';
+  b.id = 'burbuja';
+  b.hidden = true;
+  b.setAttribute('aria-hidden', 'true');
+  b.innerHTML = `<div class="burbuja__meta" id="burbuja-meta"></div>
+    <div class="burbuja__body" id="burbuja-body" tabindex="0"></div>
+    <div class="burbuja__foot">
+      <button type="button" class="burbuja__nav" data-bnav="-1" aria-label="Hito anterior">←</button>
+      <button type="button" class="burbuja__mas">Ver completo</button>
+      <button type="button" class="burbuja__nav" data-bnav="1" aria-label="Hito siguiente">→</button>
+    </div>`;
+  document.body.appendChild(b);
+  S.burbuja = b;
+  // "Ver completo" abre el panel del hito activo
+  b.querySelector('.burbuja__mas').addEventListener('click', e => {
+    e.stopPropagation();
+    if(S.burbujaId){ centrar(S.burbujaId); abrirPanel(S.burbujaId, b); }
+  });
+  // Flechas: mueven el punto viajero al hito anterior / siguiente
+  b.querySelectorAll('[data-bnav]').forEach(btn => {
+    btn.addEventListener('click', e => { e.stopPropagation(); burbujaNav(+btn.dataset.bnav); });
+  });
+}
+
+function mostrarBurbuja(){
+  const b = S.burbuja;
+  clearTimeout(S._bt);                 // cancela cualquier ocultamiento pendiente (evita parpadeo)
+  b.hidden = false; b.setAttribute('aria-hidden', 'false');
+  requestAnimationFrame(() => b.classList.add('is-open'));
+}
+
+function ocultarBurbuja(){
+  const b = S.burbuja;
+  if(!b || b.hidden) return;
+  b.classList.remove('is-open');
+  S.burbujaId = null;
+  clearTimeout(S._bt);
+  S._bt = setTimeout(() => { b.hidden = true; b.setAttribute('aria-hidden', 'true'); }, 200);
+}
+
+function posBurbuja(dotX, dotY){
+  const b = S.burbuja; if(!b || b.hidden) return;
+  const vw = window.innerWidth, vh = window.innerHeight;
+  const bw = b.offsetWidth, bh = b.offsetHeight;
+  let left, top;
+  if(vw < 760){                                   // móvil: tarjeta flotante abajo
+    left = clamp((vw - bw) / 2, 8, vw - bw - 8);
+    top  = vh - bh - 14;
+  }else{                                          // escritorio: al lado del punto
+    const gap = 28;
+    left = dotX < vw * 0.52 ? dotX + gap : dotX - gap - bw;
+    left = clamp(left, 12, vw - bw - 12);
+    top  = clamp(dotY - bh / 2, 12, vh - bh - 12);
+  }
+  b.style.left = r1(left) + 'px';
+  b.style.top  = r1(top) + 'px';
+}
+
+/** Lista de hitos visibles (puntuales) en orden del camino */
+function pinsVisibles(){
+  return S.pins.filter(o => { const h = S.data.hitos.find(x => x.id === o.id); return h && pasa(h); });
+}
+
+/** Mientras el viajero recorre la ruta, la burbuja muestra SIEMPRE el hito más
+ *  cercano (sin zonas muertas): así los hitos pegados se aprecian todos y
+ *  funciona igual al avanzar que al retroceder. */
+function actualizarBurbuja(enRuta, L, dotX, dotY){
+  if(!S.burbuja) return;
+  if(!enRuta || !$('#panel').hidden || !S.pins.length){ ocultarBurbuja(); return; }
+
+  const vis = pinsVisibles();
+  if(!vis.length){ ocultarBurbuja(); return; }
+
+  let best = null, bd = Infinity, idx = -1;
+  vis.forEach((o, i) => { const d = Math.abs(o.L - L); if(d < bd){ bd = d; best = o; idx = i; } });
+
+  if(S.burbujaId !== best.id){                     // reconstruir solo al cambiar de hito
+    S.burbujaId = best.id;
+    const h = S.data.hitos.find(x => x.id === best.id);
+    const g = GEN[h.generacion], c = CAT[h.categoria];
+    const color = h.tipo === 'banda' ? c.color : g.color;
+    S.burbuja.style.setProperty('--c', color);
+    $('#burbuja-meta').innerHTML = metaHTML(h, g, c);
+    $('#burbuja-body').innerHTML = bodyHTML(h);
+    montarFigura(S.burbuja, h, color, c);
+    $('#burbuja-body').scrollTop = 0;
+    S.burbuja.querySelector('[data-bnav="-1"]').disabled = idx <= 0;
+    S.burbuja.querySelector('[data-bnav="1"]').disabled  = idx >= vis.length - 1;
+    mostrarBurbuja();
+  }
+  posBurbuja(dotX, dotY);
+}
+
+/** Lleva el punto viajero exactamente sobre un hito (scroll calculado) */
+function irAHito(id){
+  const o = S.pins.find(p => p.id === id);
+  if(!o || !S.total) return;
+  const r = $('#road-stage').getBoundingClientRect();
+  const t = o.L / S.total;
+  const target = (window.scrollY + r.top) - window.innerHeight * 0.5 + t * r.height;
+  window.scrollTo({ top: Math.max(0, target), behavior: reduceMotion ? 'auto' : 'smooth' });
+}
+
+/** Flechas de la burbuja: salta el viajero al hito anterior/siguiente visible */
+function burbujaNav(delta){
+  const vis = pinsVisibles();
+  const i = vis.findIndex(o => o.id === S.burbujaId);
+  const sig = vis[i + delta];
+  if(sig) irAHito(sig.id);
 }
 
 function saltar(delta){
