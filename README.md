@@ -22,3 +22,10 @@ Coloca cada imagen en `assets/img/hitos/` con el nombre exacto indicado en
 1. Sube el repositorio a GitHub.
 2. Importa el repo en Vercel (framework: *Other* / static). Sin build.
 3. Comparte la URL pública de Vercel.
+
+## 👨‍💻 Autor
+
+**Irving Soriano** — Estudiante de la Licenciatura en Ciencia de Datos en la Escuela Superior de Cómputo (ESCOM) del IPN.
+
+* **GitHub**: [Mind0T](https://github.com/Mind0T)
+* **LinkedIn**: [Irving Soriano](https://www.linkedin.com/in/irving-soriano)
